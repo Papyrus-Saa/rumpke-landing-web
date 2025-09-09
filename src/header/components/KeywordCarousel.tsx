@@ -1,0 +1,57 @@
+'use client';
+
+const keywords = [
+  "Immobilien",
+  "Verkauf",
+  "Tippgeber",
+  "Attraktive Prämien sichern",
+  "Sicherheit bei jedem Schritt",
+  "Vertrauen und Transparenz",
+  "Persönlicher Service",
+  "Gemeinsam zum Erfolg",
+  "Professionelle Beratung",
+  "Diskrete Vermittlung",
+  "Rumpke – Ihr starker Partner",
+  "Jetzt Tipp abgeben und Vorteile sichern",
+];
+
+export default function KeywordCarousel() {
+  return (
+    <div className="w-full hidden 2xl:block h-5 overflow-hidden relative bg-[rgba(0,0,0,0.14)] dark:bg-[rgba(0,255,180,0.10)] dark:shadow-subtle-d shadow-subtle-l">
+      <div className="absolute top-0 left-0 w-full h-full">
+        <div className="whitespace-nowrap animate-keyword-scroll flex items-center h-4">
+          {keywords.map((word, idx) => (
+            <span
+              key={idx}
+              className="mx-4 text-xs sm:text-sm dark:text-[rgba(0,255,180,0.10)] text-gray-400"
+            >
+              {word}
+            </span>
+          ))}
+          {/* Duplicar para loop visual */}
+          {keywords.map((word, idx) => (
+            <span
+              key={`dup-${idx}`}
+              className="mx-4 text-xs sm:text-sm  dark:text-[rgba(0,255,180,0.10)] text-gray-400"
+            >
+              {word}
+            </span>
+          ))}
+        </div>
+      </div>
+      <style jsx>{`
+        @keyframes keyword-scroll {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-keyword-scroll {
+          animation: keyword-scroll 62s linear infinite;
+        }
+      `}</style>
+    </div>
+  );
+}
