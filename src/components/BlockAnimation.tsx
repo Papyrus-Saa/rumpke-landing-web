@@ -32,7 +32,7 @@ const EmptyBlock = styled(base)`background-color: transparent; color: transparen
 
 const BlockAnimation = () => {
   return (
-    <div className='flex flex-col items-center justify-center space-y-4 dark:bg-dark-300'>
+    <div className='flex flex-col items-center justify-center space-y-4 bg-white dark:bg-dark-300'>
       <div className='w-full flex justify-center items-center mb-8'>
       <GridWrapper className='w-fit sm:w-full p-1 grid grid-cols-[repeat(5,_2rem)]  sm:grid-cols-[repeat(5,_3rem)] grid-rows-[repeat(4,_2rem)] sm:grid-rows-[repeat(4,_3rem)] gap-2 '>
         <Span className={`${titleFonts.className} text-blue-500`}>G</Span>
@@ -61,7 +61,7 @@ const BlockAnimation = () => {
         <Span>P</Span>
       </GridWrapper>
     </div>
-      <FaArrowDown className='text-2xl text-green-500' />
+      <FaArrowDown className='text-2xl text-mint-600' />
       <p className='text-gray-600 font-semibold'>Fülle das Formular aus!</p>
     </div>
   );

@@ -54,7 +54,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
   };
   const inputBase =
     "w-full rounded-2xl px-4 py-2  outline-none " +
-    "bg-[oklch(98%_0_0)] dark:bg-dark-200 " +
+    "bg-[oklch(98%_0_0)] dark:bg-dark-200 bg-light-200 " +
     "border-black/10 dark:border-white/10 placeholder:opacity-60 " +
     "focus:ring-2 focus:ring-mint-600 focus:border-transparent";
 
@@ -62,14 +62,14 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
   const errorCls = "text-sm text-red-500 mt-1";
 
   return (
-    <div className="px-2 sm:px-6 md:px-8 lg:px-10 dark:bg-dark-300 bg-white pt-6 pb-10">
+    <div className="px-2 sm:px-6 md:px-8 lg:px-10 dark:bg-dark-300 mb-10 bg-white pt-6">
       <motion.form
         id='contact-form'
         onSubmit={handleSubmit(onSubmit)}
         className={
           "mx-auto max-w-2xl rounded-3xl border shadow-lg space-y-5 p-4 md:p-8 " +
           " " +
-          "border-black/10 dark:border-white/10 sm:w-[80%] mb-2"
+          "border-mint-600/60 dark:border-mint-600/30 sm:w-[80%] mb-2 scroll-mt-30"
         }
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}

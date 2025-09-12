@@ -23,6 +23,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/types/**/*.d.ts"
-  ],
+, "src/TODO.tsx"  ],
   "exclude": ["node_modules"]
 }

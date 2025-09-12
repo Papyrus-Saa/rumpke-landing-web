@@ -10,7 +10,7 @@ import './styles.css';
 import imgs from '@/data/images';
 import Image from 'next/image';
 
-// ...existing imports...
+
 
 export default function HeroBackgroundSlider() {
   return (

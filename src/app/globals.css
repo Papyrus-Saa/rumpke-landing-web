@@ -5,31 +5,53 @@
 
 @theme {
 
---color-light-100: oklch(98% 0 0);
---color-light-200: oklch(94% 0 0);
---color-light-300: oklch(88% 0 0);
-
---color-pic-100: oklch(99.4% 0.010 75.164);
---color-pic-300: oklch(22% 0 0);
-
---shadow-subtle-l: 0 2px 6px rgba(0, 0, 0, 0.10);
---shadow-subtle-d: 0 2px 6px #313131;
-
-
-
---color-dark-300: oklch(21% 0.034 264.665);
---color-dark-200: oklch(24% 0.034 264.665);
---color-dark-100: oklch(31% 0.034 264.665);
+/* ==================== 1. Navy & Gold ==================== */
+/* Light */
+--color-light-100: #f7fafc;
+--color-light-200: #e3e8ee;
+--color-light-300: #cfd8e3;
+--color-mint-600: #1a237e;
+--color-secondary-300: #bfa14a;
+/* Dark */
+--color-dark-300: #0a0c12;
+--color-dark-200: #161925;
+--color-dark-100: #23263a;
+--color-mint-600: #283593;
+--color-secondary-300: #ffd700;
 
 
---color-mint-900: oklch(30.42% 0.12  237.47);
---color-mint-800: oklch(36.42% 0.12  237.47);
---color-mint-600: #2F4F4F
-;
-;
 
---shadow-color: oklch(42% 0.12 145);
-  --box-shadow: 0 4px 12px var(--shadow-color);
+/* ==================== 3. Slate & Red ==================== */
+/* Light */
+/* --color-light-100: #f6f7f9;
+--color-light-200: #e2e4e8;
+--color-light-300: #c7cbd1;
+--color-mint-600: #b71c1c;
+--color-secondary-300: #374151; */
+/* Dark */
+/* --color-dark-300: #111113;
+--color-dark-200: #1b1c1e;
+--color-dark-100: #28292b;
+--color-mint-600: #c62828;
+--color-secondary-300: #64748b; */
+
+
+/* ==================== 7. Carbon & Teal ==================== */
+/* Light */
+/* --color-light-100: #f6f8f7;
+--color-light-200: #e2e7e5;
+--color-light-300: #c7d1ce;
+--color-mint-600: #009688;
+--color-secondary-300: #263238; */
+/* Dark */
+/* --color-dark-300: #101211;
+--color-dark-200: #1a1e1c;
+--color-dark-100: #232926;
+--color-mint-600: #26a69a;
+--color-secondary-300: #455a64; */
+
+
+
 
   --transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }

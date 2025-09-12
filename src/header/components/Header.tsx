@@ -21,11 +21,11 @@ export default function Header() {
 
   return (
     <div
-      className={`sticky top-0 z-20 w-full transition-all duration-700
-        ${scrolled ?'sm:backdrop-blur-md sm:bg-mint-600/70 sm:shadow-lg bg-mint-600' : 'bg-mint-600'}
+      className={`sticky top-0 z-20 w-full transition-all duration-700  mx-auto
+        ${scrolled ?'sm:backdrop-blur-md sm:bg-mint-600/70 sm:shadow-lg bg-mint-600 ' : 'bg-mint-600'}
       `}
     >
-      <div className="flex justify-between items-center p-2 h-12 sm:h-16 md:h-22 xl:h-26 2xl:px-52">
+      <div className="flex justify-between items-center p-2 h-12 sm:h-16 md:h-22 xl:h-26 2xl:px-52 mx-auto">
         <div>
           <Logo />
         </div>

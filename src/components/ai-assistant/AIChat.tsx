@@ -62,15 +62,19 @@ export default function AIChat() {
   }
 
   return (
+    <>
     <div
       ref={containerRef}
       className="
-        fixed left-0 right-0 top-0 z-40 mx-auto
-        h-[100dvh] min-h-[100dvh]
-        flex flex-col
-        bg-light-200 dark:bg-dark-200 py-2
+      fixed left-0 right-0 top-0 z-50 mx-auto
+      h-[100dvh] min-h-[100dvh]
+      flex flex-col
+      bg-light-200 dark:bg-dark-200
       "
     >
+      <header className='w-full bg-mint-600 py-6 text-center text-white font-medium text-lg shadow-[0px_4px_12px_0px_rgba(0,0,0,0.10)] dark:shadow-[0px_4px_12px_0px_rgba(0,255,180,0.10)]'>
+       <span>Unser KI-Assistent hilft!</span>
+      </header>
       <div
         ref={listRef}
         className="
@@ -113,5 +117,6 @@ export default function AIChat() {
         <TextMessageBox onSend={handlePost} />
       </div>
     </div>
+    </>
   )
 }

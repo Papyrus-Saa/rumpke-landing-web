@@ -19,6 +19,10 @@ import { useTipFormCount } from '@/components/form/hooks/useTipFormCount';
 import Benefits from '@/components/benefits/Benefits';
 import TipInfo from '@/components/TipInfo';
 import KeywordCarousel from '@/header/components/KeywordCarousel';
+import ButtonBehavior from '@/components/ButtonBehavior';
+import ScrollToTopButton from '@/components/ScrollTopButton';
+import { SubmitTipButton } from '@/components/SubmitTipButton';
+
 
 
 
@@ -39,27 +43,27 @@ export default function Home() {
 
 
   return (
-    <ThemeProvider>
-      <div className='w-full bg-light-100 dark:bg-dark-300'>
-        <KeywordCarousel />
-        <div
-          className=" text-gray-800 dark:text-gray-300 2xl:w-[85%] mx-auto bg-white dark:bg-dark-300 shadow-[0px_-12px_12px_5px_rgba(0,0,0,0.12)] dark:shadow-[0px_-12px_12px_5px_rgba(0,255,180,0.10)]">
-          <Header />
-          <HeroBackgroundSlider />
-          <SocialMediaComponent className='lg:hidden' />
-          <HeroIntro />
-          <HowItWorks />
-          <TipInfo />
-          <Benefits />
-          <AwardProducts />
-          <Awards />
-          <BlockAnimation />
-          {closeChat.visible && <AIChat />}
-          <TipForm />
-          <AIButton visible={closeChat.visible} toggleChat={toggleChat} />
-          <Footer />
-        </div>
-      </div>
-    </ThemeProvider>
+
+    <div
+      className="  2xl:w-full mx-auto">
+      <HeroBackgroundSlider />
+      <SocialMediaComponent className='lg:hidden' />
+      <SubmitTipButton />
+      <HeroIntro />
+      <HowItWorks />
+      <TipInfo />
+      <SubmitTipButton />
+      <Benefits />
+      <SubmitTipButton />
+      <ButtonBehavior />
+      <ScrollToTopButton />
+      <AwardProducts />
+      <Awards />
+      <BlockAnimation />
+      {closeChat.visible && <AIChat />}
+      <TipForm />
+      <AIButton visible={closeChat.visible} toggleChat={toggleChat} />
+    </div>
+
   );
 }

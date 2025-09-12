@@ -5,8 +5,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 
-import ButtonBehavior from "@/components/ButtonBehavior";
-import ScrollToTopButton from "@/components/ScrollTopButton";
+
+import Header from "@/header/components/Header";
+import { ThemeProvider } from "@/context/ThemeContext";
+import Footer from "@/components/Footer";
+import KeywordCarousel from "@/header/components/KeywordCarousel";
+import QuickLinksBar from "@/components/quick-links-bar/QuickLinksBar";
+import MoreInfo from "@/components/MoreInfo";
+
 
 
 
@@ -35,10 +41,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-        {/* <TitleScroller /> */}
-        <ButtonBehavior />
-        <ScrollToTopButton />
+        <ThemeProvider>
+          <div className=" w-full text-gray-800 dark:text-gray-300 mx-auto bg-white dark:bg-gray-950">
+            <div className="2xl:w-[85%] dark:bg-dark-300  mx-auto shadow-[0px_-12px_12px_5px_rgba(0,0,0,0.12)] dark:shadow-[0px_-12px_12px_2px_rgba(0,255,180,0.10)]">
+              <KeywordCarousel />
+            <Header />
+            {children}
+            <QuickLinksBar />
+            <MoreInfo/>
+            <Footer />
+            </div>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
