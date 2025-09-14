@@ -1,6 +1,7 @@
 import React from 'react'
 import { FiCheckCircle, FiGift, FiHome, FiSearch } from 'react-icons/fi'
 import { titleFonts } from '@/config/fonts'
+import Image from 'next/image'
 
 const steps = [
   {
@@ -27,19 +28,35 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <div className='dark:bg-dark-300 bg-white lg:px-16 xl:px-20 2xl:px-70 py-2 mb-6'>
-      <h3 className={`${titleFonts.className} ml-2 mb-4 text-lg`}>So einfach geht<span className='text-mint-600'>'</span>s</h3>
-      <ul className="space-y-4">
-        {steps.map((step, idx) => (
-          <li
-            key={idx}
-            className={`flex items-center gap-4 rounded-xl px-4 py-3 bg-light-100 dark:bg-dark-200 ${step.className}`}
-          >
-            <span className="text-2xl text-mint-600 dark:text-mint-200">{step.icon}</span>
-            <span className="font-medium">{step.title}</span>
-          </li>
-        ))}
-      </ul>
+    <div className='dark:bg-dark-200 bg-light-100 w-[90%] xl:w-[80%] 2xl:w-[70%] p-4 mb-6 mx-auto shadow'>
+      <h3 className={`${titleFonts.className} ml-2 mb-4 text-lg text-center`}>
+        So einfach geht<span className='text-mint-600'>'</span>s
+      </h3>
+      <div className='relative bg-white dark:bg-dark-300 p-4 lg:flex justify-center items-center'>
+        <div className="w-full lg:w-1/2 flex items-center">
+          <ul className="space-y-4 mb-6 lg:mb-0 w-full">
+            {steps.map((step, idx) => (
+              <li
+                key={idx}
+                className={`flex items-center gap-4 rounded-xl px-4 w-[90%] py-3 mx-auto bg-light-100 dark:bg-dark-200 ${step.className}`}
+              >
+                <span className="text-xl text-mint-600 dark:text-mint-200">{step.icon}</span>
+                <span className="font-medium">{step.title}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="w-full lg:w-1/2 flex justify-center items-center">
+          <Image
+            src="/howItWorksPic.jpg"
+            alt="How it works"
+            width={360}
+            height={320}
+            className="rounded shadow w-full max-w-[360px] max-h-[320px] h-auto"
+            sizes="(max-width: 1024px) 80vw, 360px"
+          />
+        </div>
+      </div>
     </div>
   )
 }

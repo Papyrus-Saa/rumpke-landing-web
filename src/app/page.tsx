@@ -5,23 +5,21 @@ import AIChat from '@/components/ai-assistant/AIChat';
 import BlockAnimation from '@/components/BlockAnimation';
 import HowItWorks from '@/components/HowItWorks';
 import SocialMediaComponent from '@/components/SocialMediaComponent';
-import { ThemeProvider } from '@/context/ThemeContext';
-import Header from '@/header/components/Header';
+
 import React, { useEffect, useState } from 'react';
 import TipForm from '@/components/form/TipForm';
-import Contributors from '@/components/contributors/Contributors';
+
 import HeroBackgroundSlider from '@/header/components/hero/HeroBackgroundSilder';
 import HeroIntro from '@/header/components/hero/HeroIntro';
 import Awards from '@/components/awards/Awards';
 import AwardProducts from '@/components/awards/AwardProducts';
-import Footer from '@/components/Footer';
-import { useTipFormCount } from '@/components/form/hooks/useTipFormCount';
+
 import Benefits from '@/components/benefits/Benefits';
 import TipInfo from '@/components/TipInfo';
-import KeywordCarousel from '@/header/components/KeywordCarousel';
 import ButtonBehavior from '@/components/ButtonBehavior';
 import ScrollToTopButton from '@/components/ScrollTopButton';
 import { SubmitTipButton } from '@/components/SubmitTipButton';
+import MoreInfo from '@/components/MoreInfo';
 
 
 
@@ -62,6 +60,7 @@ export default function Home() {
       <BlockAnimation />
       {closeChat.visible && <AIChat />}
       <TipForm />
+      <MoreInfo/>
       <AIButton visible={closeChat.visible} toggleChat={toggleChat} />
     </div>
 

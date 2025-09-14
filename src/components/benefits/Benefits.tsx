@@ -4,8 +4,8 @@ import { BENEFITS } from "@/components/benefits/data/benefits-data";
 
 const Benefits = () => {
   return (
-    <div className="w-full bg-white dark:bg-dark-300 py-12 ">
-      <section className="w-full max-w-3xl mx-auto px-4 py-8 shadow-[0_8px_32px_0_rgba(31,38,135,0.10)] bg-white dark:bg-dark-200">
+    <div className="w-full sm:w-[90%] mx-auto bg-white dark:bg-dark-300 py-12 ">
+      <section className="w-full max-w-3xl mx-auto px-4 py-8 shadow bg-white dark:bg-dark-200">
         <div className="text-center mb-8">
           <span className="inline-block px-4 py-1 rounded-full bg-mint-100 bg-mint-600 text-white text-xs font-bold tracking-widest uppercase mb-2 shadow-sm">
             Prämienstaffel

@@ -2,7 +2,22 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@keyframes rainbow-border {
+  0% { border-color: #ff0000; }
+  16% { border-color: #ff9900; }
+  33% { border-color: #ffff00; }
+  50% { border-color: #33ff00; }
+  66% { border-color: #00ccff; }
+  83% { border-color: #9900ff; }
+  100% { border-color: #ff0000; }
+}
 
+.rainbow-border {
+  border-width: 1px;
+  border-style: solid;
+  animation: rainbow-border 1.5s linear infinite;
+  transition: border-color 1.5s ease-out, border-width 1.5s ease-out;
+}
 @theme {
 
 /* ==================== 1. Navy & Gold ==================== */
@@ -10,13 +25,13 @@
 --color-light-100: #f7fafc;
 --color-light-200: #e3e8ee;
 --color-light-300: #cfd8e3;
---color-mint-600: #1a237e;
+--color-mint-600: #00464A;
 --color-secondary-300: #bfa14a;
 /* Dark */
 --color-dark-300: #0a0c12;
 --color-dark-200: #161925;
 --color-dark-100: #23263a;
---color-mint-600: #283593;
+--color-mint-600: #00464A;
 --color-secondary-300: #ffd700;
 
 
@@ -41,13 +56,13 @@
 /* --color-light-100: #f6f8f7;
 --color-light-200: #e2e7e5;
 --color-light-300: #c7d1ce;
---color-mint-600: #009688;
+--color-mint-600: #006075;
 --color-secondary-300: #263238; */
 /* Dark */
 /* --color-dark-300: #101211;
 --color-dark-200: #1a1e1c;
 --color-dark-100: #232926;
---color-mint-600: #26a69a;
+--color-mint-600: #003019;
 --color-secondary-300: #455a64; */
 
 

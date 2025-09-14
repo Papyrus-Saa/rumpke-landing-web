@@ -1,5 +1,5 @@
-
 'use client'
+import { useRainbow } from "@/hooks/useRainBow";
 import { useEffect, useState } from "react";
 import { FiFileText } from "react-icons/fi";
 
@@ -9,6 +9,7 @@ interface ScrollToFormButtonProps {
 
 const ScrollToFormButton: React.FC<ScrollToFormButtonProps> = ({ fixed = true }) => {
   const [show, setShow] = useState(true);
+  const { triggerRainbow } = useRainbow(); // 1. Importa triggerRainbow
 
   useEffect(() => {
     const onScroll = () => {
@@ -30,11 +31,10 @@ const ScrollToFormButton: React.FC<ScrollToFormButtonProps> = ({ fixed = true })
 
   return (
     <button
-      onClick={() =>
-        document
-          .getElementById("contact-form")
-          ?.scrollIntoView({ behavior: "smooth" })
-      }
+      onClick={() => {
+        document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" });
+        triggerRainbow(); // 2. Activa el arcoíris
+      }}
       className={` ${buttonClass} cursor-pointer`}
     >
       <FiFileText />

@@ -13,7 +13,7 @@ const Modal = ({ children, onClose }: { children: React.ReactNode, onClose: () =
         onClick={onClose}
       />
       <div
-        className="relative rounded-lg shadow-lg z-10  bg-red-600 w-fit mx-auto"
+        className="relative rounded-lg shadow-lg z-10  w-fit mx-auto"
         onClick={e => e.stopPropagation()}
       >
         {children}

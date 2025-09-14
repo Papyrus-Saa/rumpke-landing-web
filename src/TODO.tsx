@@ -2,37 +2,38 @@
 
 // ; Contenido & UX
 
-// ; ✅ Un solo bloque de pasos (“So funktioniert’s”) — ya lo tienes, evita duplicados.
+// ; ✅ Un solo bloque de pasos (“So funktioniert’s”) — ya lo tienes, evita duplicados. HECHO
 
-// ; ✅ CTA sticky en móvil (“Tipp abgeben”) que haga scroll al form (si no lo tienes siempre visible).
+// ; ✅ CTA sticky en móvil (“Tipp abgeben”) que haga scroll al form (si no lo tienes siempre visible). HECHO
 
-// ; ✅ Estado de envío del form: éxito/fracaso con aria-live + foco al primer error.
+// ; ✅ Estado de envío del form: éxito/fracaso con aria-live + foco al primer error. HECHO
 
-// ; ✅ Páginas 404/500 simples y con enlace al formulario.
+// ; ✅ Páginas 404/500 simples y con enlace al formulario.HECHO
 
 // ; Legal & GDPR (DE)
 
-// ; ✅ Datenschutzerklärung, Impressum, AGB (ya enlazadas).
+// ; ✅ Datenschutzerklärung, Impressum, AGB (ya enlazadas).HECHO
 
-// ; ✅ Teilnahmebedingungen/Tippgeber-Bedingungen: elegibilidad, cuándo se paga, exclusiones (si ya hay Makler), plazos, importe, fiscalidad.
+// ; ✅ Teilnahmebedingungen/Tippgeber-Bedingungen: elegibilidad, cuándo se paga, exclusiones (si ya hay Makler),     plazos, importe, fiscalidad. HECHO
 
-// ; ✅ Consentimiento explícito en el form + retención y borrado de datos (proceso para “Daten löschen”).
+// ; ✅ Consentimiento explícito en el form + retención y borrado de datos (proceso para “Daten löschen”).NO HACE FALTA
 
-// ; ✅ Banner de cookies (si usas analytics con cookies).
+// ; ✅ Banner de cookies (si usas analytics con cookies). //*POR HACER
+
 
 // ; ✅ Aviso e-mail: no compartes datos sin permiso; canal de contacto para reclamaciones.
 
 // ; Email & Dominios
 
-// ; ✅ SMTP de producción + SPF/DKIM/DMARC en tu dominio.
+// ; ✅ SMTP de producción + SPF/DKIM/DMARC en tu dominio. //*POR HACER
 
-// ; ✅ Plantilla de correo (admin + confirmación al usuario si dejó email).
+// ; ✅ Plantilla de correo (admin + confirmación al usuario si dejó email).NO HACE FALTA
 
-// ; ✅ Dirección From y Reply-To verificadas; manejo de rebotes (opcional).
+// ; ✅ Dirección From y Reply-To verificadas; manejo de rebotes (opcional). //*POR HACER
 
 // ; Backend (Nest) endurecido
 
-// ; ✅ helmet, CORS allowlist (dominio prod), body-limit.
+// ; ✅ helmet, CORS allowlist (dominio prod), body-limit.HECHO
 
 // ; ✅ Rate-limit + hCaptcha/reCAPTCHA verificado en servidor.
 

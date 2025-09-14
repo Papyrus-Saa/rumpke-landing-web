@@ -38,7 +38,7 @@ export default function ProductMiniSlider({
   return (
     <section
      id='product-showcase-slider'
-    className="p-2 dark:bg-dark-100 bg-light-200  sm:dark:shadow-subtle-d sm:shadow-subtle-l scroll-mt-50">
+    className="p-2 shadow rounded sm:dark:shadow-subtle-d sm:shadow-subtle-l scroll-mt-50">
       <div
         className="relative overflow-hidden dark:shadow-dark-100 hover:shadow-lg ">
         <Swiper

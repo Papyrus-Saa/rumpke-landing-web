@@ -1,19 +1,18 @@
 'use client'
 import { titleFonts } from '@/config/fonts';
-import React, { useState } from 'react'
-
-
+import { useRainbow } from '@/hooks/useRainBow';
 
 type AwardsSelectedProps = { icon: React.ReactNode; title: string }
 
 
-
-
 export default function AwardsSelected({ icon, title }: AwardsSelectedProps) {
 
+  const { triggerRainbow } = useRainbow();
 
   const handleClick = () => {
+
     document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })
+    triggerRainbow();
   }
 
   return (
