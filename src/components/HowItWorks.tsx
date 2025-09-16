@@ -28,7 +28,7 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <div className='dark:bg-dark-200 bg-light-100 w-[90%] xl:w-[80%] 2xl:w-[70%] p-4 mb-6 mx-auto shadow'>
+    <div className='dark:bg-dark-200 bg-light-100 w-[90%] xl:w-[80%] 2xl:w-[70%] p-4 mb-6 mx-auto shadow border dark:border-dark-100 rounded-lg border-light-200'>
       <h3 className={`${titleFonts.className} ml-2 mb-4 text-lg text-center`}>
         So einfach geht<span className='text-mint-600'>'</span>s
       </h3>

@@ -22,13 +22,9 @@ import { SubmitTipButton } from '@/components/SubmitTipButton';
 import MoreInfo from '@/components/MoreInfo';
 
 
-
-
-
 interface CloseChat {
   visible: boolean;
 }
-
 
 export default function Home() {
 

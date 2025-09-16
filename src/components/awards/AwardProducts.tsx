@@ -43,7 +43,9 @@ const AwardProducts = () => {
               }
             }}
           >
-            <ProductMiniSlider id={id} />
+            <ProductMiniSlider
+              id={id}
+              autoplayDelay={id === 1 ? 3000 : id === 2 ? 5000 : id === 3 ? 7000 : 4000} />
           </div>
         ))}
       </div>
@@ -54,6 +56,7 @@ const AwardProducts = () => {
               id={activeId}
               heightClass="h-[60vh] md:h-[70vh] lg:h-[60vh]"
               widthClass="w-[90vw] max-w-3xl"
+              autoplayDelay={activeId === 1 ? 3000 : activeId === 2 ? 5000 : activeId === 3 ? 7000 : 4000}
             />
           </div>
         </Modal>

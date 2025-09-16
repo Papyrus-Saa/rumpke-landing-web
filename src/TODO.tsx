@@ -1,3 +1,20 @@
+// Frontend:
+// Lo puedes subir a Strato (en tu dominio principal o un subdominio como www.tudominio.com o app.tudominio.com).
+
+// Backend:
+// Lo puedes desplegar en AWS (por ejemplo, en EC2, Elastic Beanstalk, o algún servicio de contenedores) y exponerlo en un subdominio como api.tudominio.com.
+
+// Base de datos:
+// Lo ideal es usar un servicio gestionado como Railway, Render, Supabase, Neon, etc.
+// Así no tienes que preocuparte por instalar, actualizar ni hacer backups manualmente.
+
+// Resumen profesional:
+
+// El frontend puede estar en Strato.
+// El backend en AWS.
+// La base de datos en un servicio gestionado (Railway, Render, Supabase, Neon, etc.).
+
+
 // ; ¡Vas muy bien! Para salir a producción sin sorpresas, te falta (resumen completo):
 
 // ; Contenido & UX
@@ -35,33 +52,33 @@
 
 // ; ✅ helmet, CORS allowlist (dominio prod), body-limit.HECHO
 
-// ; ✅ Rate-limit + hCaptcha/reCAPTCHA verificado en servidor.
+// ; ✅ Rate-limit + hCaptcha/reCAPTCHA verificado en servidor.HECHO
 
-// ; ✅ Validación (class-validator) ya ✔️; añade sanitización básica (escape/strip).
+// ; ✅ Validación (class-validator) ya ✔️; añade sanitización básica (escape/strip).HECHO
 
-// ; ✅ Logs estructurados (p. ej. pino) sin PII sensible; traza de errores.
+// ; ✅ Logs estructurados (p. ej. pino) sin PII sensible; traza de errores.NO HACE FALTA
 
-// ; ✅ Health check /health para monitor.
+// ; ✅ Health check /health para monitor.//*IMPORTANTE para monitorear
 
 // ; Base de datos & archivos
 
-// ; ✅ Postgres gestionado (Railway/Render/Supabase/etc.) + migraciones y backups diarios.
+// ; ✅ Postgres gestionado (Railway/Render/Supabase/etc.) + migraciones y backups diarios. //*POR HACER
 
-// ; ✅ Índices simples (created_at) y estado de payout (pending/paid).
+// ; ✅ Índices simples (created_at) y estado de payout (pending/paid).NO HACE FALTA
 
-// ; ✅ Carpeta/.bucket si guardas adjuntos (ahora no).
+// ; ✅ Carpeta/.bucket si guardas adjuntos (ahora no).NO HACE FALTA
 
 // ; Frontend
 
-// ; ✅ Corregir preload warnings (no pre-cargar fuentes/CSS manuales si usas next/font).
+// ; ✅ Corregir preload warnings (no pre-cargar fuentes/CSS manuales si usas next/font).HECHO
 
-// ; ✅ Imágenes optimizadas (next/image), tamaños/sizes correctos; evitar // en rutas.
+// ; ✅ Imágenes optimizadas (next/image), tamaños/sizes correctos; evitar // en rutas.HECHO
 
-// ; ✅ SEO: <title>, <meta description>, OG/Twitter y og:image.
+// ; ✅ SEO: <title>, <meta description>, OG/Twitter y og:image.//TODO muy importante hacer
 
-// ; ✅ Schema.org: Organization, FAQPage, WebSite (con SearchAction opcional).
+// ; ✅ Schema.org: Organization, FAQPage, WebSite (con SearchAction opcional).//TODO muy importante hacer
 
-// ; ✅ Lighthouse móvil: CLS bajo, fuentes display: swap.
+// ; ✅ Lighthouse móvil: CLS bajo, fuentes display: swap.HECHO
 
 // ; Analytics & Medición
 

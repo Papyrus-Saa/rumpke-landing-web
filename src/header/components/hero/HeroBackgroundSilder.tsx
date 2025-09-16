@@ -30,7 +30,7 @@ export default function HeroBackgroundSlider() {
       >
         {imgs.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="relative w-full h-[50vh] lg:h-[60vh] flex items-center justify-center">
+            <div className="relative w-full h-[70vh] lg:h-[80vh] flex items-center justify-center">
               <Image
                 src={`/${item.image}`}
                 alt={item.quote || "Slider image"}

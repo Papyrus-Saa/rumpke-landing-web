@@ -3,7 +3,7 @@
 import React, { useMemo } from 'react'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { A11y, Navigation, Pagination } from 'swiper/modules'
+import { A11y, Navigation, Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -16,17 +16,19 @@ type Props = {
   widthClass?: string
   speed?: number
   id: number
+  autoplayDelay?: number
 }
 
 export default function ProductMiniSlider({
   heightClass,
   widthClass,
   speed = 600,
+  autoplayDelay = 4000,
   id,
 }: Props) {
   const { mods: glMods, ready } = useSwiperGlModule('@/lib/uii/shaders/swiper-gl.esm.js')
   const mods = useMemo(
-    () => (ready ? [A11y, Navigation, Pagination, ...glMods] : [A11y, Navigation, Pagination]),
+    () => (ready ? [A11y, Navigation, Pagination, Autoplay, ...glMods] : [A11y, Navigation, Pagination, Autoplay]),
     [ready, glMods]
   )
 
@@ -37,16 +39,17 @@ export default function ProductMiniSlider({
 
   return (
     <section
-     id='product-showcase-slider'
-    className="p-2 shadow rounded sm:dark:shadow-subtle-d sm:shadow-subtle-l scroll-mt-50">
+      id='product-showcase-slider'
+      className="p-2 shadow rounded sm:dark:shadow-subtle-d sm:shadow-subtle-l scroll-mt-50">
       <div
-        className="relative overflow-hidden dark:shadow-dark-100 hover:shadow-lg ">
+        className="relative overflow-hidden dark:shadow-dark-100 hover:shadow-lg">
         <Swiper
           modules={mods}
           effect={ready ? 'gl' : undefined}
           speed={speed}
           loop={slide.image.length > 1}
           pagination={{ clickable: true }}
+          autoplay={{ delay: autoplayDelay, disableOnInteraction: false }}
           className={`w-full h-full`}
         >
           {slide.image.map((img, i) => (
