@@ -3,7 +3,7 @@
 import { createContext, useContext, ReactNode } from "react";
 import { useThemeMode, Theme } from "@/hooks/useThemeMode";
 
-// Tipo del contexto
+
 type ThemeContextType = {
   theme: Theme;
   toggleTheme: () => void;

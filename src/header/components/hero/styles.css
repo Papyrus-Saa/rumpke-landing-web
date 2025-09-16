@@ -1,0 +1,74 @@
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 11px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  font-size: 22px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 22px; /* tamaño del icono */
+}
+
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 26px;
+  height: 26lex;
+  align-items: center;
+  justify-content: center;
+ display: flex;
+ align-items: center;
+  color: var(--swiper-theme-color);
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+/* Puedes poner esto en tu globals.css o en un módulo CSS importado */
+.swiper-pagination-bullet {
+  background: #d1d5db !important; /* gris claro por defecto */
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-mint-600) !important; /* verde Tailwind (green-500) */
+}
