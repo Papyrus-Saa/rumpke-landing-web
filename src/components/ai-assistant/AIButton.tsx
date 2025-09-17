@@ -1,4 +1,4 @@
-import { MdCloseFullscreen } from "react-icons/md";
+
 import { FiX } from "react-icons/fi";
 import { RiRobot2Line } from "react-icons/ri";
 
@@ -9,8 +9,8 @@ interface AIButtonProps {
 
 const AIButton: React.FC<AIButtonProps> = ({ visible, toggleChat }) => {
   const buttonClass = visible
-    ? "fixed right-1 top-20"
-    : "fixed bottom-4 right-1 md:bottom-6 md:right-8 2xl:right-42";
+    ? ""
+    : "fixed bottom-4 right-1 md:bottom-6 md:right-8 2xl:right-52";
 
   return (
 
@@ -22,7 +22,7 @@ const AIButton: React.FC<AIButtonProps> = ({ visible, toggleChat }) => {
 
       <div className="loader-wrapper cursor-pointer">
         {visible ? (
-          <span className="loader-letter"><MdCloseFullscreen /></span>
+          <span className="loader-letter"><FiX /></span>
         ) : (
           <span className="loader-letter"><RiRobot2Line />
           </span>

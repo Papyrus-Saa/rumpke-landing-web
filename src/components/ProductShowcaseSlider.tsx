@@ -40,9 +40,9 @@ export default function ProductMiniSlider({
   return (
     <section
       id='product-showcase-slider'
-      className="p-2 shadow rounded sm:dark:shadow-subtle-d sm:shadow-subtle-l scroll-mt-50">
+      className=" rounded sm:dark:shadow-subtle-d sm:shadow-subtle-l scroll-mt-50">
       <div
-        className="relative overflow-hidden dark:shadow-dark-100 hover:shadow-lg">
+        className="relative overflow-hidden ">
         <Swiper
           modules={mods}
           effect={ready ? 'gl' : undefined}
@@ -54,7 +54,7 @@ export default function ProductMiniSlider({
         >
           {slide.image.map((img, i) => (
             <SwiperSlide key={i}>
-              <figure className={`relative mx-auto overflow-hidden hover:scale-105 transition-transform cursor-pointer hover-shadow-lg mb-2
+              <figure className={`relative mx-auto overflow-hidden hover:scale-105 transition-transform cursor-pointer
     ${heightClass ?? 'h-[300px] sm:h-[340px]'}
     ${widthClass ?? 'w-full xl:w-full'}
   `}>

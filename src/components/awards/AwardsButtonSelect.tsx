@@ -14,7 +14,7 @@ const AwardsButtonSelect = () => {
   return (
 
     <button onClick={handleClick}>
-      <FiGift className="w-6 h-6 text-gray-300 bg-dark-300 flex items-center justify-center  rounded cursor-pointer hover:shadow-lg transition-transform duration-200 ease-in-out hover:scale-110 p-1" />
+      <FiGift className="w-6 h-6  bg-secondary flex items-center justify-center  rounded cursor-pointer hover:shadow-lg transition-transform duration-200 ease-in-out hover:scale-110 p-1" />
     </button>
 
   )
