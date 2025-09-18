@@ -13,6 +13,7 @@ import KeywordCarousel from "@/header/components/KeywordCarousel";
 import QuickLinksBar from "@/components/quick-links-bar/QuickLinksBar";
 import { RainbowProvider } from "@/hooks/useRainBow";
 import CookieConsentClient from "@/components/cookie/CookieConsentClient";
+import { AIChatProvider } from "@/context/AIChatContext";
 
 
 
@@ -68,7 +69,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
-          <div className=" w-full text-gray-800 dark:text-gray-300 mx-auto bg-white dark:bg-gray-950">
+          <AIChatProvider>
+            <div className=" w-full text-gray-800 dark:text-gray-300 mx-auto bg-white dark:bg-gray-950">
             <div className="2xl:w-[85%] dark:bg-dark-300  mx-auto shadow-[0px_-12px_12px_5px_rgba(0,0,0,0.12)] dark:shadow-[0px_-12px_12px_2px_rgba(0,255,180,0.10)]">
               <KeywordCarousel />
               <Header />
@@ -80,6 +82,7 @@ export default function RootLayout({
             </div>
           </div>
           <CookieConsentClient />
+          </AIChatProvider>
         </ThemeProvider>
       </body>
     </html>

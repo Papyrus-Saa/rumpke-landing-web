@@ -6,19 +6,18 @@ import ClientMessage from './ClientMessage'
 import TypingLoader from '../loaders/TypingLoader'
 import TextMessageBox from '../chat-input-boxes/TextMessageBox'
 import { rumpkeai_assistant_use_case } from './rumpkeai-assistant-use-case'
-import AIButton from './AIButton'
+
 import { useAIChat } from '@/context/AIChatContext'
+import AIButton from './AIButton'
 
+type Message = { text: string; isGPT: boolean }
 
-export default function AIChat() {
-
- 
+export default function AIChatMobile() {
 
   const { visible, toggleChat, closeChat, messages, setMessages } = useAIChat();
 
 
   const [isLoading, setIsLoading] = useState(false)
-
   const listRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -50,8 +49,6 @@ export default function AIChat() {
   }, [])
 
   const handlePost = async (message: string) => {
-
-
     setIsLoading(true)
     setMessages(prev => [...prev, { text: message, role: "user" }])
 
@@ -74,21 +71,21 @@ export default function AIChat() {
       <div
         ref={containerRef}
         className="
-      w-[400px] h-[650px] fixed md:right-10 bottom-0 2xl:right-56 z-10
+      w-full h-full fixed top-0 right-0 z-20
       flex flex-col
       bg-light-100 dark:bg-dark-300
       shadow-ai-l dark:shadow-ai-d
       rounded-xl
       "
       >
-        <header className='w-full bg-mint-600 py-6 text-center text-white font-medium text-lg shadow-[0px_4px_12px_0px_rgba(0,0,0,0.10)] dark:shadow-[0px_4px_12px_0px_rgba(0,255,180,0.10)] rounded-t-xl'>
+        <header className='w-full bg-mint-600 py-6 text-center text-white font-medium text-lg shadow-[0px_4px_12px_0px_rgba(0,0,0,0.10)] dark:shadow-[0px_4px_12px_0px_rgba(0,255,180,0.10)]'>
           <span>Unser KI-Assistent hilft!</span>
         </header>
         <div
           ref={listRef}
           className="
           flex-1 overflow-y-auto overscroll-contain
-          px-4 pt-4 pb-3
+          px-4 pt-4 pb-3 xl:px-40  xl:pt-20
         "
         >
           <div className='absolute top-1 right-1'>
@@ -97,7 +94,7 @@ export default function AIChat() {
               toggleChat={toggleChat}
             />
           </div>
-          <div className="grid grid-cols-2 gap-y-2">
+          <div className="grid grid-cols-12 gap-y-2">
             <AIMessage text="Hi, ich bin hier um dir zu helfen &#128519;" />
             {messages.map((m, i) =>
               m.role === "assistant" ? (
@@ -119,11 +116,10 @@ export default function AIChat() {
         <div
           className="
           border-t border-black/10 dark:border-white/10
-          bg-light-100 dark:bg-dark-300
+          bg-light-200/90 dark:bg-dark-200/90
           supports-[backdrop-filter]:backdrop-blur-md
           px-4 py-3
           pb-[env(safe-area-inset-bottom)]
-
         "
         >
           <TextMessageBox onSend={handlePost} />

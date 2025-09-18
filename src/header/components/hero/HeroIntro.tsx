@@ -16,9 +16,7 @@ export default function HeroIntro() {
           Dein Tipp <span className='text-mint-600'>|</span> Ich <span className='text-mint-600'>schenk</span> dir was <span className='text-2xl'></span>
         </h1>
 
-        <p className='leading-relaxed text-lg md:text-xl text-gray-700 dark:text-gray-300 xl:mb-12'>
-          Wenn du jemanden kennst, der sein Haus, seine Wohnung oder sein Grundstück verkaufen möchte, erzähl es uns. Dafür bekommst du von uns ein Dankeschön.
-        </p>
+       
       </motion.div>
     </section>
   );

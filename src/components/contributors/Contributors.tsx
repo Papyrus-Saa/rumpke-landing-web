@@ -20,8 +20,9 @@ const Contributors = ({ total, show }: Props) => {
       style={{ minHeight: 40 }}
     >
       <FaPeoplePulling size={14} className="text-green-500 mr-1" />
-      <p className={`${titleFonts.className} text-xs mr-4 text-dark-300 dark:text-white`}>Teilnehmende</p>
-      <span className={`${titleFonts.className} rounded-md px-2 text-white ml-auto bg-mint-600`}>{total}</span>
+      <p className={`${titleFonts.className} text-xs mr-4 text-dark-300 dark:text-white`}>Schon teilgenommen</p>
+      <span className={`${titleFonts.className} rounded-md px-2
+       text-white ml-auto bg-mint-600`}>{total}</span>
 
       {/* Overlay verde y texto centrado, con transición suave */}
       <div

@@ -9,7 +9,7 @@ const ThemeSwitch = () => {
 
   return (
 
-    <button onClick={toggleTheme} className="relative z-50 w-6 h-6  bg-gray-300 text-dark-300 flex items-center justify-center  rounded cursor-pointer hover:shadow-lg transition-transform duration-200 ease-in-out hover:scale-110 ">
+    <button onClick={toggleTheme} className="relative z-50 w-6 h-6  bg-light-200  text-mint-600 flex items-center justify-center  rounded cursor-pointer hover:shadow-lg transition-transform duration-200 ease-in-out hover:scale-110 ">
       {theme === 'light' ? <LuSunMoon /> : <LuSunMoon />}
     </button>
   )

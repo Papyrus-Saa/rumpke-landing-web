@@ -1,31 +1,40 @@
-
-
-
 import { titleFonts } from "@/config/fonts";
-import { MdInfoOutline } from "react-icons/md";
+import { MdWarningAmber } from "react-icons/md";
 
 const tipRules = [
   "Wir wissen bisher noch nichts von dem geplanten Verkauf.",
-  "Das Ganze ist noch nicht offiziell ( kein Schild im Garten, keine Anzeige im Internet ).",
+  "Das Ganze ist noch nicht offiziell (kein Schild im Garten, keine Anzeige im Internet).",
   "Es liegt in einer Region, in der wir aktiv sind.",
 ];
 
 const TipInfo = () => (
- <div className="w-full dark:bg-dark-300 bg-white  flex lg:px-16 xl:px-20 2xl:px-70 ">
-   <section className="w-full max-w-lg   mx-auto my-8 p-6  dark:bg-dark-200 dark:border-mint-400 shadow ">
-    <div className="flex items-center justify-center mb-4 bg-mint-600">
-      <MdInfoOutline className="text-mint-600 dark:text-mint-300 text-2xl mr-2" />
-      <h2 className="text-lg text-white sm:text-xl font-bold text-mint-700 dark:text-mint-200">
-        Wann zählt dein Tipp?
+  <div className="w-full flex justify-center items-center py-8 px-2">
+    <section className="relative w-full max-w-xl mx-auto rounded bg-light-100 dark:bg-dark-200
+      p-6 border-4 border-double border-light-200 dark:border-dark-100">
+      <div className="absolute -top-6 left-1/2 -translate-x-1/2 flex items-center justify-center">
+        <span className="flex justify-center items-center dark:bg-dark-300 bg-white rounded-full p-1 shadow-lg border-3 border-mint-600">
+          <MdWarningAmber className="text-mint-600 text-xl" />
+        </span>
+      </div>
+      <h2 className={`text-center text-xl sm:text-2xl font-bold mb-6 mt-4 text-mint-600 dark:text-mint-600 ${titleFonts.className}`}>
+        Wichtig für deinen Tipp!
       </h2>
-    </div>
-    <ul className="list-disc p-2 space-y-2 text-gray-800 dark:text-gray-100 text-base">
-      {tipRules.map((rule, idx) => (
-        <li className={`${titleFonts.className} ""`} key={idx}>{rule}</li>
-      ))}
-    </ul>
-  </section>
- </div>
+      <ul className="list-none space-y-4 px-2 text-base">
+        {tipRules.map((rule, idx) => (
+          <li
+            key={idx}
+            className="flex items-start gap-3 bg-light-100/80 dark:bg-dark-100 rounded-lg p-3 shadow "
+          >
+            <span className="mt-1 text-mint-600 text-lg font-bold">•</span>
+            <span className={`${titleFonts.className} text-gray-800 dark:text-gray-100`}>{rule}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-6 text-center text-sm text-mint-600 font-semibold">
+        Bitte beachte diese Hinweise, damit dein Tipp gültig ist!
+      </div>
+    </section>
+  </div>
 );
 
 export default TipInfo;
