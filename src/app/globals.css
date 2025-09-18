@@ -25,13 +25,13 @@
 --color-light-100: #f7fafc;
 --color-light-200: #e3e8ee;
 --color-light-300: #cfd8e3;
---color-mint-600: #236B34;
+--color-mint-600: #103647;
 --color-secondary-300: #bfa14a;
 /* Dark */
 --color-dark-300: #0a0c12;
 --color-dark-200: #11131a;
 --color-dark-100: #181b24;
---color-mint-600: #236B34;
+--color-mint-600: #103647;
 --color-secondary: #FFA600;
 
 
@@ -72,4 +72,26 @@
 
 --shadow-ai-l: 0 8px 32px 0 rgba(44, 62, 80, 0.18), 0 4px 16px 0 rgba(180, 180, 180, 0.12);
 --shadow-ai-d: 0 8px 32px 0 rgba(60, 60, 60, 0.38), 0 4px 16px 0 rgba(0, 0, 0, 0.32);
+}
+
+
+
+.rainbow-border-animated {
+  --angle: 0deg;
+  border-width: 1px;
+  border-style: double;
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: rotate 6s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }

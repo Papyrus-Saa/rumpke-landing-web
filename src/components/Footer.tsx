@@ -1,3 +1,4 @@
+import { titleFonts } from "@/config/fonts"
 
 
 
@@ -5,7 +6,7 @@
 const Footer = () => {
   return (
     <div className=" dark:bg-dark-300 bg-white py-6 w-full mx-auto">
-      <p className="text-center border-r border-l w-fit mx-auto px-6 border-mint-600">© 2025 Rumpke | Immobilien</p>
+      <p className={`${titleFonts.className} text-xs text-center border-r-3 border-l-3 w-fit mx-auto px-6 border-mint-600`}>© {new Date().getFullYear()} Ich schenk dir was</p>
     </div>
   )
 }

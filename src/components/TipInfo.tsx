@@ -23,7 +23,7 @@ const TipInfo = () => (
         {tipRules.map((rule, idx) => (
           <li
             key={idx}
-            className="flex items-start gap-3 bg-light-100/80 dark:bg-dark-100 rounded-lg p-3 shadow "
+            className="flex items-start gap-3 bg-white dark:bg-dark-100 rounded-lg p-3 shadow "
           >
             <span className="mt-1 text-mint-600 text-lg font-bold">•</span>
             <span className={`${titleFonts.className} text-gray-800 dark:text-gray-100`}>{rule}</span>

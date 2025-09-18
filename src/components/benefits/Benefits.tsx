@@ -4,8 +4,8 @@ import { BENEFITS } from "@/components/benefits/data/benefits-data";
 
 const Benefits = () => {
   return (
-    <div className="w-full sm:w-[90%] mx-auto bg-white dark:bg-dark-300 py-12 ">
-      <section className="w-full max-w-3xl mx-auto px-4 py-8 shadow bg-white dark:bg-dark-200">
+    <div className="w-full sm:w-[90%] mx-auto">
+      <section className="w-full max-w-3xl mx-auto px-4 py-8 shadow bg-light-100 dark:bg-dark-200">
         <div className="text-center mb-8">
           <span className="inline-block px-4 py-1 rounded-full bg-mint-100 bg-mint-600 text-white text-xs font-bold tracking-widest uppercase mb-2 shadow-sm">
             Prämienstaffel
@@ -21,7 +21,7 @@ const Benefits = () => {
           {BENEFITS.map((b, i) => (
             <div
               key={i}
-              className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-light-100 dark:bg-dark-100 px-5 py-4 shadow-md hover:scale-[1.02] transition-transform "
+              className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white dark:bg-dark-100 px-5 py-4 shadow-md hover:scale-[1.02] transition-transform "
             >
               <div className="flex-shrink-0 w-full sm:w-48 mb-2 sm:mb-0 ">
                 <span className="block text-lg sm:text-xl font-bold text-mint-600 dark:text-mint-400">

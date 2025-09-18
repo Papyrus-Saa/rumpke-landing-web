@@ -70,8 +70,8 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <AIChatProvider>
-            <div className=" w-full text-gray-800 dark:text-gray-300 mx-auto bg-white dark:bg-gray-950">
-            <div className="2xl:w-[85%] dark:bg-dark-300  mx-auto shadow-[0px_-12px_12px_5px_rgba(0,0,0,0.12)] dark:shadow-[0px_-12px_12px_2px_rgba(0,255,180,0.10)]">
+            <div className=" w-full text-gray-800 dark:text-gray-300 mx-auto bg-light-100 dark:bg-gray-950">
+            <div className="bg-white 2xl:w-[85%] dark:bg-dark-300  mx-auto shadow-[0px_-12px_12px_1px_rgba(0,0,0,0.12)] dark:shadow-[0px_-12px_12px_2px_rgba(0,255,180,0.10)]">
               <KeywordCarousel />
               <Header />
               <RainbowProvider>

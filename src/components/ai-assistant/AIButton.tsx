@@ -10,7 +10,7 @@ interface AIButtonProps {
 const AIButton: React.FC<AIButtonProps> = ({ visible, toggleChat }) => {
   const buttonClass = visible
     ? ""
-    : "fixed bottom-4 right-1 md:bottom-6  2xl:right-52";
+    : "fixed bottom-4 right-1 md:bottom-6  2xl:right-42";
 
   return (
 

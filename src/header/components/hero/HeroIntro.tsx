@@ -16,7 +16,7 @@ export default function HeroIntro() {
           Dein Tipp <span className='text-mint-600'>|</span> Ich <span className='text-mint-600'>schenk</span> dir was <span className='text-2xl'></span>
         </h1>
 
-       
+
       </motion.div>
     </section>
   );

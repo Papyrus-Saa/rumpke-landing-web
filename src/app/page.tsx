@@ -23,12 +23,17 @@ import MoreInfo from '@/components/MoreInfo';
 import MotivationBanner from '@/components/MotivationBanner';
 import { useAIChat } from '@/context/AIChatContext';
 import AIChatMobile from '@/components/ai-assistant/AIChatMobile';
+import { FormPic } from '@/components/form/FormPic';
+
+type ScrollToFormButtonProps = {
+  onClick?: () => void;
+};
 
 
 export default function Home() {
-
-
+  const [showFormPic, setShowFormPic] = useState(false);
   const { visible, toggleChat } = useAIChat();
+
 
   return (
 
@@ -36,6 +41,7 @@ export default function Home() {
       className="2xl:w-full mx-auto">
       <HeroBackgroundSlider />
       <SocialMediaComponent className='lg:hidden' />
+      {showFormPic && <FormPic />}
       <SubmitTipButton />
       <HeroIntro />
       <HowItWorks />
@@ -44,7 +50,12 @@ export default function Home() {
       <AwardProducts />
       <Benefits />
       <SubmitTipButton />
-      <ButtonBehavior />
+      <div
+        onMouseEnter={() => setShowFormPic(true)}
+        onMouseLeave={() => setShowFormPic(false)}
+      >
+        <ButtonBehavior  />
+      </div>
       <ScrollToTopButton />
       <BlockAnimation />
       <TipForm />
