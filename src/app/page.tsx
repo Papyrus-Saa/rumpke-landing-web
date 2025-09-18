@@ -22,6 +22,7 @@ import { SubmitTipButton } from '@/components/SubmitTipButton';
 import MoreInfo from '@/components/MoreInfo';
 import MotivationBanner from '@/components/MotivationBanner';
 import { useAIChat } from '@/context/AIChatContext';
+import AIChatMobile from '@/components/ai-assistant/AIChatMobile';
 
 
 export default function Home() {
@@ -55,7 +56,12 @@ export default function Home() {
         )}
         {visible && <AIChat />}
       </div>
-      {/* <AIChat /> */}
+      <div className='md:hidden'>
+        {!visible && (
+          <AIButton visible={false} toggleChat={toggleChat} />
+        )}
+        {visible && <AIChatMobile />}
+      </div>
     </div>
 
   );

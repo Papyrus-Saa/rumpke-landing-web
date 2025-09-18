@@ -6,21 +6,19 @@ import ClientMessage from './ClientMessage'
 import TypingLoader from '../loaders/TypingLoader'
 import TextMessageBox from '../chat-input-boxes/TextMessageBox'
 import { rumpkeai_assistant_use_case } from './rumpkeai-assistant-use-case'
-import ThemeSwitch from '../ThemeSwitch'
 import AIButton from './AIButton'
 import { useAIChat } from '@/context/AIChatContext'
 
 
-type Message = { text: string; isGPT: boolean }
-
 export default function AIChat() {
 
+ 
 
-  const { visible, toggleChat, closeChat } = useAIChat();
+  const { visible, toggleChat, closeChat, messages, setMessages } = useAIChat();
 
 
   const [isLoading, setIsLoading] = useState(false)
-  const [messages, setMessages] = useState<Message[]>([])
+
   const listRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -55,17 +53,17 @@ export default function AIChat() {
 
 
     setIsLoading(true)
-    setMessages(prev => [...prev, { text: message, isGPT: false }])
+    setMessages(prev => [...prev, { text: message, role: "user" }])
 
     try {
       const data = await rumpkeai_assistant_use_case(message)
       if (!data) {
-        setMessages(prev => [...prev, { text: 'Ohne Antwort vom Server', isGPT: true }])
+        setMessages(prev => [...prev, { text: 'Ohne Antwort vom Server', role: "assistant" }])
       } else {
-        setMessages(prev => [...prev, { text: data.message.content, isGPT: true }])
+        setMessages(prev => [...prev, { text: data.message.content, role: "assistant" }])
       }
     } catch {
-      setMessages(prev => [...prev, { text: 'Fehler beim Senden.', isGPT: true }])
+      setMessages(prev => [...prev, { text: 'Fehler beim Senden.', role: "assistant" }])
     } finally {
       setIsLoading(false)
     }
@@ -76,7 +74,7 @@ export default function AIChat() {
       <div
         ref={containerRef}
         className="
-      w-[400px] h-[650px] fixed bottom-0 2xl:left-56 z-10
+      w-[400px] h-[650px] fixed md:right-10 bottom-0 2xl:right-56 z-10
       flex flex-col
       bg-light-100 dark:bg-dark-300
       shadow-ai-l dark:shadow-ai-d
@@ -93,10 +91,6 @@ export default function AIChat() {
           px-4 pt-4 pb-3
         "
         >
-
-          <div className='absolute top-1 right-1 sm:hidden'>
-            <ThemeSwitch />
-          </div>
           <div className='absolute top-1 right-1'>
             <AIButton
               visible={visible}
@@ -106,7 +100,7 @@ export default function AIChat() {
           <div className="grid grid-cols-2 gap-y-2">
             <AIMessage text="Hi, ich bin hier um dir zu helfen &#128519;" />
             {messages.map((m, i) =>
-              m.isGPT ? (
+              m.role === "assistant" ? (
                 <AIMessage key={i} text={m.text} />
               ) : (
                 <ClientMessage key={i} text={m.text} />

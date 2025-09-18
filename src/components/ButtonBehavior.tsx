@@ -26,7 +26,7 @@ const ScrollToFormButton: React.FC<ScrollToFormButtonProps> = ({ fixed = true })
   if (!show) return null;
 
   const buttonClass = fixed
-    ? "fixed right-1 w-6 h-6 flex justify-center items-center lg:right-42 2xl:bottom-6 bottom-1/2 text-white bg-mint-600  rounded-full shadow-lg z-10"
+    ? "fixed right-1 w-6 h-6 flex justify-center items-center 2xl:right-42 2xl:bottom-6 bottom-1/2 text-white bg-mint-600  rounded-full shadow-lg z-10"
     : "bg-mint-600 text-white rounded-full shadow-lg z-10";
 
   return (

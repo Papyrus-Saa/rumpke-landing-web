@@ -6,13 +6,18 @@ import ClientMessage from './ClientMessage'
 import TypingLoader from '../loaders/TypingLoader'
 import TextMessageBox from '../chat-input-boxes/TextMessageBox'
 import { rumpkeai_assistant_use_case } from './rumpkeai-assistant-use-case'
-import ThemeSwitch from '../ThemeSwitch'
+
+import { useAIChat } from '@/context/AIChatContext'
+import AIButton from './AIButton'
 
 type Message = { text: string; isGPT: boolean }
 
-export default function AIChat() {
+export default function AIChatMobile() {
+
+  const { visible, toggleChat, closeChat, messages, setMessages } = useAIChat();
+
+
   const [isLoading, setIsLoading] = useState(false)
-  const [messages, setMessages] = useState<Message[]>([])
   const listRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -45,17 +50,17 @@ export default function AIChat() {
 
   const handlePost = async (message: string) => {
     setIsLoading(true)
-    setMessages(prev => [...prev, { text: message, isGPT: false }])
+    setMessages(prev => [...prev, { text: message, role: "user" }])
 
     try {
       const data = await rumpkeai_assistant_use_case(message)
       if (!data) {
-        setMessages(prev => [...prev, { text: 'Ohne Antwort vom Server', isGPT: true }])
+        setMessages(prev => [...prev, { text: 'Ohne Antwort vom Server', role: "assistant" }])
       } else {
-        setMessages(prev => [...prev, { text: data.message.content, isGPT: true }])
+        setMessages(prev => [...prev, { text: data.message.content, role: "assistant" }])
       }
     } catch {
-      setMessages(prev => [...prev, { text: 'Fehler beim Senden.', isGPT: true }])
+      setMessages(prev => [...prev, { text: 'Fehler beim Senden.', role: "assistant" }])
     } finally {
       setIsLoading(false)
     }
@@ -63,59 +68,63 @@ export default function AIChat() {
 
   return (
     <>
-    <div
-      ref={containerRef}
-      className="
-      w-[450px] h-[700px] fixed bottom-0 right-36 z-10
-      flex flex-col
-      bg-light-200 dark:bg-dark-200
-      "
-    >
-      <header className='w-full bg-mint-600 py-6 text-center text-white font-medium text-lg shadow-[0px_4px_12px_0px_rgba(0,0,0,0.10)] dark:shadow-[0px_4px_12px_0px_rgba(0,255,180,0.10)]'>
-       <span>Unser KI-Assistent hilft!</span>
-      </header>
       <div
-        ref={listRef}
+        ref={containerRef}
         className="
+      w-full h-full fixed top-0 right-0 z-20
+      flex flex-col
+      bg-light-100 dark:bg-dark-300
+      shadow-ai-l dark:shadow-ai-d
+      rounded-xl
+      "
+      >
+        <header className='w-full bg-mint-600 py-6 text-center text-white font-medium text-lg shadow-[0px_4px_12px_0px_rgba(0,0,0,0.10)] dark:shadow-[0px_4px_12px_0px_rgba(0,255,180,0.10)]'>
+          <span>Unser KI-Assistent hilft!</span>
+        </header>
+        <div
+          ref={listRef}
+          className="
           flex-1 overflow-y-auto overscroll-contain
           px-4 pt-4 pb-3 xl:px-40  xl:pt-20
         "
-      >
+        >
+          <div className='absolute top-1 right-1'>
+            <AIButton
+              visible={visible}
+              toggleChat={toggleChat}
+            />
+          </div>
+          <div className="grid grid-cols-12 gap-y-2">
+            <AIMessage text="Hi, ich bin hier um dir zu helfen &#128519;" />
+            {messages.map((m, i) =>
+              m.role === "assistant" ? (
+                <AIMessage key={i} text={m.text} />
+              ) : (
+                <ClientMessage key={i} text={m.text} />
+              )
+            )}
 
-        <div className='absolute top-1 right-1 sm:hidden'>
-          <ThemeSwitch/>
+            {isLoading && (
+              <div className="col-start-1 col-end-12">
+                <TypingLoader />
+              </div>
+            )}
+          </div>
         </div>
-        <div className="grid grid-cols-12 gap-y-2">
-          <AIMessage text="Hi, ich bin hier um dir zu helfen &#128519;" />
-          {messages.map((m, i) =>
-            m.isGPT ? (
-              <AIMessage key={i} text={m.text} />
-            ) : (
-              <ClientMessage key={i} text={m.text} />
-            )
-          )}
-
-          {isLoading && (
-            <div className="col-start-1 col-end-12">
-              <TypingLoader />
-            </div>
-          )}
-        </div>
-      </div>
 
 
-      <div
-        className="
+        <div
+          className="
           border-t border-black/10 dark:border-white/10
           bg-light-200/90 dark:bg-dark-200/90
           supports-[backdrop-filter]:backdrop-blur-md
           px-4 py-3
           pb-[env(safe-area-inset-bottom)]
         "
-      >
-        <TextMessageBox onSend={handlePost} />
+        >
+          <TextMessageBox onSend={handlePost} />
+        </div>
       </div>
-    </div>
     </>
   )
 }
