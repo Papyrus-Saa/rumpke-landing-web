@@ -8,6 +8,7 @@ import AwardsButtonSelect from "@/components/awards/AwardsButtonSelect"
 import Contributors from "@/components/contributors/Contributors"
 import { useTipFormCount } from "@/components/form/hooks/useTipFormCount"
 
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const { total } = useTipFormCount();
@@ -25,7 +26,7 @@ export default function Header() {
         ${scrolled ?'sm:backdrop-blur-md sm:bg-mint-600/70 sm:shadow-lg bg-mint-600 ' : 'bg-mint-600'}
       `}
     >
-      <div className="flex justify-between items-center p-2 h-12 sm:h-16 md:h-22 xl:h-20 2xl:px-52 mx-auto">
+      <div className="flex justify-between items-center p-2 h-12 sm:h-16 md:h-22 xl:h-20 lg:px-16 2xl:px-52 mx-auto">
         <div>
           <Logo />
         </div>

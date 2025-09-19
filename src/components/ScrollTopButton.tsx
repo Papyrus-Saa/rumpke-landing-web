@@ -18,7 +18,7 @@ const ScrollToTopButton: React.FC = () => {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed right-1 2xl:right-42  bottom-20  rounded-full shadow-lg hover:bg-mint-600 transition hover:text-white  z-10  text-gray-500 dark:shadow-subtle-d border cursor-pointer"
+      className="fixed right-1 2xl:right-52 bottom-14 2xl:bottom-6 rounded-full shadow-lg hover:bg-mint-600 transition hover:text-white  z-10  text-gray-500 dark:shadow-subtle-d border cursor-pointer"
       aria-label="Scroll to top"
     >
       <FiArrowUp className="w-6 h-6" />

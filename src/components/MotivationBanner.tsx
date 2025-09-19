@@ -37,7 +37,17 @@ const MotivationBanner: React.FC = () => (
       Ich schenk dir was – Eine Initiative von Rumpke Immobilien
     </h2>
     <p className="text-center text-lg text-gray-700 dark:text-gray-200 mb-10 max-w-2xl mx-auto">
-      Diese Seite ist Teil einer besonderen Aktion von <span className="font-semibold text-mint-600">Rumpke Immobilien</span>.
+      Diese Seite ist Teil einer besonderen Aktion von <span className="font-semibold text-mint-600">
+        <span className="font-semibold text-mint-600">
+          <a
+            href="https://www.rumpke-immobilien.de/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Rumpke Immobilien
+          </a>
+        </span>{" "}
+      </span>
       Wenn du jemanden kennst, der sein Haus, seine Wohnung oder sein Grundstück verkaufen möchte, kannst du uns einen Tipp geben – und erhältst als Dankeschön eine exklusive Prämie.
       Gemeinsam schaffen wir neue Möglichkeiten und belohnen dein Engagement!
     </p>

@@ -1,0 +1,86 @@
+import { FaUniversity, FaCertificate, FaShieldAlt } from "react-icons/fa";
+import Image from "next/image";
+
+export interface Badge {
+  id: number;
+  name: string;
+  icon: React.ReactNode;
+  description: string;
+}
+
+const badges: Badge[] = [
+  {
+    id: 1,
+    name: "IHK Zertifikat",
+    icon: <FaCertificate className="text-mint-600 text-3xl" />,
+    description: "Offiziell geprüfte Immobilienmaklerin und Wertermittlerin durch die IHK.",
+  },
+  {
+    id: 2,
+    name: "Universitätsabschluss",
+    icon: <FaUniversity className="text-mint-600 text-3xl" />,
+    description: "Fundierte Ausbildung und Abschluss an einer renommierten Universität.",
+  },
+  {
+    id: 3,
+    name: "Vertrauenswürdigkeit",
+    icon: <FaShieldAlt className="text-mint-600 text-3xl" />,
+    description: "Zuverlässigkeit und Diskretion bei allen Immobilienangelegenheiten.",
+  },
+];
+
+const WhyTrustUs: React.FC = () => (
+  <section
+    id="why-trust-us"
+    className="w-full mx-auto py-16 px-4 md:px-12 transition-opacity duration-500">
+    <div className="bg-white dark:bg-dark-300 rounded-3xl shadow-[0_12px_48px_0_rgba(44,62,80,0.18)] dark:shadow-[0_12px_48px_0_rgba(255,255,255,0.10)] flex flex-col md:flex-row items-center gap-10 p-10">
+      <div className="flex flex-col items-center md:items-start md:w-1/3">
+        <div className="relative w-70 h-56  shadow-xl border-4 dark:border-gray-800 border-amber-50 mb-4 bg-white dark:bg-dark-200">
+          <Image
+            src="/howItWorksPic.jpg"
+            alt="Ann-Christin Rumpke"
+            fill
+            className="object-cover"
+            sizes="160px"
+            priority
+          />
+        </div>
+        <div className="text-center md:text-left">
+          <h3 className="text-xl font-bold text-mint-600 dark:text-mint-400 mb-1">Ann-Christin Rumpke</h3>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">Geprüfte Immobilienmaklerin & Wertermittlerin</p>
+          <span className="inline-block bg-mint-100 bg-mint-600
+           px-3 py-1 rounded-full text-xs font-semibold mb-2 text-white">
+            Emsland & Grafschaft Bentheim
+          </span>
+        </div>
+      </div>
+
+      <div className="flex-1 flex flex-col gap-6 ">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-mint-600 dark:text-mint-400 mb-2 tracking-tight drop-shadow-lg">
+          Warum Sie uns vertrauen können
+        </h2>
+        <p className="text-lg text-gray-700 dark:text-gray-200 font-medium">
+          Vertrauen ist die Basis jeder erfolgreichen Zusammenarbeit. Als erfahrene Immobilienmaklerin mit fundierter Ausbildung und offiziellen Zertifikaten stehe ich Ihnen mit Kompetenz und Engagement zur Seite.
+        </p>
+        <p className="text-base text-gray-500 dark:text-gray-400">
+          Mein Ziel ist es, Ihre Wünsche und Bedürfnisse zu verstehen und gemeinsam die beste Lösung für Ihre Immobilie zu finden. Diskretion, Zuverlässigkeit und ein starkes Netzwerk von Experten garantieren Ihnen höchste Sicherheit und Professionalität.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+          {badges.map((badge) => (
+            <div
+              key={badge.id}
+              className="flex flex-col items-center bg-light-100 dark:bg-dark-100 rounded-2xl shadow-subtle-l dark:shadow-subtle-d p-6 transition hover:scale-105 hover:shadow-lg"
+            >
+              <div className="mb-3">{badge.icon}</div>
+              <span className="text-base font-semibold text-mint-700 dark:text-mint-400 text-center mb-2">{badge.name}</span>
+              <p className="text-xs text-gray-600 dark:text-gray-300 text-center">{badge.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+export default WhyTrustUs;

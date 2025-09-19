@@ -28,7 +28,7 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <div className='dark:bg-dark-200 bg-light-100 w-[90%] xl:w-[80%] 2xl:w-[70%] p-4 mb-6 mx-auto shadow border dark:border-dark-100 rounded-lg border-light-200'>
+    <div className='dark:bg-dark-200 bg-light-100 w-full xl:w-[80%] 2xl:w-[70%] p-4 mb-6 mx-auto shadow border dark:border-dark-100 rounded-lg border-light-200'>
       <h3 className={`${titleFonts.className} ml-2 mb-4 text-lg text-center`}>
         So einfach geht<span className='text-mint-600'>'</span>s
       </h3>
@@ -38,7 +38,7 @@ const HowItWorks = () => {
             {steps.map((step, idx) => (
               <li
                 key={idx}
-                className={`flex items-center gap-4 rounded-xl px-4 w-[90%] py-3 mx-auto bg-light-100 dark:bg-dark-200 ${step.className}`}
+                className={`flex items-center gap-4 rounded-xl px-4 sm:w-[90%] py-3 mx-auto bg-light-100 dark:bg-dark-200 ${step.className}`}
               >
                 <span className="text-xl text-mint-600 dark:text-mint-200">{step.icon}</span>
                 <span className="font-medium">{step.title}</span>

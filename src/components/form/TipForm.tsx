@@ -87,7 +87,7 @@ const { rainbowActive } = useRainbow();
 
   const inputBase =
     "w-full rounded-2xl px-4 py-2  outline-none " +
-    "bg-[oklch(98%_0_0)] dark:bg-dark-100 bg-light-200 " +
+    "bg-[oklch(98%_0_0)] dark:bg-dark-100 bg-light-100 " +
     "border-black/10 dark:border-white/10 placeholder:opacity-60 " +
     "focus:ring-2 focus:ring-mint-600 focus:border-transparent" +
     "border-2 border-transparent";
@@ -101,7 +101,7 @@ const { rainbowActive } = useRainbow();
         id='contact-form'
         onSubmit={handleSubmit(onSubmit)}
         className={
-          "mx-auto max-w-2xl rounded-3xl  shadow-lg space-y-5 p-4 md:p-8  bg-light-100 dark:bg-dark-200" +
+          "mx-auto max-w-2xl rounded-3xl  shadow-lg space-y-5 p-4 md:p-8  bg-light-200 dark:bg-dark-200" +
           " " +
           " sm:w-[80%] mb-2 scroll-mt-40"
         }
