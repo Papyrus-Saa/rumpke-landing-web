@@ -25,6 +25,8 @@ import { useAIChat } from '@/context/AIChatContext';
 import AIChatMobile from '@/components/ai-assistant/AIChatMobile';
 import { FormPic } from '@/components/form/FormPic';
 
+
+
 type ScrollToFormButtonProps = {
   onClick?: () => void;
 };
@@ -54,7 +56,7 @@ export default function Home() {
         onMouseEnter={() => setShowFormPic(true)}
         onMouseLeave={() => setShowFormPic(false)}
       >
-        <ButtonBehavior  />
+        <ButtonBehavior />
       </div>
       <ScrollToTopButton />
       <BlockAnimation />

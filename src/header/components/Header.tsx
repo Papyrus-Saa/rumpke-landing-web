@@ -8,6 +8,7 @@ import AwardsButtonSelect from "@/components/awards/AwardsButtonSelect"
 import Contributors from "@/components/contributors/Contributors"
 import { useTipFormCount } from "@/components/form/hooks/useTipFormCount"
 
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const { total } = useTipFormCount();

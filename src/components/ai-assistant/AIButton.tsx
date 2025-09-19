@@ -15,12 +15,12 @@ const AIButton: React.FC<AIButtonProps> = ({ visible, toggleChat }) => {
   return (
 
     <button
-      className={`${buttonClass} z-50 w-6 h-6 flex items-center text-white justify-center rounded-full bg-gradient-to-tr from-purple-900 via-cyan-900 to-pink-900 shadow-orange-500 shadow-[0_0_10px_5px_rgba(0,0,0,0.2
+      className={`${buttonClass} z-50 w-6 h-6 flex items-center text-white justify-center rounded-full  cursor-pointer bg-gradient-to-tr from-purple-900 via-cyan-900 to-pink-900 shadow-orange-500 shadow-[0_0_15px_5px_rgba(0,0,0,0.6
       5)] hover:shadow-xl transition-shadow duration-300 focus:outline-none`}
       onClick={toggleChat}
     >
 
-      <div className="loader-wrapper cursor-pointer">
+      <div className="loader-wrapper">
         {visible ? (
           <span className="loader-letter"><FiX /></span>
         ) : (
