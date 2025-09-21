@@ -40,7 +40,7 @@ const StyledWrapper = styled.div`
 
   @keyframes scale-up4 {
     20% {
-      background-color: #ffff;
+      background-color: #b3d41d;
       transform: scaleY(1.5);
     }
 

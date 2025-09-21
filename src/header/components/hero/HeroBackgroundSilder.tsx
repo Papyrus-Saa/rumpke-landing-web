@@ -14,7 +14,7 @@ import Image from 'next/image';
 
 export default function HeroBackgroundSlider() {
   return (
-    <div className="relative">
+    <div className="relative p-1 bg-light-200 dark:bg-cyan-800/20 duration-500 rounded-xl shadow-lg">
       <Swiper
         loop={true}
         spaceBetween={30}
@@ -26,16 +26,16 @@ export default function HeroBackgroundSlider() {
         pagination={{ clickable: true }}
         navigation={false}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper h-full"
+        className="mySwiper h-full rounded-xl"
       >
         {imgs.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="relative w-full h-[50vh] lg:h-[70vh] flex items-center justify-center">
+            <div className="relative w-full h-[50vh] lg:h-[70vh] flex items-center justify-center overflow-hidden">
               <Image
                 src={`/${item.image}`}
                 alt={item.quote || "Slider image"}
                 fill
-                className="object-cover"
+                className="object-cover rounded-xl"
                 sizes="(max-width: 1024px) 100vw, 1200px"
                 priority={item.id === 1}
               />

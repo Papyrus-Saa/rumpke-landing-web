@@ -18,7 +18,7 @@ const Contributors = ({ total, show }: Props) => {
       <div
         onMouseEnter={() => setfirst(true)}
         onMouseLeave={() => setfirst(false)}
-        className="relative p-2 lg:px-16 xl:px-20 2xl:px-72 flex justify-start items-center border-b dark:border-green-500 border-green-400 dark:bg-dark-300 bg-white dark:text-white text-dark-300"
+        className="relative p-2 lg:px-16 xl:px-20 2xl:px-72 flex justify-start items-center border-b dark:border-green-500 border-green-400 dark:bg-dark-300 bg-white dark:text-white text-dark-300 duration-500"
         style={{ minHeight: 40 }}
       >
         <FaPeoplePulling size={14} className="text-green-500 mr-2" />

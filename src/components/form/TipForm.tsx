@@ -90,18 +90,18 @@ const { rainbowActive } = useRainbow();
     "bg-[oklch(98%_0_0)] dark:bg-dark-100 bg-light-100 " +
     "border-black/10 dark:border-white/10 placeholder:opacity-60 " +
     "focus:ring-2 focus:ring-mint-600 focus:border-transparent" +
-    "border-2 border-transparent";
+    "border-2 border-transparent duration-500";
 
   const labelCls = "block text-sm font-medium mb-1";
   const errorCls = "text-sm text-red-500 mt-1";
 
   return (
-    <div className="px-2 sm:px-6 md:px-8 lg:px-10 dark:bg-dark-300 mb-10 bg-light pt-6">
+    <div className="px-2 sm:px-6 md:px-8 lg:px-10  mb-10 bg-light pt-6">
       <motion.form
         id='contact-form'
         onSubmit={handleSubmit(onSubmit)}
         className={
-          "mx-auto max-w-2xl rounded-3xl  shadow-lg space-y-5 p-4 md:p-8  bg-light-200 dark:bg-dark-200" +
+          "mx-auto max-w-2xl rounded-3xl  shadow-lg space-y-5 p-4 md:p-8 duration-500  bg-light-200 dark:bg-dark-200" +
           " " +
           " sm:w-[80%] mb-2 scroll-mt-40"
         }
@@ -216,8 +216,8 @@ const { rainbowActive } = useRainbow();
             className="
               text-xs text-gray-600 dark:text-gray-300 mt-1 pl-3 py-2
               border-l-4 border-mint-600
-              bg-light-200 dark:bg-dark-300
-              rounded
+              bg-light-300 dark:bg-dark-300
+              rounded duration-500
             "
           >
             Ihre Daten werden ausschließlich zur Bearbeitung Ihres Tipps verwendet und nicht an Dritte weitergegeben.

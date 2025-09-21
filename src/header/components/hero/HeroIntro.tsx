@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroIntro() {
   return (
-    <section className="flex items-center justify-center text-center px-6 py-10 dark:bg-dark-300 bg-white">
+    <section className="flex items-center justify-center text-center px-6 py-10">
       <motion.div
         className="max-w-3xl"
         initial={{ opacity: 0, y: 40 }}

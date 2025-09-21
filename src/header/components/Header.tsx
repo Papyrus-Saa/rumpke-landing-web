@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <div
-      className={`sticky top-0 z-20 w-full transition-all duration-700  mx-auto
+      className={`sticky top-0 z-20 w-full  duration-500  mx-auto
         ${scrolled ?'sm:backdrop-blur-md sm:bg-mint-600/70 sm:shadow-lg bg-mint-600 ' : 'bg-mint-600'}
       `}
     >
@@ -36,7 +36,6 @@ export default function Header() {
           <ThemeSwitch />
         </div>
       </div>
-      {/* Contributors pegado al header */}
       <Contributors total={total} />
     </div>
   )

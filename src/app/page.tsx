@@ -40,7 +40,8 @@ export default function Home() {
   return (
 
     <div
-      className="2xl:w-full mx-auto">
+      className="2xl:w-full mx-auto duration-500"
+    >
       <HeroBackgroundSlider />
       <SocialMediaComponent className='lg:hidden' />
       {showFormPic && <FormPic />}

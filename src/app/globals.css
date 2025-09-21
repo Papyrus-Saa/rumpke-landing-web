@@ -22,33 +22,33 @@
 
 /* ==================== 1. Navy & Gold ==================== */
 /* Light */
---color-light-100: #f7fafc;
+/* --color-light-100: #f7fafc;
 --color-light-200: #e3e8ee;
 --color-light-300: #cfd8e3;
 --color-mint-600: #103647;
---color-secondary-300: #FFA600;
+--color-secondary-300: #FFA600; */
 /* Dark */
---color-dark-300: #0a0c12;
+/* --color-dark-300: #0a0c12;
 --color-dark-200: #11131a;
 --color-dark-100: #181b24;
 --color-mint-600: #103647;
---color-secondary: #FFA600;
+--color-secondary: #FFA600; */
 
 
 
 /* ==================== 3. Slate & Red ==================== */
 /* Light */
-/* --color-light-100: #f6f7f9;
+--color-light-100: #f6f7f9;
 --color-light-200: #e2e4e8;
 --color-light-300: #c7cbd1;
 --color-mint-600: #b71c1c;
---color-secondary-300: #374151; */
+--color-secondary: #374151;
 /* Dark */
-/* --color-dark-300: #111113;
+--color-dark-300: #111113;
 --color-dark-200: #1b1c1e;
 --color-dark-100: #28292b;
 --color-mint-600: #c62828;
---color-secondary-300: #64748b; */
+--color-secondary: #64748b;
 
 
 /* ==================== 7. Carbon & Teal ==================== */

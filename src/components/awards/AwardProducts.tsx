@@ -29,9 +29,9 @@ const AwardProducts = () => {
   const isLargeScreen = typeof window !== "undefined" && window.innerWidth >= 640
 
   return (
-    <div className=" bg-white dark:bg-dark-300 py-4 lg:py-0 mb-6">
+    <div className="py-4 lg:py-0 mb-6 duration-500">
       <h5 className={`${titleFonts.className} text-center lg:text-2xl font-black py-6 px-6`}>Als Dankeschön kannst du dir etwas aussuchen - zum Beispiel:</h5>
-      <div className="xl:w-[80%] 2xl:w-[70%] sm:w-[90%] mx-auto bg-light-100 dark:bg-dark-200 p-6 shadow border dark:border-dark-100 border-light-200 rounded">
+      <div className="xl:w-[80%] 2xl:w-[70%] sm:w-[90%] mx-auto duration-500 bg-light-100 dark:bg-dark-200 p-6 shadow border dark:border-dark-100 border-light-200 rounded">
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 lg:grid-cols-4 xl:grid-cols-2  lg:gap-6 gap-1  w-full mx-auto">
           {[1, 2, 3, 4].map(id => (
             <div

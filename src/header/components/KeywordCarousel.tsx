@@ -28,7 +28,6 @@ export default function KeywordCarousel() {
               {word}
             </span>
           ))}
-          {/* Duplicar para loop visual */}
           {keywords.map((word, idx) => (
             <span
               key={`dup-${idx}`}
