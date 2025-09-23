@@ -23,8 +23,7 @@ export function useSubmit() {
     try {
       setLoading(true); setError(null); setSuccess(null)
       console.log("Enviando:", data);
-      const dataToSend = { ...data };
-      delete (dataToSend as Record<string, unknown>).terms;
+      const { terms, ...dataToSend } = data;
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000'}/rumpkeai/tip-form`,
         {

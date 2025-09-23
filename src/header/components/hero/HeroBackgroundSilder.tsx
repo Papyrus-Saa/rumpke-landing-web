@@ -45,8 +45,8 @@ export default function HeroBackgroundSlider() {
     return { idx, color };
   }
 
-  function handleSlideChange(swiper: any) {
-    const slideIdx = swiper.realIndex;
+  function handleSlideChange(swiper: unknown) {
+    const slideIdx = (swiper as any).realIndex;
     setCurrentSlide(slideIdx);
     const welcome = imgs[slideIdx].welcome;
     const { idx, color } = getRandomWordAndColor(welcome);

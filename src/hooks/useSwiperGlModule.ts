@@ -12,12 +12,11 @@ export default function useSwiperGlModule(
     let alive = true
       ; (async () => {
         try {
-          let m;
+          let m: unknown;
           switch (modulePath) {
             case '@/lib/uii/shaders/swiper-gl.esm.js':
               m = await import('@/lib/uii/shaders/swiper-gl.esm.js');
               break;
-            // Si necesitas más módulos, agrega más casos aquí
             default:
               throw new Error('Módulo no soportado');
           }
