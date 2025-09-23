@@ -7,21 +7,15 @@ export const rumpkeai_assistant_use_case = async (prompt: string) => {
       },
       body: JSON.stringify({ prompt })
     });
-
-    if (!resp.ok) {
-      throw new Error('Network response was not ok');
-    }
-
+    if (!resp.ok) throw new Error();
     const data = await resp.json();
-  
-
     return {
       message: {
         role: 'assistant',
         content: data.message?.content || 'Sin respuesta del servidor.'
       }
     };
-  } catch (error) {
+  } catch {
     return {
       message: {
         role: 'assistant',

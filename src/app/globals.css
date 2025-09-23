@@ -20,55 +20,31 @@
 }
 @theme {
 
-/* ==================== 1. Navy & Gold ==================== */
-/* Light */
-/* --color-light-100: #f7fafc;
---color-light-200: #e3e8ee;
---color-light-300: #cfd8e3;
---color-mint-600: #103647;
---color-secondary-300: #FFA600; */
-/* Dark */
-/* --color-dark-300: #0a0c12;
---color-dark-200: #11131a;
---color-dark-100: #181b24;
---color-mint-600: #103647;
---color-secondary: #FFA600; */
 
+/* --color-light-100: #f9f8ff;
+--color-light-200: #e6e3fa;
+--color-light-300: #cfc7e7;
+--color-mint-600: #a07be6;
+--color-secondary: #eaeaea;
+--color-dark-100: #181332;
+--color-dark-200: #120e26;
+--color-dark-300: #080817;
+--color-mint-700: #3a215a;
+--color-secondary: #cfcfcf; */
 
+--color-light-100: #f6faf7;
+--color-light-200: #e3ede6;
+--color-light-300: #cfd8cf;
+--color-mint-600: #10b981;
+--color-secondary: #eaeaea;
+--color-dark-100: #16251a;
+--color-dark-200: #101a12;
+--color-dark-300: #070d08;
+--color-mint-700: #04432f;
+--color-secondary: #cfcfcf;
 
-/* ==================== 3. Slate & Red ==================== */
-/* Light */
---color-light-100: #f6f7f9;
---color-light-200: #e2e4e8;
---color-light-300: #c7cbd1;
---color-mint-600: #b71c1c;
---color-secondary: #374151;
-/* Dark */
---color-dark-300: #111113;
---color-dark-200: #1b1c1e;
---color-dark-100: #28292b;
---color-mint-600: #c62828;
---color-secondary: #64748b;
-
-
-/* ==================== 7. Carbon & Teal ==================== */
-/* Light */
-/* --color-light-100: #f6f8f7;
---color-light-200: #e2e7e5;
---color-light-300: #c7d1ce;
---color-mint-600: #006075;
---color-secondary-300: #263238; */
-/* Dark */
-/* --color-dark-300: #101211;
---color-dark-200: #1a1e1c;
---color-dark-100: #232926;
---color-mint-600: #003019;
---color-secondary-300: #455a64; */
-
-/* Sombras sutiles */
-
---shadow-subtle-l:0 2px 12px 0 rgba(44, 62, 80, 0.08), 0 1.5px 6px 0 rgba(44, 62, 80, 0.04);
---shadow-subtle-d: 0 2px 12px 0 rgba(255, 255, 255, 0.08), 0 1.5px 6px 0 rgba(255, 255, 255, 0.04);
+--shadow-subtle-l: 0px 0px 5px 2px rgba(140,111,199,0.12);
+--shadow-subtle-d: 0px 0px 5px 2px var(--color-mint-700);
 
 --shadow-ai-l: 0 8px 32px 0 rgba(44, 62, 80, 0.18), 0 4px 16px 0 rgba(180, 180, 180, 0.12);
 --shadow-ai-d: 0 8px 32px 0 rgba(60, 60, 60, 0.38), 0 4px 16px 0 rgba(0, 0, 0, 0.32);

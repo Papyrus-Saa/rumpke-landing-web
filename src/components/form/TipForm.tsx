@@ -38,7 +38,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
   const { submit, loading, success, error: submitError } = useSubmit();
   const errorRef = useRef<HTMLDivElement>(null);
 
-const { rainbowActive } = useRainbow();
+  const { rainbowActive } = useRainbow();
   const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm<TipFormData>({
     defaultValues: {
       name: '',
@@ -86,11 +86,7 @@ const { rainbowActive } = useRainbow();
   };
 
   const inputBase =
-    "w-full rounded-2xl px-4 py-2  outline-none " +
-    "bg-[oklch(98%_0_0)] dark:bg-dark-100 bg-light-100 " +
-    "border-black/10 dark:border-white/10 placeholder:opacity-60 " +
-    "focus:ring-2 focus:ring-mint-600 focus:border-transparent" +
-    "border-2 border-transparent duration-500";
+    "w-full rounded-2xl px-4 py-2 outline-none bg-[oklch(98%_0_0)] dark:bg-dark-100 bg-light-100 border-black/10 dark:border-white/10 placeholder:opacity-60 focus:ring-2 focus:ring-mint-600 dark:focus:ring-mint-700 focus:border-transparent border-2 border-transparent duration-500";
 
   const labelCls = "block text-sm font-medium mb-1";
   const errorCls = "text-sm text-red-500 mt-1";
@@ -101,9 +97,7 @@ const { rainbowActive } = useRainbow();
         id='contact-form'
         onSubmit={handleSubmit(onSubmit)}
         className={
-          "mx-auto max-w-2xl rounded-3xl  shadow-lg space-y-5 p-4 md:p-8 duration-500  bg-light-200 dark:bg-dark-200" +
-          " " +
-          " sm:w-[80%] mb-2 scroll-mt-40"
+          "mx-auto max-w-2xl rounded-3xl shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] space-y-5 p-4 md:p-8 duration-500 bg-light-200 dark:bg-dark-200 sm:w-[80%] mb-2 scroll-mt-40"
         }
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -213,12 +207,7 @@ const { rainbowActive } = useRainbow();
             <p className="text-sm text-red-500 mt-1">{errors.terms.message}</p>
           )}
           <p
-            className="
-              text-xs text-gray-600 dark:text-gray-300 mt-1 pl-3 py-2
-              border-l-4 border-mint-600
-              bg-light-300 dark:bg-dark-300
-              rounded duration-500
-            "
+            className="text-xs text-gray-600 dark:text-gray-300 mt-1 pl-3 py-2 border-l-4 border-mint-600 dark:border-mint-700 bg-light-300 dark:bg-dark-300 rounded duration-500"
           >
             Ihre Daten werden ausschließlich zur Bearbeitung Ihres Tipps verwendet und nicht an Dritte weitergegeben.
           </p>
@@ -234,10 +223,7 @@ const { rainbowActive } = useRainbow();
               type="submit"
               disabled={loading}
               className={
-                "inline-flex items-center justify-center rounded px-3 py-1 sm:py-1 font-medium " +
-                "bg-mint-600 text-white shadow-sm " +
-                "hover:brightness-110 active:brightness-95 " +
-                "disabled:opacity-60 disabled:cursor-not-allowed transition cursor-pointer w-full "
+                "inline-flex items-center justify-center rounded px-3 py-1 sm:py-1 font-medium bg-mint-600 dark:bg-mint-700 text-white shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] hover:brightness-110 active:brightness-95 disabled:opacity-60 disabled:cursor-not-allowed transition cursor-pointer w-full"
               }
             >
               {loading ? 'Senden…' : 'Tipp senden'}
@@ -254,8 +240,5 @@ const { rainbowActive } = useRainbow();
       </motion.form>
     </div>
   );
-}
-function setError(arg0: string) {
-  throw new Error('Function not implemented.')
 }
 

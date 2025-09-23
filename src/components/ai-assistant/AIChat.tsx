@@ -14,7 +14,7 @@ export default function AIChat() {
 
 
 
-  const { visible, toggleChat, closeChat, messages, setMessages } = useAIChat();
+  const { visible, toggleChat, messages, setMessages } = useAIChat();
 
 
   const [isLoading, setIsLoading] = useState(false)

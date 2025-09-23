@@ -26,12 +26,6 @@ import AIChatMobile from '@/components/ai-assistant/AIChatMobile';
 import { FormPic } from '@/components/form/FormPic';
 
 
-
-type ScrollToFormButtonProps = {
-  onClick?: () => void;
-};
-
-
 export default function Home() {
   const [showFormPic, setShowFormPic] = useState(false);
   const { visible, toggleChat } = useAIChat();

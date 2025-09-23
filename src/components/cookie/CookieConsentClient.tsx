@@ -73,7 +73,7 @@ export default function CookieConsentClient(): React.JSX.Element | null {
   if (!open) return null;
 
   return (
-    <div className="fixed bottom-0 lg:py-4 left-0 2xl:left-1/2 2xl:transform 2xl:-translate-x-1/2 w-full 2xl:w-[85%] z-50 bg-light-100/90 dark:bg-dark-300/90 dark:text-white hover:bg-white dark:hover:bg-dark-300 border-t border-gray-200 dark:border-gray-800">
+    <div className="duration-500 fixed bottom-0 lg:py-4 left-0 2xl:left-1/2 2xl:transform 2xl:-translate-x-1/2 w-full 2xl:w-[85%] z-50 bg-light-100/90 dark:bg-dark-300/90 dark:text-white hover:bg-white dark:hover:bg-dark-300 border-t border-gray-200 dark:border-gray-800">
       <div className="font-bold mb-1 text-center">Cookies & Datenschutz</div>
       <div className="lg:flex mx-auto w-[90%] py-2">
         <div className="flex-1">

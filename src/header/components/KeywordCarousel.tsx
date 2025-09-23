@@ -17,13 +17,13 @@ const keywords = [
 
 export default function KeywordCarousel() {
   return (
-    <div className="w-full hidden 2xl:block h-5 overflow-hidden relative bg-[rgba(0,0,0,0.10)] dark:bg-[rgb(0,16,24)] dark:shadow-subtle-d shadow-subtle-l">
+    <div className="w-full hidden 2xl:block h-5 overflow-hidden relative transition-colors">
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="whitespace-nowrap animate-keyword-scroll flex items-center h-4">
           {keywords.map((word, idx) => (
             <span
               key={idx}
-              className="mx-4 text-xs sm:text-sm dark:text-[rgba(0,255,180,0.20)] text-gray-400"
+              className="duration-500 mx-4 text-xs sm:text-sm dark:text-[rgba(0,255,180,0.20)] text-gray-400"
             >
               {word}
             </span>
@@ -31,7 +31,7 @@ export default function KeywordCarousel() {
           {keywords.map((word, idx) => (
             <span
               key={`dup-${idx}`}
-              className="mx-4 text-xs sm:text-sm  dark:text-[rgba(0,255,180,0.20)] text-gray-400"
+              className="duration-500 mx-4 text-xs sm:text-sm dark:text-[rgba(0,255,180,0.20)] text-gray-400"
             >
               {word}
             </span>

@@ -5,11 +5,10 @@ import { FaArrowRight } from "react-icons/fa"
 
 interface TextMessageBoxProps {
   onSend: (message: string) => void
-  placeholder?: string
   disabledHelp?: boolean
 }
 
-const TextMessageBox = ({ onSend, placeholder }: TextMessageBoxProps) => {
+const TextMessageBox = ({ onSend }: TextMessageBoxProps) => {
 
 
   const [message, setMessage] = useState("")

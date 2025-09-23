@@ -23,9 +23,8 @@ export function useSubmit() {
     try {
       setLoading(true); setError(null); setSuccess(null)
       console.log("Enviando:", data);
-
-      const { terms, ...dataToSend } = data;
-
+      const dataToSend = { ...data };
+      delete (dataToSend as Record<string, unknown>).terms;
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000'}/rumpkeai/tip-form`,
         {
@@ -34,9 +33,7 @@ export function useSubmit() {
           body: JSON.stringify(dataToSend),
         }
       );
-
       const result = await res.json();
-
       if (!res.ok) {
         const j = await res.json().catch(() => ({ message: res.statusText }))
         throw new Error(j.message || 'Unbekannter Fehler')
@@ -44,11 +41,12 @@ export function useSubmit() {
       setSuccess('Vielen Dank! Ihre Angaben wurden übermittelt. 😊')
       return { ok: true, result }
     }
-    catch (e: any) {
+    catch (e) {
+      const errorMsg = (e instanceof Error) ? e.message : String(e);
       setError(
-        e.message === 'Failed to fetch'
+        errorMsg === 'Failed to fetch'
           ? 'Verbindung zum Server fehlgeschlagen. Bitte versuchen Sie es später erneut.'
-          : e.message
+          : errorMsg
       );
       return false;
     }
