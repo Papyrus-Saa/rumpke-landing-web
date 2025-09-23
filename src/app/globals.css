@@ -43,7 +43,7 @@
 --color-mint-700: #04432f;
 --color-secondary: #cfcfcf;
 
---shadow-subtle-l: 0px 0px 5px 2px rgba(140,111,199,0.12);
+--shadow-subtle-l: 0px 4px 16px 4px rgba(140,111,199,0.22);
 --shadow-subtle-d: 0px 0px 5px 2px var(--color-mint-700);
 
 --shadow-ai-l: 0 8px 32px 0 rgba(44, 62, 80, 0.18), 0 4px 16px 0 rgba(180, 180, 180, 0.12);

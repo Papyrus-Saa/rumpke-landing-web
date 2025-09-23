@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import './styles.css';
 import imgs from '@/data/images';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 
 
@@ -35,7 +35,7 @@ export default function HeroBackgroundSlider() {
   const [randomColor, setRandomColor] = useState(colors[0]);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  function getRandomWordAndColor(text: string): { idx: number; color: string } {
+  const getRandomWordAndColor = useCallback((text: string): { idx: number; color: string } => {
     const words = text.split(/(\s+)/);
     const wordIndices = words
       .map((w: string, i: number) => (/\w/.test(w) ? i : null))
@@ -43,7 +43,7 @@ export default function HeroBackgroundSlider() {
     const idx = wordIndices[Math.floor(Math.random() * wordIndices.length)];
     const color = colors[Math.floor(Math.random() * colors.length)];
     return { idx, color };
-  }
+  }, [colors]);
 
   function handleSlideChange(swiper: unknown) {
     const slideIdx = (swiper as any).realIndex;
