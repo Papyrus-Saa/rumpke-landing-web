@@ -22,8 +22,8 @@ type Props = {
 export default function ProductMiniSlider({
   heightClass,
   widthClass,
-  speed = 600,
-  autoplayDelay = 4000,
+  speed = 900,
+  autoplayDelay = 5000,
   id,
 }: Props) {
   const { mods: glMods, ready } = useSwiperGlModule('@/lib/uii/shaders/swiper-gl.esm.js')
@@ -40,7 +40,7 @@ export default function ProductMiniSlider({
   return (
     <section
       id='product-showcase-slider'
-      className=" rounded sm:dark:shadow-subtle-d sm:shadow-subtle-l scroll-mt-50">
+      className=" scroll-mt-50 mb-6">
       <div
         className="relative overflow-hidden ">
         <Swiper
@@ -50,13 +50,13 @@ export default function ProductMiniSlider({
           loop={slide.image.length > 1}
           pagination={{ clickable: true }}
           autoplay={{ delay: autoplayDelay, disableOnInteraction: false }}
-          className={`w-full h-full`}
+          className={`w-full h-full rounded-md`}
         >
           {slide.image.map((img, i) => (
             <SwiperSlide key={i}>
               <figure className={`relative mx-auto overflow-hidden hover:scale-105 transition-transform cursor-pointer
-    ${heightClass ?? 'h-[300px] sm:h-[340px]'}
-    ${widthClass ?? 'w-full xl:w-full'}
+    ${heightClass ?? 'h-[320px] sm:h-[350px]'}
+    ${widthClass ?? 'w-full lg:max-w-md rounded-md'}
   `}>
                 <h3 className="absolute inset-x-0 top-0 z-10 py-2 px-4 bg-gradient-to-b from-black/70 to-transparent text-white text-base md:text-lg font-semibold">{slide.title}</h3>
                 <Image

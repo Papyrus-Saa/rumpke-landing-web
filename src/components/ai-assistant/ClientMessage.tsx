@@ -9,8 +9,8 @@ const ClientMessage = ({ text }: ClientMessageProps) => {
         <div className="flex items-center justify-center h-10 w-10 rounded-full bg-red-700 flex-shrink-0 text-white">
           D
         </div>
-        <div className="relative mr-3 text-sm dark:bg-dark-100 bg-light-300 bg-opacity-25 pt-3 pb-2 px-4 shadow rounded-xl">
-          {text}
+        <div className="duration-500 relative mr-3 text-sm dark:bg-dark-100 bg-light-300 bg-opacity-25 pt-3 pb-2 px-4 shadow rounded-xl">
+          <p>{text}</p>
         </div>
       </div>
     </div>

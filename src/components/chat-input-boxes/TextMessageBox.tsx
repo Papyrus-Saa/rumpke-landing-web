@@ -5,11 +5,10 @@ import { FaArrowRight } from "react-icons/fa"
 
 interface TextMessageBoxProps {
   onSend: (message: string) => void
-  placeholder?: string
   disabledHelp?: boolean
 }
 
-const TextMessageBox = ({ onSend, placeholder }: TextMessageBoxProps) => {
+const TextMessageBox = ({ onSend }: TextMessageBoxProps) => {
 
 
   const [message, setMessage] = useState("")
@@ -28,7 +27,7 @@ const TextMessageBox = ({ onSend, placeholder }: TextMessageBoxProps) => {
     <form
 
       onSubmit={handleSendMessage}
-      className="flex flex-row items-center h-12 rounded-xl dark:bg-dark-100  w-full px-1 m-2">
+      className="flex flex-row items-center h-12 rounded-xl duration-500 dark:bg-dark-100 bg-light-200  w-full px-1 m-2">
 
       <div className="flex-grow ">
 
@@ -38,7 +37,7 @@ const TextMessageBox = ({ onSend, placeholder }: TextMessageBoxProps) => {
             autoComplete="off"
             autoFocus
             name="message"
-            className="flex w-full border rounded-xl dark:text-light-100 text-dark-300 focus:outline-none focus:ring-2 focus:ring-mint-900 focus:border-transparent pl-4 pr-12 h-10"
+            className="flex w-full border rounded-xl dark:text-light-100 text-dark-300 focus:outline-none focus:ring-2 focus:ring-mint-600 focus:border-transparent pl-4 pr-12 h-10"
             placeholder="Nachricht/Frage"
             value={message}
             onChange={(e) => setMessage(e.target.value)}

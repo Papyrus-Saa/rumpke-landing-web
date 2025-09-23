@@ -12,9 +12,9 @@ import { useAIChat } from '@/context/AIChatContext'
 
 export default function AIChat() {
 
- 
 
-  const { visible, toggleChat, closeChat, messages, setMessages } = useAIChat();
+
+  const { visible, toggleChat, messages, setMessages } = useAIChat();
 
 
   const [isLoading, setIsLoading] = useState(false)
@@ -76,7 +76,7 @@ export default function AIChat() {
         className="
       w-[400px] h-[650px] fixed md:right-10 bottom-0 2xl:right-56 z-10
       flex flex-col
-      bg-light-100 dark:bg-dark-300
+      bg-light-100 dark:bg-dark-300 duration-500
       shadow-ai-l dark:shadow-ai-d
       rounded-xl
       "
@@ -118,6 +118,7 @@ export default function AIChat() {
 
         <div
           className="
+          duration-500
           border-t border-black/10 dark:border-white/10
           bg-light-100 dark:bg-dark-300
           supports-[backdrop-filter]:backdrop-blur-md

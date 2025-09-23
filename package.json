@@ -15,7 +15,7 @@
     "@hookform/resolvers": "^3.10.0",
     "@mui/material": "^7.3.1",
     "@types/react-google-recaptcha": "^2.1.9",
-    "framer-motion": "^12.23.12",
+    "framer-motion": "^12.23.16",
     "lib-schema": "^0.5.0",
     "next": "15.5.0",
     "primereact": "^10.9.7",
