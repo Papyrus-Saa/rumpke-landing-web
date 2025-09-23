@@ -1,4 +1,5 @@
 IMPORTANT:
+Only ENGLISH
 This is a website for people who know of a property for sale and wish to notify us via our form.
 Never comment anything.
 
