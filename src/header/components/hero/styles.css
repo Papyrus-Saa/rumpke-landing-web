@@ -1,4 +1,4 @@
-/* Animación para la palabra coloreada en el slider */
+
 .animate-colored-word {
   animation: coloredWordFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: bottom;
@@ -28,7 +28,7 @@
   text-align: center;
   font-size: 11px;
 
-  /* Center slide text vertically */
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +51,7 @@
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  font-size: 22px; /* tamaño del icono */
+  font-size: 22px;
 }
 
 .autoplay-progress {
@@ -83,12 +83,12 @@
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
-/* Puedes poner esto en tu globals.css o en un módulo CSS importado */
+
 .swiper-pagination-bullet {
-  background: #d1d5db !important; /* gris claro por defecto */
+  background: #d1d5db !important;
   opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-  background: var(--color-mint-600) !important; /* verde Tailwind (green-500) */
+  background: var(--color-mint-600) !important;
 }
