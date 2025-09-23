@@ -58,7 +58,7 @@ export default function HeroBackgroundSlider() {
     const { idx, color } = getRandomWordAndColor(imgs[0].welcome);
     setRandomWordIndex(idx);
     setRandomColor(color);
-  }, []);
+  }, [getRandomWordAndColor]);
 
   function renderWelcomeText(text: string): React.ReactNode[] {
     const words = text.split(/(\s+)/);
