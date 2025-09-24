@@ -28,7 +28,7 @@ export default function HeroBackgroundSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   function handleSlideChange(swiper: { realIndex: number }) {
-    const slideIdx = swiper.realIndex;
+    const slideIdx = (swiper as { realIndex: number }).realIndex;
     setCurrentSlide(slideIdx);
     const welcome = imgs[slideIdx].welcome;
     setRandom(getRandomWordAndColor(welcome));
