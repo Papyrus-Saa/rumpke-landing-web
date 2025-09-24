@@ -86,7 +86,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
   };
 
   const inputBase =
-    "w-full rounded-2xl px-4 py-2 outline-none bg-[oklch(98%_0_0)] dark:bg-dark-100 bg-light-100 border-black/10 dark:border-white/10 placeholder:opacity-60 focus:ring-2 focus:ring-mint-600 dark:focus:ring-mint-700 focus:border-transparent border-2 border-transparent duration-300";
+    "w-full rounded-2xl px-4 py-2 outline-none bg-[oklch(98%_0_0)] dark:bg-dark-100 bg-light-200 border-black/10 dark:border-white/10 placeholder:opacity-60 focus:ring-2 focus:ring-mint-600 dark:focus:ring-mint-700 focus:border-transparent border-2 border-transparent duration-300";
 
   const labelCls = "block text-sm font-medium mb-1";
   const errorCls = "text-sm text-red-500 mt-1";
@@ -97,7 +97,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
         id='contact-form'
         onSubmit={handleSubmit(onSubmit)}
         className={
-          "mx-auto max-w-2xl rounded-3xl shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] space-y-5 p-4 md:p-8 duration-300 bg-light-200 dark:bg-dark-200 sm:w-[80%] mb-2 scroll-mt-40"
+          "mx-auto max-w-2xl rounded-3xl shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] space-y-5 p-4 md:p-8 duration-300 bg-light-100 dark:bg-dark-200 sm:w-[80%] mb-2 scroll-mt-40"
         }
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
