@@ -8,7 +8,7 @@ const Benefits = () => {
           <span className="inline-block px-4 py-1 rounded-full bg-mint-100 bg-mint-600 dark:bg-mint-700 text-white text-xs font-bold tracking-widest uppercase mb-2 shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] transition-all duration-300">
             Prämienstaffel
           </span>
-          <h3 className="text-3xl sm:text-4xl font-bold text-mint-700 dark:text-mint-300 mb-2 drop-shadow transition-all duration-300">
+          <h3 className="text-3xl sm:text-4xl font-bold text-mint-600 dark:text-mint-300 mb-2 drop-shadow transition-all duration-300">
             Deine Belohnung für deinen Tipp
           </h3>
           <p className="text-lg text-gray-700  dark:text-gray-200 font-medium transition-all duration-300">
@@ -22,7 +22,7 @@ const Benefits = () => {
               className="flex flex-col sm:flex-row items-start sm:items-center justify-between px-5 py-4 shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] hover:scale-[1.02] transition-all duration-300"
             >
               <div className="flex-shrink-0 w-full sm:w-48 mb-2 sm:mb-0 transition-all duration-300">
-                <span className="block text-lg sm:text-xl font-bold text-mint-600 dark:text-mint-700 transition-all duration-300">
+                <span className="block text-lg sm:text-xl font-bold text-mint-600 transition-all duration-300">
                   {b.amount}
                 </span>
                 <span className="block text-base font-semibold text-gray-700 dark:text-gray-200 transition-all duration-300">
