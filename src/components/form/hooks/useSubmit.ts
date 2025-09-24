@@ -20,27 +20,26 @@ export function useSubmit() {
   const [error, setError] = useState<string | null>(null)
 
   const submit = async (data: TipFormData) => {
+    setLoading(true);
+    setError(null);
+    setSuccess(null);
     try {
-      setLoading(true); setError(null); setSuccess(null)
-      console.log("Enviando:", data);
-      const { terms, ...dataToSend } = data;
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000'}/rumpkeai/tip-form`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(dataToSend),
+          body: JSON.stringify(data),
         }
       );
       const result = await res.json();
       if (!res.ok) {
-        const j = await res.json().catch(() => ({ message: res.statusText }))
-        throw new Error(j.message || 'Unbekannter Fehler')
+        const j = await res.json().catch(() => ({ message: res.statusText }));
+        throw new Error(j.message || 'Unbekannter Fehler');
       }
-      setSuccess('Vielen Dank! Ihre Angaben wurden übermittelt. 😊')
-      return { ok: true, result }
-    }
-    catch (e) {
+      setSuccess('Vielen Dank! Ihre Angaben wurden übermittelt. 😊');
+      return { ok: true, result };
+    } catch (e) {
       const errorMsg = (e instanceof Error) ? e.message : String(e);
       setError(
         errorMsg === 'Failed to fetch'
@@ -48,11 +47,10 @@ export function useSubmit() {
           : errorMsg
       );
       return false;
-    }
-    finally {
+    } finally {
       setLoading(false);
     }
-  }
+  };
 
   return { submit, loading, success, error }
 }

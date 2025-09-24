@@ -1,37 +1,19 @@
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { AutoplayOptions } from 'swiper/types';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import './styles.css';
 import imgs from '@/data/images';
 import Image from 'next/image';
-import React, { useState, useCallback } from 'react';
-
-
+import React, { useState } from 'react';
 
 export default function HeroBackgroundSlider() {
-  const colors = [
-    '#f82d00',
-    '#00ca25',
-    '#0330fa',
-    '#fcb723',
-    '#A55EEA',
-    '#20B2AA',
-    '#FF6F61',
-    '#FFB400',
-    '#00C9A7',
-    '#FF3CAC',
-    '#F97F51',
-    '#4B4B4B',
-    '#00B894',
-    '#6C5CE7',
-    '#EA2027',
-  ];
+  const colors = React.useMemo(() => [
+    '#f82d00', '#00ca25', '#0330fa', '#fcb723', '#A55EEA', '#20B2AA',
+    '#FF6F61', '#FFB400', '#00C9A7', '#FF3CAC', '#F97F51', '#4B4B4B',
+    '#00B894', '#6C5CE7', '#EA2027',
+  ], []);
 
-  // Función para obtener palabra y color aleatorio
   const getRandomWordAndColor = (text: string): { idx: number; color: string } => {
     const words = text.split(/(\s+)/);
     const wordIndices = words
@@ -45,15 +27,13 @@ export default function HeroBackgroundSlider() {
   const [{ idx: randomWordIndex, color: randomColor }, setRandom] = useState(() => getRandomWordAndColor(imgs[0].welcome));
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Actualiza palabra y color al cambiar slide
-  function handleSlideChange(swiper: unknown) {
-    const slideIdx = (swiper as any).realIndex;
+  function handleSlideChange(swiper: { realIndex: number }) {
+    const slideIdx = swiper.realIndex;
     setCurrentSlide(slideIdx);
     const welcome = imgs[slideIdx].welcome;
     setRandom(getRandomWordAndColor(welcome));
   }
 
-  // Renderiza el texto con la palabra coloreada
   function renderWelcomeText(text: string): React.ReactNode[] {
     const words = text.split(/(\s+)/);
     return words.map((word: string, i: number) => {
