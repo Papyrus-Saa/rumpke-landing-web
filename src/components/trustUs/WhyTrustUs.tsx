@@ -34,7 +34,7 @@ const badges: Badge[] = [
 const WhyTrustUs: React.FC = () => (
   <section
     id="why-trust-us"
-    className="w-full mx-auto mt-6 mb-10 sm:p-12 md:p-6 xl:px-6 transition-opacity duration-500 overflow-auto max-h-screen ">
+    className="w-full mx-auto mt-6 mb-10 sm:p-12 md:p-6 xl:px-6 transition-opacity duration-300 overflow-auto max-h-screen ">
     <div className="bg-white dark:bg-dark-300 shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] flex flex-col lg:flex-row items-center gap-10 p-4 sm:rounded-2xl">
       <div className="flex flex-col items-center md:items-start md:w-1/3 ">
         <div className="relative w-70 h-56 shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] border-4 dark:border-gray-800 border-amber-50 mb-4 bg-white dark:bg-dark-200">

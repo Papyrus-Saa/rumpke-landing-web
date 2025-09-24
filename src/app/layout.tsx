@@ -70,18 +70,18 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <AIChatProvider>
-            <div className="duration-500 w-full  text-gray-800 dark:text-gray-300 mx-auto bg-light-100 dark:bg-dark-300">
-            <div className="duration-500 bg-white 2xl:w-[85%] dark:bg-dark-300  mx-auto dark:shadow-[var(--shadow-subtle-d)] shadow-[var(--shadow-subtle-l)]">
-              <KeywordCarousel />
-              <Header />
-              <RainbowProvider>
-                {children}
-              </RainbowProvider>
-              <QuickLinksBar />
-              <Footer />
+            <div className="duration-300 w-full  text-gray-800 dark:text-gray-300 mx-auto bg-light-100 dark:bg-dark-300">
+              <div className="duration-300 bg-white 2xl:w-[85%] dark:bg-dark-300  mx-auto dark:shadow-[var(--shadow-subtle-d)] shadow-[var(--shadow-subtle-l)]">
+                <KeywordCarousel />
+                <Header />
+                <RainbowProvider>
+                  {children}
+                </RainbowProvider>
+                <QuickLinksBar />
+                <Footer />
+              </div>
             </div>
-          </div>
-          <CookieConsentClient />
+            <CookieConsentClient />
           </AIChatProvider>
         </ThemeProvider>
       </body>
