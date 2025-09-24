@@ -31,35 +31,29 @@ export default function HeroBackgroundSlider() {
     '#EA2027',
   ];
 
-  const [randomWordIndex, setRandomWordIndex] = useState(0);
-  const [randomColor, setRandomColor] = useState(colors[0]);
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const getRandomWordAndColor = useCallback((text: string): { idx: number; color: string } => {
+  // Función para obtener palabra y color aleatorio
+  const getRandomWordAndColor = (text: string): { idx: number; color: string } => {
     const words = text.split(/(\s+)/);
     const wordIndices = words
       .map((w: string, i: number) => (/\w/.test(w) ? i : null))
       .filter((i: number | null) => i !== null) as number[];
-    const idx = wordIndices[Math.floor(Math.random() * wordIndices.length)];
+    const idx = wordIndices.length > 0 ? wordIndices[Math.floor(Math.random() * wordIndices.length)] : 0;
     const color = colors[Math.floor(Math.random() * colors.length)];
     return { idx, color };
-  }, [colors]);
+  };
 
+  const [{ idx: randomWordIndex, color: randomColor }, setRandom] = useState(() => getRandomWordAndColor(imgs[0].welcome));
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Actualiza palabra y color al cambiar slide
   function handleSlideChange(swiper: unknown) {
     const slideIdx = (swiper as any).realIndex;
     setCurrentSlide(slideIdx);
     const welcome = imgs[slideIdx].welcome;
-    const { idx, color } = getRandomWordAndColor(welcome);
-    setRandomWordIndex(idx);
-    setRandomColor(color);
+    setRandom(getRandomWordAndColor(welcome));
   }
 
-  React.useEffect(() => {
-    const { idx, color } = getRandomWordAndColor(imgs[0].welcome);
-    setRandomWordIndex(idx);
-    setRandomColor(color);
-  }, [getRandomWordAndColor]);
-
+  // Renderiza el texto con la palabra coloreada
   function renderWelcomeText(text: string): React.ReactNode[] {
     const words = text.split(/(\s+)/);
     return words.map((word: string, i: number) => {
@@ -86,11 +80,12 @@ export default function HeroBackgroundSlider() {
         centeredSlides={true}
         autoplay={{
           delay: 6000,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
         } as AutoplayOptions}
-        pagination={{ clickable: true }}
+        allowTouchMove={false}
+        pagination={false}
         navigation={false}
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[Autoplay]}
         className="mySwiper h-full 2xl:rounded-xl"
         onSlideChange={handleSlideChange}
       >
