@@ -12,19 +12,19 @@ const badges: Badge[] = [
   {
     id: 1,
     name: "IHK Zertifikat",
-    icon: <FaCertificate className="text-mint-600 dark:text-mint-700 text-3xl" />,
+    icon: <FaCertificate className="text-mint-600  text-3xl" />,
     description: "Offiziell geprüfte Immobilienmaklerin und Wertermittlerin durch die IHK.",
   },
   {
     id: 2,
     name: "Universitätsabschluss",
-    icon: <FaUniversity className="text-mint-600 dark:text-mint-700 text-3xl" />,
+    icon: <FaUniversity className="text-mint-600  text-3xl" />,
     description: "Fundierte Ausbildung und Abschluss an einer renommierten Universität.",
   },
   {
     id: 3,
     name: "Vertrauenswürdigkeit",
-    icon: <FaShieldAlt className="text-mint-600 dark:text-mint-700 text-3xl" />,
+    icon: <FaShieldAlt className="text-mint-600  text-3xl" />,
     description: "Zuverlässigkeit und Diskretion bei allen Immobilienangelegenheiten.",
   },
 ];
@@ -48,7 +48,7 @@ const WhyTrustUs: React.FC = () => (
           />
         </div>
         <div className="text-center md:text-left">
-          <h3 className="text-xl font-bold text-mint-600 dark:text-mint-700 mb-1">Ann-Christin Rumpke</h3>
+          <h3 className="text-xl font-bold text-mint-600  mb-1">Ann-Christin Rumpke</h3>
           <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">Geprüfte Immobilienmaklerin & Wertermittlerin</p>
           <span className="inline-block bg-mint-100 bg-mint-600 dark:bg-mint-700 px-3 py-1 rounded-full text-xs font-semibold mb-2 text-white">
             -
@@ -75,7 +75,7 @@ const WhyTrustUs: React.FC = () => (
               className="w-full flex flex-col items-center bg-light-100 dark:bg-dark-100 rounded-2xl shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] p-6 transition hover:scale-105"
             >
               <div className="mb-3">{badge.icon}</div>
-              <span className="text-base font-semibold text-mint-600 dark:text-mint-700 text-center mb-2">{badge.name}</span>
+              <span className="text-base font-semibold text-mint-600  text-center mb-2">{badge.name}</span>
               <p className="text-xs text-gray-600 dark:text-gray-300 text-center">{badge.description}</p>
             </div>
           ))}
