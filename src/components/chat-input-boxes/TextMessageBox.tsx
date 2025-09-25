@@ -27,7 +27,7 @@ const TextMessageBox = ({ onSend }: TextMessageBoxProps) => {
     <form
 
       onSubmit={handleSendMessage}
-      className="flex flex-row items-center h-12 rounded-xl duration-300 dark:bg-dark-100 bg-light-200  w-full px-1 m-2">
+      className="flex flex-row items-center h-12 rounded-xl duration-100 dark:bg-dark-100 bg-light-200  w-full px-1 m-2">
 
       <div className="flex-grow ">
 

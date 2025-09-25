@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <main className="duration-300 h-[60vh] w-full flex flex-col justify-center items-center bg-white dark:bg-dark-300">
+    <main className="duration-100 h-[60vh] w-full flex flex-col justify-center items-center bg-white dark:bg-dark-300">
       <h1 className="text-2xl font-extrabold dark:text-light-300 text-dark-200 tracking-widest">404</h1>
       <div className="px-2 py-4 text-sm rounded">
         Hoppla, etwas ist schief gelaufen...

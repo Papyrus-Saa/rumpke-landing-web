@@ -53,7 +53,7 @@ const SocialMediaComponent = ({ className }: { className?: string }) => (
         animate="animate"
         whileHover="whileHover"
         transition={{ type: 'spring', stiffness: 400, damping: 20, delay: idx * 0.1 }}
-        className={`rounded w-6 h-6 flex items-center justify-center shadow-lg text-white ${bg} ${hover} transition-all duration-300`}
+        className={`rounded w-6 h-6 flex items-center justify-center shadow-lg text-white ${bg} ${hover} transition-all duration-100`}
       >
         {icon}
       </motion.a>

@@ -27,9 +27,9 @@ const AwardProducts = () => {
   const [activeId, setActiveId] = useState<number | null>(null)
 
   return (
-    <div className="py-4 lg:py-0 mb-6 duration-300">
+    <div className="py-4 lg:py-0 mb-6 duration-100">
       <h5 className={`${titleFonts.className} text-center lg:text-2xl font-black p-6`}>Als Dankeschön kannst du dir etwas aussuchen - zum Beispiel:</h5>
-      <div className="xl:w-[80%] 2xl:w-[70%] sm:w-[90%] mx-auto duration-300 ">
+      <div className="xl:w-[80%] 2xl:w-[70%] sm:w-[90%] mx-auto duration-100 ">
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 lg:grid-cols-4 xl:grid-cols-2  lg:gap-6 gap-1  w-full mx-auto">
           {[1, 2, 3, 4].map(id => (
             <div

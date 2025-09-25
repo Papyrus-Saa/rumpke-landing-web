@@ -10,22 +10,22 @@ type TimelineStep = {
 
 const timeline: TimelineStep[] = [
   {
-    icon: <FaHome className="duration-300 text-mint-600 dark:text-mint-700 text-3xl" />,
+    icon: <FaHome className="duration-100 text-mint-600 dark:text-mint-700 text-3xl" />,
     title: "Rumpke Immobilien",
     desc: "Die erfahrene Immobilienagentur aus der Region – zuverlässig, transparent und persönlich.",
   },
   {
-    icon: <FaLightbulb className="duration-300 text-mint-600 dark:text-mint-700 text-3xl" />,
+    icon: <FaLightbulb className="duration-100 text-mint-600 dark:text-mint-700 text-3xl" />,
     title: "Initiative: Ich schenk dir was",
     desc: "Eine Aktion von Rumpke Immobilien, um gemeinsam mit dir neue Chancen zu entdecken und echte Dankbarkeit zu zeigen.",
   },
   {
-    icon: <FaHandshake className="duration-300 text-mint-600 dark:text-mint-700 text-3xl" />,
+    icon: <FaHandshake className="duration-100 text-mint-600 dark:text-mint-700 text-3xl" />,
     title: "Gemeinsam mehr erreichen",
     desc: "Mit deinem Tipp hilfst du, Immobilienbesitzer und Interessenten zusammenzubringen – und wirst dafür belohnt.",
   },
   {
-    icon: <FaGift className="duration-300  text-mint-600 dark:text-mint-700 text-3xl" />,
+    icon: <FaGift className="duration-100  text-mint-600 dark:text-mint-700 text-3xl" />,
     title: "Dein Geschenk wartet",
     desc: "Für jeden erfolgreichen Tipp erhältst du eine exklusive Prämie als Dankeschön.",
   },
@@ -49,17 +49,17 @@ const MotivationBanner: React.FC = () => (
       Wenn du jemanden kennst, der sein Haus, seine Wohnung oder sein Grundstück verkaufen möchte, kannst du uns einen Tipp geben – und erhältst als Dankeschön eine exklusive Prämie.
       Gemeinsam schaffen wir neue Möglichkeiten und belohnen dein Engagement!
     </p>
-    <div className="duration-300 flex flex-col md:flex-row items-center justify-center gap-0 xl:w-[80%] 2xl:w-[70%] sm:w-[90%] mx-auto relative mb-6 ">
+    <div className="duration-100 flex flex-col md:flex-row items-center justify-center gap-0 xl:w-[80%] 2xl:w-[70%] sm:w-[90%] mx-auto relative mb-6 ">
       {timeline.map((step) => (
         <div
           key={step.title}
-          className="duration-300 flex flex-col items-center shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] border-mint-600 dark:border-mint-700 rounded-2xl text-center px-4 py-6 relative flex-1 m-2 hover:bg-mint-600/20"
+          className="duration-100 flex flex-col items-center shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] border-mint-600 dark:border-mint-700 rounded-2xl text-center px-4 py-6 relative flex-1 m-2 hover:bg-mint-600/20"
         >
-          <div className="duration-300 z-10 rounded-full p-4 shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] mb-4 border-4 border-mint-600 dark:border-mint-700">
+          <div className="duration-100 z-10 rounded-full p-4 shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] mb-4 border-4 border-mint-600 dark:border-mint-700">
             {step.icon}
           </div>
-          <h3 className="duration-300 text-lg font-semibold text-mint-600 dark:text-mint-700 mb-2">{step.title}</h3>
-          <p className="duration-300 text-gray-700 dark:text-gray-200 text-base ">{step.desc}</p>
+          <h3 className="duration-100 text-lg font-semibold text-mint-600 dark:text-mint-700 mb-2">{step.title}</h3>
+          <p className="duration-100 text-gray-700 dark:text-gray-200 text-base ">{step.desc}</p>
         </div>
       ))}
     </div>
