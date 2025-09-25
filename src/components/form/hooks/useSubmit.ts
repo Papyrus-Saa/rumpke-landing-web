@@ -24,7 +24,6 @@ export function useSubmit() {
     setError(null);
     setSuccess(null);
     try {
-      // Elimina 'terms' antes de enviar si no es necesario en el backend
       const { terms, ...dataToSend } = data;
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000'}/rumpkeai/tip-form`,

@@ -1,4 +1,10 @@
-'use client'
+
+"use client";
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
 import React, { useState, useEffect, ChangeEvent, MouseEvent } from "react";
 import CookieInput from "./CookieInput";
 import CookieButton from "./CookieButton";
@@ -20,6 +26,7 @@ const defaultCategories: CookieCategories = {
 const COOKIE_KEY = "cookieConsent";
 
 function setCookie(name: string, value: string, days: number) {
+  if (typeof window === 'undefined') return;
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
   document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
 }
@@ -42,25 +49,21 @@ export default function CookieConsentClient(): React.JSX.Element | null {
   useEffect(() => {
     const consent = getCookie(COOKIE_KEY) || window.localStorage.getItem(COOKIE_KEY);
     if (consent) setOpen(false);
-
-    // Google Analytics: solo si estadísticas aceptadas
-    try {
-      const categories = JSON.parse(window.localStorage.getItem(COOKIE_KEY) || '{}');
-      if (categories.statistics) {
-        if (!document.getElementById('google-analytics')) {
-          const script = document.createElement('script');
-          script.id = 'google-analytics';
-          script.async = true;
-          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX'; // <-- PON TU ID DE GA AQUÍ
-          document.head.appendChild(script);
-
-          const inlineScript = document.createElement('script');
-          inlineScript.innerHTML = `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');`;
-          document.head.appendChild(inlineScript);
-        }
-      }
-    } catch (e) { }
   }, []);
+
+  function insertGoogleAnalyticsScript() {
+    if (!document.getElementById('google-analytics')) {
+      const script = document.createElement('script');
+      script.id = 'google-analytics';
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-54X5RBNXJ8';
+      document.head.appendChild(script);
+
+      const inlineScript = document.createElement('script');
+      inlineScript.innerHTML = `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-54X5RBNXJ8');`;
+      document.head.appendChild(inlineScript);
+    }
+  }
 
   const handleCategoryChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
@@ -70,14 +73,28 @@ export default function CookieConsentClient(): React.JSX.Element | null {
     }));
   };
 
-  const saveConsent = (accepted: boolean) => {
-    if (accepted) {
-      setCookie(COOKIE_KEY, "all", 365);
-      window.localStorage.setItem(COOKIE_KEY, JSON.stringify({ ...categories, accepted: true }));
-    } else {
-      setCookie(COOKIE_KEY, "necessary", 365);
-      window.localStorage.setItem(COOKIE_KEY, JSON.stringify({ necessary: true, accepted: false }));
+  const updateConsentMode = (categories: CookieCategories) => {
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        ad_storage: categories.marketing ? 'granted' : 'denied',
+        analytics_storage: categories.statistics ? 'granted' : 'denied',
+      });
     }
+  };
+
+  const saveConsent = (accepted: boolean) => {
+    let consentCategories;
+    if (accepted) {
+      consentCategories = { necessary: true, preferences: true, statistics: true, marketing: true };
+      setCookie(COOKIE_KEY, "all", 365);
+      window.localStorage.setItem(COOKIE_KEY, JSON.stringify({ ...consentCategories, accepted: true }));
+      insertGoogleAnalyticsScript();
+    } else {
+      consentCategories = { necessary: true, preferences: false, statistics: false, marketing: false };
+      setCookie(COOKIE_KEY, "necessary", 365);
+      window.localStorage.setItem(COOKIE_KEY, JSON.stringify({ ...consentCategories, accepted: false }));
+    }
+    updateConsentMode(consentCategories);
     setOpen(false);
   };
 
@@ -85,6 +102,10 @@ export default function CookieConsentClient(): React.JSX.Element | null {
     e.preventDefault();
     setCookie(COOKIE_KEY, "custom", 365);
     window.localStorage.setItem(COOKIE_KEY, JSON.stringify(categories));
+    if (categories.statistics) {
+      insertGoogleAnalyticsScript();
+    }
+    updateConsentMode(categories);
     setOpen(false);
   };
 

@@ -2,7 +2,7 @@ import { BENEFITS } from "@/components/benefits/data/benefits-data";
 
 const Benefits = () => {
   return (
-    <div className="w-full sm:w-[90%] mx-auto transition-all duration-100">
+    <div className="w-full sm:w-[90%] mx-auto transition-all duration-100 mb-6">
       <section className="w-full max-w-3xl mx-auto px-4 py-8 shadow bg-light-100 dark:bg-dark-200 transition-all duration-100">
         <div className="text-center mb-8 transition-all duration-100">
           <span className="inline-block px-4 py-1 rounded-full bg-mint-100 bg-mint-600 dark:bg-mint-700 text-white text-xs font-bold tracking-widest uppercase mb-2 shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] transition-all duration-100">
@@ -37,7 +37,7 @@ const Benefits = () => {
         </div>
         <div className="mt-8 text-center transition-all duration-100">
           <span className="inline-block px-6 py-2 rounded-full bg-mint-600 dark:bg-mint-700 text-white font-semibold shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] text-lg tracking-wide animate-pulse transition-all duration-100">
-            Tipp abgeben & Prämie sichern!
+            <span style={{ color: '#9c9c9c' }}>Tipp abgeben & Prämie sichern!</span>
           </span>
         </div>
       </section>
