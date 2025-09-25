@@ -35,7 +35,7 @@ export const FormPic = () => {
           transition={{ duration: 0.5 }}
           className="fixed right-1 2xl:right-48 top-1/2 -translate-y-1/2 z-10 overflow-hidden shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] rainbow-border-animated"
         >
-          <span className="bg-mint-600 dark:bg-mint-700 w-full text-xs py-1 block text-center text-gray-400">Tipp-Formular</span>
+          <span className="bg-mint-600 dark:bg-mint-700 w-full text-xs py-1 block text-center text-white">Tipp-Formular</span>
           <div className="relative w-30 h-40">
             <Image
               src="/form-pic.png"
