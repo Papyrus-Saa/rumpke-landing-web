@@ -53,7 +53,7 @@ export default function HeroBackgroundSlider() {
   }
 
   return (
-    <div className="transition-colors duration-1000 bg-light-100 dark:bg-cyan-800/30 relative p-1 ">
+    <div className="transition-colors duration-1000  dark:bg-cyan-800/30 relative p-1 ">
       <Swiper
         loop={true}
         spaceBetween={30}

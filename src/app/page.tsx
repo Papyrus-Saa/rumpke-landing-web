@@ -34,7 +34,7 @@ export default function Home() {
   return (
 
     <div
-      className="2xl:w-full mx-auto duration-300"
+      className="2xl:w-full mx-auto duration-100"
     >
       <HeroBackgroundSlider />
       <SocialMediaComponent className='lg:hidden' />

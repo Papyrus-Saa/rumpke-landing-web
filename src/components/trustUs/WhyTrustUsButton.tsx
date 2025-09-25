@@ -28,7 +28,7 @@ const WhyTrustUsButton = () => {
   return (
     <div
       ref={containerRef}
-      className="text-center p-2 hover:transition-colors hover:duration-300 duration-300 dark:bg-dark-300 bg-white dark:text-white text-dark-300 dark:border-dark-100 dark:hover:bg-dark-300 hover:bg-light-100 "
+      className="text-center p-2 hover:transition-colors hover:duration-100 duration-100 dark:bg-dark-300 bg-white dark:text-white text-dark-300 dark:border-dark-100 dark:hover:bg-dark-300 hover:bg-light-100 "
     >
       <div className="lg:px-16 xl:px-20 2xl:px-72">
         <button
