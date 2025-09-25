@@ -42,6 +42,24 @@ export default function CookieConsentClient(): React.JSX.Element | null {
   useEffect(() => {
     const consent = getCookie(COOKIE_KEY) || window.localStorage.getItem(COOKIE_KEY);
     if (consent) setOpen(false);
+
+    // Google Analytics: solo si estadísticas aceptadas
+    try {
+      const categories = JSON.parse(window.localStorage.getItem(COOKIE_KEY) || '{}');
+      if (categories.statistics) {
+        if (!document.getElementById('google-analytics')) {
+          const script = document.createElement('script');
+          script.id = 'google-analytics';
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX'; // <-- PON TU ID DE GA AQUÍ
+          document.head.appendChild(script);
+
+          const inlineScript = document.createElement('script');
+          inlineScript.innerHTML = `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');`;
+          document.head.appendChild(inlineScript);
+        }
+      }
+    } catch (e) { }
   }, []);
 
   const handleCategoryChange = (e: ChangeEvent<HTMLInputElement>) => {

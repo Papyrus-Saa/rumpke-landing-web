@@ -34,7 +34,7 @@ const timeline: TimelineStep[] = [
 const MotivationBanner: React.FC = () => (
   <section className=" py-10  w-full">
     <h2 className="text-center text-2xl md:text-3xl font-bold text-mint-600 dark:text-mint-700 mb-6">
-      Ich schenk dir was – Eine Initiative von Rumpke Immobilien
+      Ich schenke dir was – Eine Initiative von Rumpke Immobilien
     </h2>
     <p className="text-center text-lg text-gray-700 dark:text-gray-200 mb-10 max-w-2xl mx-auto">
       Diese Seite ist Teil einer besonderen Aktion von <span className="font-semibold text-mint-600 dark:text-mint-700">
