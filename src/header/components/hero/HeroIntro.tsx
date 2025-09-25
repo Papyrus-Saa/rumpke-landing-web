@@ -13,7 +13,7 @@ export default function HeroIntro() {
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         <h1 className="text-3xl md:text-5xl font-bold mb-">
-          Dein Tipp <span className='text-mint-600'>|</span> Ich <span className='text-mint-600'>schenke</span> dir was <span className='text-2xl'></span>
+          Dein Tipp <span style={{ color: '#005A73' }}> | </span> Ich <span style={{ color: '#005A73' }}>schenke</span> dir was <span className='text-2xl'></span>
         </h1>
 
 

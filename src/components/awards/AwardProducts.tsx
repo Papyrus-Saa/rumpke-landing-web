@@ -1,68 +1,52 @@
-import { useState } from "react"
-import ProductMiniSlider from "../ProductShowcaseSlider"
-import { Dialog } from '@headlessui/react'
+
+import Image from 'next/image'
 import { titleFonts } from "@/config/fonts"
-
-
-const Modal = ({ children, onClose }: { children: React.ReactNode, onClose: () => void }) => (
-  <Dialog open={true} onClose={onClose} className="fixed z-50 inset-0 overflow-y-auto hidden sm:block">
-    <div className="flex  items-center justify-center min-h-screen">
-      <div
-        className="fixed inset-0 bg-gray-900/50 blur-2xl "
-        aria-hidden="true"
-        onClick={onClose}
-      />
-      <div
-        className="relative rounded-lg shadow-lg z-10  w-fit mx-auto"
-        onClick={e => e.stopPropagation()}
-      >
-        {children}
-      </div>
-    </div>
-  </Dialog>
-)
+import slides from "@/data/gallerySlides"
 
 const AwardProducts = () => {
-  const [open, setOpen] = useState(false)
-  const [activeId, setActiveId] = useState<number | null>(null)
-
   return (
-    <div className="py-4 lg:py-0 mb-6 duration-100">
-      <h5 className={`${titleFonts.className} text-center lg:text-2xl font-black p-6`}>Als Dankeschön kannst du dir etwas aussuchen - zum Beispiel:</h5>
-      <div className="xl:w-[80%] 2xl:w-[70%] sm:w-[90%] mx-auto duration-100 ">
-        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 lg:grid-cols-4 xl:grid-cols-2  lg:gap-6 gap-1  w-full mx-auto">
-          {[1, 2, 3, 4].map(id => (
+    <section className="w-full py-10 px-1 flex flex-col items-center overflow-x-hidden">
+      <h2 className={`${titleFonts.className}  text-center text-xl md:text-2xl font-bold tracking-tight mb-8`}>Unsere Prämien</h2>
+      <div className="w-full  grid  sm:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-2 2xl:w-[70%] sm:gap-8">
+        {slides.map((slide, idx) => (
+          <div key={slide.id} className="duration-100 p-1 flex flex-col items-center  rounded-xl md:p-4 transition-all  bg-light-200 sm:bg-light-100 dark:bg-dark-200 border-light-200 dark:border-gray-900 border hover:scale-[1.02] mb-2 am:mb-0 hover:shadow-[var(--shadow-subtle-l)] dark:hover:shadow-[var(--shadow-subtle-d)]">
+            <div className="w-full text-center py-2 px-2 md:px-0 ">
+              <span className="inline-block text-base md:text-lg font-semibold dark:text-mint-200 tracking-wide truncate max-w-[180px] md:max-w-[220px] text-mint-600">{slide.title}</span>
+            </div>
             <div
-              key={id}
-              className="cursor-pointer"
-              onClick={() => {
-                if (window.innerWidth >= 640) {
-                  setActiveId(id)
-                  setOpen(true)
-                }
-              }}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full justify-center items-center px-0  py-2 md:py-4 group "
             >
-              <ProductMiniSlider
-                id={id}
-                autoplayDelay={id === 1 ? 3000 : id === 2 ? 5000 : id === 3 ? 7000 : 4000} />
+              {slide.images.map((img, i) => (
+                <div
+                  key={i}
+                  className="relative flex-shrink-0 flex flex-col items-center justify-end  overflow-hidden transition-all duration-300 group-hover:ring-4 group-hover:ring-mint-600 border-amber-50 dark:border-gray-700 border-2"
+                  style={{ boxShadow: 'var(--shadow-subtle-l)', borderRadius: '0.5rem' }}
+                >
+                  <div
+                    className="w-full"
+                    style={{ aspectRatio: '1 / 1', width: '100%', maxWidth: '360px', minWidth: '180px', margin: '0 auto', borderRadius: '0.5rem', overflow: 'hidden' }}
+                  >
+                    <Image
+                      src={`/${img}`}
+                      alt={slide.title}
+                      fill={true}
+                      sizes="(max-width: 640px) 100vw, 260px"
+                      className="object-cover w-full h-full"
+                      priority={i === 0}
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        {open && activeId && (
-          <Modal onClose={() => setOpen(false)}>
-            <div className=" max-w-2xl mx-auto">
-              <ProductMiniSlider
-                id={activeId}
-                heightClass="h-[60vh] md:h-[70vh] lg:h-[60vh]"
-                widthClass="w-[90vw] max-w-3xl"
-                autoplayDelay={activeId === 1 ? 3000 : activeId === 2 ? 5000 : activeId === 3 ? 7000 : 4000}
-              />
+            <div className="duration-100 w-full  text-center rounded  px-4 py-3 mt-2 dark:text-mint-200 text-base md:text-lg font-medium">
+              {slide.quote}
             </div>
-          </Modal>
-        )}
+          </div>
+        ))}
       </div>
-    </div>
+    </section>
   )
 }
 
 export default AwardProducts
+

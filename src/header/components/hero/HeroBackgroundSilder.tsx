@@ -24,20 +24,27 @@ export default function HeroBackgroundSlider() {
     return { idx, color };
   };
 
-  const [{ idx: randomWordIndex, color: randomColor }, setRandom] = useState(() => getRandomWordAndColor(imgs[0].welcome));
+  const [randomWordIndex, setRandomWordIndex] = useState<number | null>(null);
+  const [randomColor, setRandomColor] = useState<string | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Solo genera color y palabra en el cliente
+  React.useEffect(() => {
+    const { idx, color } = getRandomWordAndColor(imgs[currentSlide].welcome);
+    setRandomWordIndex(idx);
+    setRandomColor(color);
+  }, [currentSlide]);
 
   function handleSlideChange(swiper: { realIndex: number }) {
     const slideIdx = (swiper as { realIndex: number }).realIndex;
     setCurrentSlide(slideIdx);
-    const welcome = imgs[slideIdx].welcome;
-    setRandom(getRandomWordAndColor(welcome));
   }
 
   function renderWelcomeText(text: string): React.ReactNode[] {
     const words = text.split(/(\s+)/);
     return words.map((word: string, i: number) => {
-      if (i === randomWordIndex && /\w/.test(word)) {
+      // Solo resalta si ya se generó en el cliente
+      if (randomWordIndex !== null && randomColor !== null && i === randomWordIndex && /\w/.test(word)) {
         return (
           <span
             key={i}
@@ -63,7 +70,7 @@ export default function HeroBackgroundSlider() {
           disableOnInteraction: true,
         } as AutoplayOptions}
         allowTouchMove={false}
-        pagination={false}
+        pagination={{ clickable: true, renderBullet: (index, className) => `<span class='${className}' aria-label='Gehe zu Slide ${index + 1}'></span>` }}
         navigation={false}
         modules={[Autoplay]}
         className="mySwiper h-full 2xl:rounded-xl"

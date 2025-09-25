@@ -25,6 +25,7 @@ const ScrollToFormButton: React.FC = () => {
 
   return (
     <button
+      aria-label="Scroll to contact form"
       className="fixed right-1 2xl:right-42 top-1/2 -translate-y-1/2 z-10 w-6 h-6 flex items-center justify-center overflow-visible shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] hover:shadow-[var(--shadow-subtle-l)] dark:hover:shadow-[var(--shadow-subtle-d)] transition-shadow rainbow-border-animated bg-gray-700 cursor-pointer"
       onClick={() => {
         document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" });
