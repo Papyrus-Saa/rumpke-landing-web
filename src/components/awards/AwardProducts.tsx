@@ -7,14 +7,14 @@ const AwardProducts = () => {
   return (
     <section className="w-full py-10 px-1 flex flex-col items-center overflow-x-hidden">
       <h2 className={`${titleFonts.className}  text-center text-xl md:text-2xl font-bold tracking-tight mb-8`}>Unsere Prämien</h2>
-      <div className="w-full  grid  sm:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-2 2xl:w-[70%] sm:gap-8">
+      <div className="w-full grid  sm:grid-cols-2 2xl:grid-cols-2 2xl:w-[70%] sm:gap-8">
         {slides.map((slide, idx) => (
           <div key={slide.id} className="duration-100 p-1 flex flex-col items-center  rounded-xl md:p-4 transition-all  bg-light-200 sm:bg-light-100 dark:bg-dark-200 border-light-200 dark:border-gray-900 border hover:scale-[1.02] mb-2 am:mb-0 hover:shadow-[var(--shadow-subtle-l)] dark:hover:shadow-[var(--shadow-subtle-d)]">
             <div className="w-full text-center py-2 px-2 md:px-0 ">
               <span className="inline-block text-base md:text-lg font-semibold dark:text-mint-200 tracking-wide truncate max-w-[180px] md:max-w-[220px] text-mint-600">{slide.title}</span>
             </div>
             <div
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full justify-center items-center px-0  py-2 md:py-4 group "
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full justify-center items-center  py-2 md:py-4 group "
             >
               {slide.images.map((img, i) => (
                 <div

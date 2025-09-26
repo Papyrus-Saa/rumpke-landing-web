@@ -28,7 +28,7 @@ export default function HeroBackgroundSlider() {
   const [randomColor, setRandomColor] = useState<string | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Solo genera color y palabra en el cliente
+
   React.useEffect(() => {
     const { idx, color } = getRandomWordAndColor(imgs[currentSlide].welcome);
     setRandomWordIndex(idx);
@@ -43,7 +43,7 @@ export default function HeroBackgroundSlider() {
   function renderWelcomeText(text: string): React.ReactNode[] {
     const words = text.split(/(\s+)/);
     return words.map((word: string, i: number) => {
-      // Solo resalta si ya se generó en el cliente
+
       if (randomWordIndex !== null && randomColor !== null && i === randomWordIndex && /\w/.test(word)) {
         return (
           <span
@@ -60,13 +60,13 @@ export default function HeroBackgroundSlider() {
   }
 
   return (
-    <div className="transition-colors duration-1000  dark:bg-cyan-800/30 relative p-1 ">
+    <div className="transition-colors duration-1000  dark:bg-cyan-800/30 relative 2xl:p-1">
       <Swiper
         loop={true}
-        spaceBetween={30}
+        spaceBetween={10}
         centeredSlides={true}
         autoplay={{
-          delay: 6000,
+          delay: 9000,
           disableOnInteraction: true,
         } as AutoplayOptions}
         allowTouchMove={false}
