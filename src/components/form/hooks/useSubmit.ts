@@ -26,7 +26,7 @@ export function useSubmit() {
     try {
       const { terms, ...dataToSend } = data;
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000'}/rumpkeai/tip-form`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL || 'https://api.ichschenkedirwas.de'}/rumpkeai/tip-form`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
