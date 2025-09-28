@@ -24,9 +24,24 @@ export function useSubmit() {
     setError(null);
     setSuccess(null);
     try {
-      const emailBody = `Neue Tipp-Einreichung!\n\nPrämie: ${data.prize}\nName: ${data.name}\nKontakt: ${data.contact}\nAdresse: ${data.address}\nBeziehung zum Eigentümer: ${data.ownerRelation}\nAdresse der Immobilie: ${data.propertyAddress}\nName des Eigentümers: ${data.ownerName || '-'}\nKontakt des Eigentümers: ${data.ownerContact || '-'}\nAGB akzeptiert: ${data.terms ? 'Ja' : 'Nein'}\n`;
+      const { terms, ...dataToSend } = data;
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL || 'https://api.ichschenkedirwas.de'}/rumpkeai/tip-form`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(dataToSend),
+        }
+      );
+      const result = await res.json();
+      if (!res.ok) {
+        const j = await res.json().catch(() => ({ message: res.statusText }));
+        throw new Error(j.message || 'Unbekannter Fehler');
+      }
 
-      const res = await fetch('https://api.ichschenkedirwas.de/email/test', {
+
+      const emailBody = `Neue Tipp-Einreichung!\n\nPrämie: ${data.prize}\nName: ${data.name}\nKontakt: ${data.contact}\nAdresse: ${data.address}\nBeziehung zum Eigentümer: ${data.ownerRelation}\nAdresse der Immobilie: ${data.propertyAddress}\nName des Eigentümers: ${data.ownerName || '-'}\nKontakt des Eigentümers: ${data.ownerContact || '-'}\nAGB akzeptiert: ${data.terms ? 'Ja' : 'Nein'}\n`;
+      await fetch('https://api.ichschenkedirwas.de/email/test', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -35,10 +50,7 @@ export function useSubmit() {
           text: emailBody,
         }),
       });
-      const result = await res.json();
-      if (!res.ok) {
-        throw new Error(result?.message || 'Unbekannter Fehler');
-      }
+
       setSuccess('Vielen Dank! Ihre Angaben wurden übermittelt. 😊');
       return { ok: true, result };
     } catch (e) {
