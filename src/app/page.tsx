@@ -40,7 +40,7 @@ export default function Home() {
       <SocialMediaComponent className='lg:hidden' />
       {showFormPic && <FormPic />}
       <SubmitTipButton />
-      <HeroIntro />
+      {/* <HeroIntro /> */}
       <HowItWorks />
       <TipInfo />
       <SubmitTipButton />
