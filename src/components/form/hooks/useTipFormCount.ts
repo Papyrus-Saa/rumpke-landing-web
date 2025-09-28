@@ -7,7 +7,7 @@ export function useTipFormCount() {
 
   useEffect(() => {
     const fetchCount = async () => {
-      const res = await fetch('http://localhost:3000/rumpkeai/count');
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || 'https://api.ichschenkedirwas.de'}/rumpkeai/count`);
       const data = await res.json();
       setTotal(data.totalSubmissions);
     };
