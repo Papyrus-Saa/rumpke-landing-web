@@ -15,8 +15,6 @@ export default function HeroIntro() {
         <h1 className="text-3xl md:text-5xl font-bold mb-">
           Dein Tipp <span style={{ color: '#005A73' }}> | </span> Ich <span style={{ color: '#005A73' }}>schenke</span> dir was <span className='text-2xl'></span>
         </h1>
-
-
       </motion.div>
     </section>
   );
