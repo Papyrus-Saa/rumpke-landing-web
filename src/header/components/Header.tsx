@@ -36,10 +36,10 @@ export default function Header() {
             <ThemeSwitch />
           </div>
         </nav>
-      </header>
       <div className="w-full mx-auto">
         <Contributors total={total} />
       </div>
+      </header>
     </>
   );
 }
