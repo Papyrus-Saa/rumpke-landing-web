@@ -38,19 +38,6 @@ export function useSubmit() {
         const j = await res.json().catch(() => ({ message: res.statusText }));
         throw new Error(j.message || 'Unbekannter Fehler');
       }
-
-
-      const emailBody = `Neue Tipp-Einreichung!\n\nPrämie: ${data.prize}\nName: ${data.name}\nKontakt: ${data.contact}\nAdresse: ${data.address}\nBeziehung zum Eigentümer: ${data.ownerRelation}\nAdresse der Immobilie: ${data.propertyAddress}\nName des Eigentümers: ${data.ownerName || '-'}\nKontakt des Eigentümers: ${data.ownerContact || '-'}\nAGB akzeptiert: ${data.terms ? 'Ja' : 'Nein'}\n`;
-      await fetch('https://api.ichschenkedirwas.de/email/test', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          to: 'info@rumpke-immobilien.de',
-          subject: 'Neue Tipp-Einreichung über das Formular',
-          text: emailBody,
-        }),
-      });
-
       setSuccess('Vielen Dank! Ihre Angaben wurden übermittelt. 😊');
       return { ok: true, result };
     } catch (e) {
