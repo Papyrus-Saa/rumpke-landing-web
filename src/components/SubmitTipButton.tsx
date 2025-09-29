@@ -22,12 +22,13 @@ export const SubmitTipButton = () => {
 
         className="
         duration-100
-        text-secondary-d dark:text-secondary-l py-2 px-4 rounded-b-xl rounded-t-2xl bg-secondary-l dark:bg-secondary-d font-bold cursor-pointer
-          shadow-md transition-all
-          hover:shadow-lg hover:scale-105
-          focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2
-          lg:mt-6
-        "
+        text-white py-2 px-4 rounded-b-xl rounded-t-2xl font-bold cursor-pointer
+        shadow-md transition-all
+        hover:shadow-lg hover:scale-105
+        focus:outline-none focus:ring-2 focus:ring-offset-2
+        lg:mt-6
+  bg-gradient-to-tr from-orange-400 via-orange-500 to-yellow-400
+  dark:bg-gradient-to-tr dark:from-orange-700 dark:via-orange-600 dark:to-yellow-500"
       >
         Tipp abgeben
       </button>
