@@ -14,6 +14,7 @@ import QuickLinksBar from "@/components/quick-links-bar/QuickLinksBar";
 import { RainbowProvider } from "@/hooks/useRainBow";
 import CookieConsentClient from "@/components/cookie/CookieConsentClient";
 import { AIChatProvider } from "@/context/AIChatContext";
+import { titleFonts } from "@/config/fonts";
 
 
 
@@ -85,8 +86,8 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <AIChatProvider>
-            <div className="duration-100 w-full  text-gray-800 dark:text-gray-300 mx-auto bg-light-100 dark:bg-gray-950">
-              <div className="duration-100 bg-white 2xl:w-[85%] dark:bg-dark-300  mx-auto dark:shadow-[var(--shadow-subtle-d)] shadow-[var(--shadow-subtle-l)]">
+            <div className="duration-100 w-full  text-gray-800 dark:text-gray-300 mx-auto bg-light-100 dark:bg-black">
+              <div className={`${titleFonts.className} duration-100 bg-white 2xl:w-[85%] dark:bg-dark-300  mx-auto dark:shadow-[var(--shadow-subtle-d)] shadow-[var(--shadow-subtle-l)]`}>
                 <KeywordCarousel />
                 <Header />
                 <RainbowProvider>
