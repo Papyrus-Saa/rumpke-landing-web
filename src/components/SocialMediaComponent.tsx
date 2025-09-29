@@ -3,23 +3,23 @@
 
 
 
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const SOCIALS = [
   {
-    href: 'https://facebook.com',
+    href: 'https://www.facebook.com/profile.php?id=61572884870790&rdid=V4DdluER74BYp4cE&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16zyHEySPr%2F#',
     icon: <FaFacebookF size={15} />,
     ariaLabel: 'Facebook',
     bg: 'bg-[#1877F3]',
     hover: 'hover:bg-[#1456b8]',
   },
   {
-    href: 'https://twitter.com',
-    icon: <FaTwitter size={15} />,
-    ariaLabel: 'Twitter',
-    bg: 'bg-[#1DA1F2]',
-    hover: 'hover:bg-[#157bb8]',
+    href: 'https://www.instagram.com/rumpkeimmobilien/',
+    icon: <FaInstagram size={15} />,
+    ariaLabel: 'Instagram',
+    bg: 'bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500',
+    hover: 'hover:from-pink-600 hover:via-red-600 hover:to-yellow-600',
   },
   {
     href: 'https://linkedin.com',
