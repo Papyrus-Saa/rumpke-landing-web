@@ -32,7 +32,7 @@ const Contributors = ({ total, show }: Props) => {
         <div
           className={`absolute inset-0 flex items-center justify-center bg-white/10 dark:bg-dark-300/60 border border-white/30 dark:border-dark-100/30 rounded backdrop-blur-md z-10 transition-opacity duration-100 ease-in-out ${hover && total > 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         >
-          <p className={`${titleFonts.className} duration-200 text-xs lg:text-sm text-mint-600 dark:text-white animate-pulse drop-shadow-lg text-center p-4`}>
+          <p className={`${titleFonts.className} duration-200 text-xs  text-mint-600 dark:text-white animate-pulse drop-shadow-lg text-center p-4`}>
             Schon <span className="font-bold text-green-600">{total}</span> Tippgeber {plural} ihre Chance genutzt – sei auch du dabei!
           </p>
         </div>
