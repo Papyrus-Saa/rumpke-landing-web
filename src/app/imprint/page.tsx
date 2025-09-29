@@ -1,6 +1,6 @@
 const ImprintPage = () => {
   return (
-    <main className="w-full bg-white dark:bg-dark-300 flex justify-center items-start py-10 px-2">
+    <main className="w-full  flex justify-center items-start py-10 px-2 p-4">
       <section className="w-full max-w-3xl bg-light-100 dark:bg-dark-200 rounded-2xl border-mint-600 border p-6 sm:p-10 space-y-8">
         <h1 className="text-3xl sm:text-4xl font-extrabold border-l-4 border-mint-600 text-mint-600 pl-4 mb-6 text-center">
           Impressum

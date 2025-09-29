@@ -27,7 +27,7 @@ const steps = [
 ];
 
 const HowItWorks = () => (
-  <div className='py-8'>
+  <div className='py-8 w-[90%] mx-auto'>
     <h1 className="text-3xl text-center md:text-5xl font-bold mt- mb-6">
       Dein Tipp <span style={{ color: '#005A73' }}> | </span> Ich <span style={{ color: '#005A73' }}>schenke</span> dir was <span className='text-2xl'></span>
     </h1>
