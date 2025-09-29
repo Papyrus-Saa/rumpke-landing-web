@@ -36,7 +36,7 @@ export function useSubmit() {
       const result = await res.json();
       if (!res.ok) {
         const j = await res.json().catch(() => ({ message: res.statusText }));
-        throw new Error(j.message || 'Unbekannter Fehler');
+        throw new Error(j.message || 'Es ist ein Fehler aufgetreten. Bitte lade die Seite neu. Wenn das Problem weiterhin besteht, versuche es später erneut.');
       }
       setSuccess('Vielen Dank! Ihre Angaben wurden übermittelt. 😊');
       return { ok: true, result };
