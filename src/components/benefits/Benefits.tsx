@@ -21,7 +21,7 @@ const Benefits = () => {
         <div className="w-full mt-10 mb-12 rounded-lg">
           <div className="hidden sm:block overflow-x-auto">
             <div className="rounded-lg overflow-hidden border-gradient-t-2 border-gradient-b-2 border-gradient-r-4 border-gradient-l-2 border-r border-amber-500 ">
-              <table className="duration-100 min-w-full w-full bg-white dark:bg-dark-200 ">
+              <table className="duration-100 min-w-full w-full bg-light-100 dark:bg-dark-200 ">
                 <thead>
                   <tr>
                     <th className="duration-100 px-3 py-2 text-xs sm:text-sm font-bold text-left bg-light-200 dark:bg-dark-100 rounded-tl-lg">Stufe</th>
