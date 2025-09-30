@@ -221,9 +221,10 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
           <div className="sm:ml-auto mx-auto">
             <button
               type="submit"
-              disabled={loading}
+              // disabled={loading}
+              disabled={true}
               className={
-                "inline-flex items-center justify-center rounded px-3 py-1 sm:py-1 font-medium text-white shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] hover:brightness-110 active:brightness-95 disabled:opacity-60 disabled:cursor-not-allowed transition cursor-pointer w-full bg-gradient-to-tr from-orange-400 via-orange-500 to-yellow-400 dark:bg-gradient-to-tr dark:from-orange-700 dark:via-orange-600 dark:to-yellow-500"
+                "inline-flex items-center justify-center rounded px-3 py-1 sm:py-1 font-medium text-white shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] hover:brightness-110 active:brightness-95 disabled:opacity-60 disabled:cursor-not-allowed transition cursor-pointer w-full bg-gradient-to-tr grad bg-gradient-orange-yellow"
               }
             >
               {loading ? 'Senden…' : 'Tipp senden'}
