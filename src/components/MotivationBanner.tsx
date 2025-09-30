@@ -55,7 +55,7 @@ const MotivationBanner: React.FC = () => (
           key={step.title}
           className="duration-100 flex flex-col items-center shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] border-mint-600 rounded-2xl text-center px-3 sm:px-4 py-5 sm:py-6 relative flex-1 min-w-[220px] max-w-xs m-2 hover:bg-mint-600/20 mx-auto"
         >
-          <div className="duration-100 z-10 rounded-full p-3 sm:p-4 shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] mb-3 sm:mb-4 border-4 border-mint-600 flex items-center justify-center">
+          <div className="duration-100 z-10 rounded-full p-2 shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] mb-3 sm:mb-4 border-2 border-mint-600 flex items-center justify-center">
             {step.icon}
           </div>
           <h2 className="duration-100 text-base sm:text-lg font-semibold text-mint-600 mb-1 sm:mb-2 w-full text-center">{step.title}</h2>
