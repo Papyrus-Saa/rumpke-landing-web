@@ -32,7 +32,7 @@ const timeline: TimelineStep[] = [
 ];
 
 const MotivationBanner: React.FC = () => (
-  <section className="py-8 sm:py-10 w-full flex flex-col items-center">
+  <section className="py-8 sm:py-10 w-full flex flex-col items-center ">
   <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-bold text-mint-600 mb-4 sm:mb-6 px-2 w-full">
       Ich schenke dir was – Eine Initiative von Rumpke Immobilien
     </h2>
