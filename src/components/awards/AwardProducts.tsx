@@ -38,7 +38,7 @@ const AwardProducts = () => {
                 </div>
               ))}
             </div>
-            <div className="duration-100 w-full  text-center rounded  px-4 py-3 mt-2 dark:text-mint-200 text-base md:text-lg font-medium">
+            <div className="duration-100 w-full  text-center rounded  px-4 py-3 mt-2 dark:text-mint-200 text-base">
               {slide.quote}
             </div>
           </div>

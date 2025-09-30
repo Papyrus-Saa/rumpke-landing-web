@@ -111,7 +111,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
           </div>
         )}
         <div>
-          <label className={labelCls} htmlFor="prize"><span className='text-2xl'>Prämie auswählen *</span></label>
+          <label className={labelCls} htmlFor="prize"><span className='text-gradient-orange-yellow'>Prämie auswählen *</span></label>
           <select
             id="prize"
             className={`${inputBase} ${rainbowActive ? 'rainbow-border' : ''}`}

@@ -27,6 +27,7 @@ export default function HeroBackgroundSlider() {
   const [randomWordIndex, setRandomWordIndex] = useState<number | null>(null);
   const [randomColor, setRandomColor] = useState<string | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<{ [key: number]: boolean }>({});
 
 
   React.useEffect(() => {
@@ -77,7 +78,6 @@ export default function HeroBackgroundSlider() {
         onSlideChange={handleSlideChange}
       >
         {imgs.map((item, idx) => {
-          const [imgLoaded, setImgLoaded] = React.useState(false);
           return (
             <SwiperSlide key={item.id}>
               <div className="relative w-full h-[50vh] lg:h-[70vh] flex items-center justify-center overflow-hidden">
@@ -90,9 +90,9 @@ export default function HeroBackgroundSlider() {
                   priority={item.id === 1}
                   placeholder="blur"
                   blurDataURL={`/_next/image?url=/${item.image}&w=16&q=1`}
-                  onLoadingComplete={() => setImgLoaded(true)}
+                  onLoadingComplete={() => setLoadedImages(prev => ({ ...prev, [item.id]: true }))}
                 />
-                {!imgLoaded && (
+                {!loadedImages[item.id] && (
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-200/60 to-gray-400/80 animate-pulse z-10" />
                 )}
 

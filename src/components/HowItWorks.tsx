@@ -28,11 +28,11 @@ const steps = [
 
 const HowItWorks = () => (
   <div className='py-8 w-[90%] mx-auto'>
-    <h1 className="text-3xl text-center md:text-5xl font-bold mt- mb-6">
+    <h1 className="text-xl md:text-3xl text-center  font-bold mt- mb-6">
       Dein Tipp <span style={{ color: '#005A73' }}> | </span> Ich <span style={{ color: '#005A73' }}>schenke</span> dir was <span className='text-2xl'></span>
     </h1>
     <div className="dark:bg-dark-200 bg-light-100 w-full xl:w-[80%] 2xl:w-[70%] lg:p-6 mb-6 mx-auto shadow border dark:border-dark-100 rounded-lg border-light-200 transition-all duration-100">
-      <h3 className={`${titleFonts.className} ml-2 mb-4 text-lg text-center`}>
+      <h3 className={`${titleFonts.className} py-1 ml-2 mb-4 sm:text-lg text-center`}>
         So einfach geht<span className="text-mint-600">&apos;</span>s
       </h3>
       <div className="relative bg-white dark:bg-dark-300 transition-all duration-100 p-4 flex flex-col lg:flex-row justify-center items-center gap-6">
@@ -43,8 +43,8 @@ const HowItWorks = () => (
                 key={idx}
                 className={`flex items-center gap-4 rounded-xl px-4 w-full py-4 mx-auto bg-light-100 dark:bg-dark-200 transition-all duration-100 text-base sm:text-lg ${step.className}`}
               >
-                <span className="text-2xl sm:text-3xl text-mint-600 dark:text-mint-200">{step.icon}</span>
-                <span className="font-medium break-words">{step.title}</span>
+                <span className="sm:text-2xl text-mint-600 dark:text-mint-200">{step.icon}</span>
+                <span>{step.title}</span>
               </li>
             ))}
           </ul>
