@@ -15,7 +15,7 @@ const AIMessage = ({ text }: Props) => {
         <div className="flex items-center justify-center h-10 w-10 rounded-full bg-amber-400 flex-shrink-0 text-gray-950">
           <RiRobot2Line />
         </div>
-        <div className="relative ml-3 text-sm bg-mint-600 text-white bg-opacity-25 pt-3 pb-2 px-4 shadow rounded-xl">
+        <div className="relative ml-3 text-sm bg-mint-600 dark:bg-mint-700 text-white bg-opacity-25 pt-3 pb-2 px-4 shadow rounded-xl">
           <p>{text}</p>
         </div>
       </div>

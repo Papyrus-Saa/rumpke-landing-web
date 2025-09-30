@@ -58,14 +58,14 @@ const WhyTrustUs: React.FC = () => (
       </div>
 
       <div className="flex-1 flex flex-col gap-6 ">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-mint-600 dark:text-mint-700 mb-2 tracking-tight drop-shadow-lg">
-          Warum Sie uns vertrauen können
+        <h2 className="text-3xl md:text-4xl font-extrabold text-mint-600  mb-2 tracking-tight drop-shadow-lg">
+          Warum du uns vertrauen kannst
         </h2>
         <p className="text-lg text-gray-700 dark:text-gray-200 font-medium">
-          Vertrauen ist die Basis jeder erfolgreichen Zusammenarbeit. Als erfahrene Immobilienmaklerin mit fundierter Ausbildung und offiziellen Zertifikaten stehe ich Ihnen mit Kompetenz und Engagement zur Seite.
+          Vertrauen ist die Basis jeder erfolgreichen Zusammenarbeit. Als erfahrene Immobilienmaklerin mit fundierter Ausbildung und offiziellen Zertifikaten stehe ich dir mit Kompetenz und Engagement zur Seite.
         </p>
         <p className="text-base text-gray-500 dark:text-gray-400 mb-4">
-          Mein Ziel ist es, Ihre Wünsche und Bedürfnisse zu verstehen und gemeinsam die beste Lösung für Ihre Immobilie zu finden. Diskretion, Zuverlässigkeit und ein starkes Netzwerk von Experten garantieren Ihnen höchste Sicherheit und Professionalität.
+          Mein Ziel ist es, deine Wünsche und Bedürfnisse zu verstehen und gemeinsam die beste Lösung für deine Immobilie zu finden. Diskretion, Zuverlässigkeit und ein starkes Netzwerk von Experten garantieren dir höchste Sicherheit und Professionalität.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">

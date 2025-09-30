@@ -70,7 +70,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
     setLocalError(null);
 
     if (!data.captchaToken) {
-      setError('Bitte bestätigen Sie, dass Sie kein Roboter sind.');
+      setError('Bitte bestätige, dass du kein Roboter bist.');
       return;
     }
     const submitResult = await submit(data);
@@ -198,7 +198,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
             <input
               type="checkbox"
               id="terms"
-              {...register('terms', { required: 'Bitte akzeptieren Sie die AGB.' })}
+              {...register('terms', { required: 'Bitte akzeptiere die AGB.' })}
               className="w-5 h-5 accent-mint-600"
             />
             Ich akzeptiere die AGB *
@@ -209,7 +209,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
           <p
             className="text-xs text-gray-600 dark:text-gray-300 mt-1 pl-3 py-2 border-l-4 border-mint-600 dark:border-mint-700 bg-light-300 dark:bg-dark-300 rounded duration-100"
           >
-            Ihre Daten werden ausschließlich zur Bearbeitung Ihres Tipps verwendet und nicht an Dritte weitergegeben.
+            Deine Daten werden ausschließlich zur Bearbeitung deines Tipps verwendet und nicht an Dritte weitergegeben.
           </p>
         </div>
         {success && (

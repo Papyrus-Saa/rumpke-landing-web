@@ -9,7 +9,7 @@ import { useAIChat } from '@/context/AIChatContext'
 import AIButton from './AIButton'
 
 export default function AIChatMobile() {
-  const { visible, toggleChat, messages, setMessages } = useAIChat();
+  const { visible, toggleChat, messages, setMessages, clearConversation } = useAIChat();
   const [isLoading, setIsLoading] = useState(false)
   const listRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -50,8 +50,30 @@ export default function AIChatMobile() {
   return (
     <>
       <div ref={containerRef} className="w-full h-full fixed top-0 right-0 z-20 flex flex-col bg-light-100 dark:bg-dark-300 shadow-ai-l dark:shadow-ai-d rounded-xl">
-        <header className='w-full bg-mint-600 py-6 text-center text-white font-medium text-lg shadow-[0px_4px_12px_0px_rgba(0,0,0,0.10)] dark:shadow-[0px_4px_12px_0px_rgba(0,255,180,0.10)]'>
+        <header className='w-full bg-mint-600 dark:bg-mint-700 py-6 text-center text-white font-medium text-lg shadow-[0px_4px_12px_0px_rgba(0,0,0,0.10)] dark:shadow-[0px_4px_12px_0px_rgba(0,255,180,0.10)] relative'>
           <span>Unser KI-Assistent hilft!</span>
+          {messages.length > 0 && (
+            <button
+              onClick={clearConversation}
+              className="absolute right-12 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors duration-200"
+              title="Unterhaltung löschen"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                />
+              </svg>
+            </button>
+          )}
         </header>
         <div ref={listRef} className="flex-1 overflow-y-auto overscroll-contain px-4 pt-4 pb-3 xl:px-40  xl:pt-20">
           <div className='absolute top-1 right-1'>

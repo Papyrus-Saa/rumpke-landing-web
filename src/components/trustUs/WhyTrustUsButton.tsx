@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import WhyTrustUs from "./WhyTrustUs";
-import { titleFonts } from "@/config/fonts";
+
 
 const WhyTrustUsButton = () => {
   const [visible, setVisible] = useState(false);
