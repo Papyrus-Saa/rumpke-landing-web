@@ -86,7 +86,7 @@ export default function AIChat() {
           {messages.length > 0 && (
             <button
               onClick={clearConversation}
-              className="absolute right-12 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors duration-200"
+              className="absolute right-12 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors duration-200 cursor-pointer"
               title="Unterhaltung löschen"
             >
               <svg
