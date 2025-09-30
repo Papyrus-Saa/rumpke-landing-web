@@ -38,13 +38,13 @@ export function useSubmit() {
         const j = await res.json().catch(() => ({ message: res.statusText }));
         throw new Error(j.message || 'Es ist ein Fehler aufgetreten. Bitte lade die Seite neu. Wenn das Problem weiterhin besteht, versuche es später erneut.');
       }
-      setSuccess('Vielen Dank! Ihre Angaben wurden übermittelt. 😊');
+      setSuccess('Vielen Dank! Deine Angaben wurden übermittelt. 😊');
       return { ok: true, result };
     } catch (e) {
       const errorMsg = (e instanceof Error) ? e.message : String(e);
       setError(
         errorMsg === 'Failed to fetch'
-          ? 'Verbindung zum Server fehlgeschlagen. Bitte versuchen Sie es später erneut.'
+          ? 'Verbindung zum Server fehlgeschlagen. Bitte versuche es später erneut.'
           : errorMsg
       );
       return false;

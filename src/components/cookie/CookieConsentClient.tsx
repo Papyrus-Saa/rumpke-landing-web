@@ -117,7 +117,7 @@ export default function CookieConsentClient(): React.JSX.Element | null {
       <div className="lg:flex mx-auto w-[90%] py-2">
         <div className="flex-1">
           <div className="text-sm mb-4 px-2 text-left">
-            Diese Website verwendet Cookies, um die Benutzererfahrung zu verbessern, den Datenverkehr zu analysieren und personalisierte Werbung anzuzeigen. Sie können alle Cookies akzeptieren oder Ihre Präferenzen festlegen.
+            Diese Website verwendet Cookies, um die Benutzererfahrung zu verbessern, den Datenverkehr zu analysieren und personalisierte Werbung anzuzeigen. Du kannst alle Cookies akzeptieren oder deine Präferenzen festlegen.
           </div>
           <form className="flex flex-wrap lg:block gap-4 text-xs mb-4 px-2">
             <CookieInput
