@@ -3,9 +3,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-import { Geist, Geist_Mono } from "next/font/google";
-
-
+import { mainFont, titleFonts } from "@/config/fonts";
 import Header from "@/header/components/Header";
 import { ThemeProvider } from "@/context/ThemeContext";
 import Footer from "@/components/Footer";
@@ -14,20 +12,12 @@ import QuickLinksBar from "@/components/quick-links-bar/QuickLinksBar";
 import { RainbowProvider } from "@/hooks/useRainBow";
 import CookieConsentClient from "@/components/cookie/CookieConsentClient";
 import { AIChatProvider } from "@/context/AIChatContext";
-import { titleFonts } from "@/config/fonts";
 
 
 
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
 
 export const metadata: Metadata = {
   title: "Ich schenke dir was",
@@ -82,12 +72,12 @@ export default function RootLayout({
         <meta name="twitter:image" content="https://www.ichschenkedirwas.de/hero-pic-2.jpg" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${mainFont.variable} antialiased`}
       >
         <ThemeProvider>
           <AIChatProvider>
-            <div className="duration-100 w-full  text-gray-800 dark:text-gray-300 mx-auto bg-light-100 dark:bg-black">
-              <div className={`${titleFonts.className} duration-100 bg-white 2xl:w-[85%] dark:bg-dark-300  mx-auto dark:shadow-[var(--shadow-subtle-d)] shadow-[var(--shadow-subtle-l)]`}>
+            <div className="duration-100 w-full text-gray-800 dark:text-gray-300 mx-auto bg-light-100 dark:bg-black font-sans">
+              <div className="duration-100 bg-white 2xl:w-[85%] dark:bg-dark-300 mx-auto dark:shadow-[var(--shadow-subtle-d)] shadow-[var(--shadow-subtle-l)]">
                 <KeywordCarousel />
                 <Header />
                 <RainbowProvider>

@@ -1,13 +1,13 @@
 const images = [
   {
     id: 1,
-    image: 'hero-pic-1.jpg',
+    image: 'hero-pic-2.jpg',
     quote: 'Finden Sie Immobilien, die mehr als nur vier Wände sind',
     welcome: 'Starte entspannt – wir begleiten dich von Anfang an mit Kompetenz und Herz.'
   },
   {
     id: 2,
-    image: 'hero-pic-2.jpg',
+    image: 'hero-pic-1.jpg',
     quote: 'Melden Sie Ihr Objekt – wir kümmern uns um den Rest und Sie profitieren direkt',
     welcome: 'Mit uns bist du nie allein: Persönliche Beratung und Rundum-Service sind unser Versprechen.'
   },

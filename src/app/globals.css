@@ -1,3 +1,55 @@
+
+.shadow-orange-yellow {
+  box-shadow: 0 4px 24px 0 #fb923c, 0 2px 8px 0 #fde047, 0 1px 4px 0 #f59e42;
+}
+.shadow-purple-fuchsia {
+  box-shadow: 0 4px 24px 0 #6d28d9, 0 2px 8px 0 #a21caf, 0 1px 4px 0 #f0abfc;
+}
+
+
+:root {
+  --gradient-orange-yellow: linear-gradient(45deg, #fb923c 0%, #f59e42 50%, #fde047 100%);
+  --gradient-purple-fuchsia: linear-gradient(90deg, #6d28d9 0%, #a21caf 50%, #f0abfc 100%);
+}
+.dark {
+  --gradient-orange-yellow: linear-gradient(45deg, #ea580c 0%, #ea580c 50%, #facc15 100%);
+  --gradient-purple-fuchsia: linear-gradient(90deg, #a21caf 0%, #6d28d9 50%, #f0abfc 100%);
+}
+
+.bg-gradient-orange-yellow {
+  background: var(--gradient-orange-yellow)
+}
+.text-gradient-orange-yellow {
+  background: var(--gradient-orange-yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.text-gradient-purple-fuchsia {
+  background: var(--gradient-purple-fuchsia);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.text-gradient-purple-fuchsia {
+  background: var(--gradient-purple-fuchsia);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-mint-green {
+  background: var(--gradient-mint-green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
