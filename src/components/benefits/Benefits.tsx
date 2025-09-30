@@ -6,7 +6,7 @@ const Benefits = () => {
     <div className="w-full sm:w-[96%] lg:w-[90%] xl:w-[80%] mx-auto transition-all duration-100 mb-6">
       <section className="w-full max-w-7xl mx-auto px-4 py-8 transition-all duration-100">
         <div className="text-center mb-8 transition-all duration-100">
-          <span className="inline-block px-4 py-1 rounded bg-mint-600 dark:bg-mint-700 text-white text-xs font-bold tracking-widest uppercase shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] transition-all duration-100 mb-6">
+          <span className="inline-block px-4 py-1  bg-mint-600 dark:bg-mint-700 text-white text-xs font-bold tracking-widest uppercase shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] transition-all duration-100 mb-6">
             Prämienstaffel
           </span>
           <h3 className="text-3xl sm:text-4xl font-bold text-mint-600 dark:text-mint-300 drop-shadow transition-all duration-100 mb-4">
@@ -24,7 +24,7 @@ const Benefits = () => {
             return (
               <div
                 key={i}
-                className={`group relative flex flex-col items-center justify-between px-3 py-5 sm:px-6 sm:py-7 rounded-2xl ${bgClass} hover:scale-[1.01] transition-all duration-150 w-full`}
+                className={`group relative flex flex-col items-center justify-between px-3 py-5 sm:px-6 sm:py-7 rounded-xl ${bgClass} hover:scale-[1.01] transition-all duration-150 w-full`}
               >
                 <div className="flex flex-col items-center mb-1 w-full">
                   <span className="text-lg sm:text-xl font-bold text-mint-600 dark:text-mint-300 tracking-tight">

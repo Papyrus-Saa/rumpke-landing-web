@@ -12,14 +12,14 @@ export const rumpkeai_assistant_use_case = async (prompt: string) => {
     return {
       message: {
         role: 'assistant',
-        content: data.message?.content || 'Sin respuesta del servidor.'
+        content: data.message?.content || 'Keine Antwort vom Server.'
       }
     };
   } catch {
     return {
       message: {
         role: 'assistant',
-        content: 'Es gab einen Fehler beim Verarbeiten deiner Anfrage.'
+        content: 'Beim Verarbeiten deiner Anfrage ist ein Fehler aufgetreten.'
       }
     };
   }
