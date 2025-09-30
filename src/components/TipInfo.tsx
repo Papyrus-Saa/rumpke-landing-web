@@ -30,7 +30,7 @@ const TipInfo = ({ rules = defaultRules }: TipInfoProps) => (
             className="flex items-start gap-3 bg-white dark:bg-dark-100 rounded-lg p-3 sm:p-4 shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] duration-100 w-full text-base sm:text-lg"
           >
             <span className="mt-1 text-mint-600 dark:text-mint-700 text-lg font-bold">•</span>
-            <span className={`${titleFonts.className} text-gray-800 dark:text-gray-100 duration-100 break-words`}>{rule}</span>
+            <span className={"text-gray-800 dark:text-gray-100 duration-100 break-words"}>{rule}</span>
           </li>
         ))}
       </ul>

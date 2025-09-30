@@ -34,7 +34,7 @@ const WhyTrustUsButton = () => {
         <button
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleClose}
-          className={`${titleFonts.className} text-xs cursor-pointer flex justify-end  text-green-500`}
+          className={"text-xs cursor-pointer flex justify-end  text-green-500"}
         >
           Warum uns vertrauen?
         </button>
