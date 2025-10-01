@@ -9,8 +9,8 @@ import SocialMediaComponent from '@/components/SocialMediaComponent';
 import React, { useState } from 'react';
 import TipForm from '@/components/form/TipForm';
 
-import HeroBackgroundSlider from '@/header/components/hero/HeroBackgroundSilder';
-import HeroIntro from '@/header/components/hero/HeroIntro';
+import HeroBackgroundSlider from '@/components/hero/HeroBackgroundSilder';
+import HeroIntro from '@/components/hero/HeroIntro';
 
 import AwardProducts from '@/components/awards/AwardProducts';
 
