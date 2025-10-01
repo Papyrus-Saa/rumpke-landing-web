@@ -17,7 +17,7 @@ const keywords = [
 
 export default function KeywordCarousel() {
   return (
-    <div className="w-full hidden 2xl:block h-5 overflow-hidden relative transition-colors bg-light-200 dark:bg-dark-300">
+    <div className="w-full hidden 2xl:block h-5 overflow-hidden relative transition-colors">
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="whitespace-nowrap animate-keyword-scroll flex items-center h-4">
           {keywords.map((word, idx) => (
