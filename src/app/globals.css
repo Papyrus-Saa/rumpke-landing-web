@@ -70,6 +70,8 @@
   animation: rainbow-border 1.5s linear infinite;
   transition: border-color 1.5s ease-out, border-width 1.5s ease-out;
 }
+
+
 @theme {
 
 
