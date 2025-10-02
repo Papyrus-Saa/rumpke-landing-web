@@ -24,8 +24,16 @@ L.Icon.Default.mergeOptions({
 });
 
 // URLs de los estilos del mapa
-const LIGHT_STYLE = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
-const DARK_STYLE = "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png";
+const MAP_STYLES = {
+  street: {
+    light: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    dark: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
+  },
+  satellite: {
+    url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+  }
+};
 
 // Fix para los iconos de Leaflet
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -45,24 +53,10 @@ const kmToMeters = (km: number) => km * 1000;
 // Props interface
 export interface LeafletMapClientProps {
   is3D: boolean;
+  isSatellite?: boolean;
 }
 
-// Componente para manejar los eventos de zoom y vista 3D
-function MapEvents({ is3D }: { is3D: boolean }) {
-  const map = useMap();
-
-  useEffect(() => {
-    if (is3D) {
-      map.setView([MAIN_LOCATION.lat, MAIN_LOCATION.lng], 10);
-    } else {
-      map.setView([MAIN_LOCATION.lat, MAIN_LOCATION.lng], 8);
-    }
-  }, [is3D, map]);
-
-  return null;
-}
-
-const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D }) => {
+const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite = false }) => {
   console.log('LeafletMapClient mounted');
 
   const [input, setInput] = useState("");
@@ -165,8 +159,9 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D }) => {
           zoomControl={false}
         >
           <TileLayer
-            key={isDarkMode ? 'dark' : 'light'} // Forzar re-render cuando cambia el tema
-            url={isDarkMode ? DARK_STYLE : LIGHT_STYLE}
+            key={`${isDarkMode ? 'dark' : 'light'}-${isSatellite ? 'satellite' : 'street'}`}
+            url={isSatellite ? MAP_STYLES.satellite.url : (isDarkMode ? MAP_STYLES.street.dark : MAP_STYLES.street.light)}
+            attribution={isSatellite ? MAP_STYLES.satellite.attribution : ''}
           />
           <Circle
             center={[MAIN_LOCATION.lat, MAIN_LOCATION.lng]}
@@ -174,14 +169,13 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D }) => {
             {...circleOptions}
           />
           <Marker position={[MAIN_LOCATION.lat, MAIN_LOCATION.lng]}>
-            <Popup>Main Location</Popup>
+            <Popup>Unser Standort</Popup>
           </Marker>
           {searchMarker && (
             <Marker position={searchMarker}>
               <Popup>Gesuchte Adresse</Popup>
             </Marker>
           )}
-          <MapEvents is3D={is3D} />
         </MapContainer>
       </div>
       <form className="mb-4 flex gap-2" onSubmit={handleSearch}>

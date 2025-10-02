@@ -13,7 +13,7 @@ const LeafletMapClient = dynamic(() => import("@/components/map/LeafletMapClient
 });
 
 const LeafletMap: React.FC = () => {
-  const [is3D, setIs3D] = useState(false);
+  const [isSatellite, setIsSatellite] = useState(false);
 
   return (
     <div className="duration-100 w-full max-w-6xl mx-auto p-1 md:p-4 bg-light-100 dark:bg-dark-200 rounded-2xl dark:shadow-xl">
@@ -23,14 +23,14 @@ const LeafletMap: React.FC = () => {
           </span>
         </div>
         <button
-          className={`cursor-pointer duration-100 px-3 py-1 rounded text-xs font-semibold transition-colors ml-4 ${is3D ? 'bg-mint-700 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200'
+          className={`cursor-pointer duration-100 px-3 py-1 rounded text-xs font-semibold transition-colors ml-4 ${isSatellite ? 'bg-mint-700 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200'
             }`}
-          onClick={() => setIs3D(v => !v)}
+          onClick={() => setIsSatellite(v => !v)}
         >
-          {is3D ? "Normale Ansicht" : "3D Nachtansicht"}
+          {isSatellite ? "Straßenansicht" : "Satellitenansicht"}
         </button>
       </div>
-      <LeafletMapClient is3D={is3D} />
+      <LeafletMapClient isSatellite={isSatellite} is3D={false} />
       <div className="mb-4 text-sm text-gray-700 dark:text-gray-200">
         <div className="flex items-center justify-between w-full">
           <div className="flex flex-col flex-1">

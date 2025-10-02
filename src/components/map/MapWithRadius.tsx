@@ -5,6 +5,10 @@ import dynamic from "next/dynamic";
 const MapContainer = dynamic(() => import("./LeafletMapClient"), { ssr: false });
 import ProfessionalGlobe from "../ProfessionalGlobe";
 
+export interface LeafletMapClientProps {
+  is3D: boolean;
+}
+
 const MapWithRadius: React.FC = () => {
   const [is3D, setIs3D] = useState(false);
   return (

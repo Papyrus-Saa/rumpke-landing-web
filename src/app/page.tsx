@@ -10,7 +10,7 @@ import React, { useState } from 'react';
 import TipForm from '@/components/form/TipForm';
 
 import HeroBackgroundSlider from '@/components/hero/HeroBackgroundSilder';
-import HeroIntro from '@/components/hero/HeroIntro';
+
 
 import AwardProducts from '@/components/awards/AwardProducts';
 
