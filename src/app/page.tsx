@@ -25,6 +25,7 @@ import { useAIChat } from '@/context/AIChatContext';
 import AIChatMobile from '@/components/ai-assistant/AIChatMobile';
 import { FormPic } from '@/components/form/FormPic';
 import MapWithRadius from '@/components/map/MapWithRadius';
+import LeafletMap from '@/components/map/LeafletMap';
 
 
 export default function Home() {
@@ -44,7 +45,9 @@ export default function Home() {
       {/* <HeroIntro /> */}
       <HowItWorks />
       <TipInfo />
-      <MapWithRadius />
+      {/* Comentar el mapa antiguo y probar el nuevo */}
+      {/* <MapWithRadius /> */}
+      <LeafletMap />
       <SubmitTipButton />
       <AwardProducts />
       <Benefits />

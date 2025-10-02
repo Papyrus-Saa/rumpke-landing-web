@@ -2,27 +2,35 @@
 
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
-const MapContainer = dynamic(() => import("./LeafletMapClient"), { ssr: false });
 import ProfessionalGlobe from "../ProfessionalGlobe";
 
-const MapWithRadius: React.FC = () => {
+// Cargamos el mapa dinámicamente solo en el cliente
+const LeafletMapClient = dynamic(() => import("@/components/map/LeafletMapClient"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-[400px] bg-gray-100 dark:bg-gray-800 rounded-xl animate-pulse" />
+  ),
+});
+
+const LeafletMap: React.FC = () => {
   const [is3D, setIs3D] = useState(false);
+
   return (
     <div className="duration-100 w-full max-w-6xl mx-auto p-1 md:p-4 bg-light-100 dark:bg-dark-200 rounded-2xl dark:shadow-xl">
       <div className="mb-2 flex justify-between items-center w-full">
         <div className="flex flex-col flex-1">
           <span className="mb-2 text-base text-left">
-
           </span>
         </div>
         <button
-          className={`cursor-pointer duration-100 px-3 py-1 rounded text-xs font-semibold transition-colors ml-4 ${is3D ? 'bg-mint-700 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200'}`}
+          className={`cursor-pointer duration-100 px-3 py-1 rounded text-xs font-semibold transition-colors ml-4 ${is3D ? 'bg-mint-700 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200'
+            }`}
           onClick={() => setIs3D(v => !v)}
         >
           {is3D ? "Normale Ansicht" : "3D Nachtansicht"}
         </button>
       </div>
-      <MapContainer is3D={is3D} />
+      <LeafletMapClient is3D={is3D} />
       <div className="mb-4 text-sm text-gray-700 dark:text-gray-200">
         <div className="flex items-center justify-between w-full">
           <div className="flex flex-col flex-1">
@@ -40,5 +48,4 @@ const MapWithRadius: React.FC = () => {
   );
 };
 
-export default MapWithRadius;
-// ...existing code...
+export default LeafletMap;
