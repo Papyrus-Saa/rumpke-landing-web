@@ -16,10 +16,7 @@ const AIButton: React.FC<AIButtonProps> = ({ visible, toggleChat }) => {
     <button
       title="KI-Assistent öffnen/schließen"
       className={`${buttonClass} z-50 w-6 h-6 flex items-center justify-center rounded-full cursor-pointer transition-shadow duration-100 focus:outline-none ${visible ? 'bg-gradient-to-tr from-cyan-900 via-mint-600 to-purple-900 shadow-lg border-2 border-mint-600' : 'text-white bg-gradient-to-tr from-purple-900 via-cyan-900 to-pink-900 shadow-orange-500 shadow-[0_0_15px_5px_rgba(0,0,0,0.65)] hover:shadow-xl'}`}
-      style={visible ? {
-        position: 'relative',
-        overflow: 'hidden',
-      } : {}}
+      style={visible ? { position: 'relative', overflow: 'hidden' } : {}}
       onClick={toggleChat}
     >
       <div className="loader-wrapper">
@@ -35,21 +32,6 @@ const AIButton: React.FC<AIButtonProps> = ({ visible, toggleChat }) => {
                 </linearGradient>
               </defs>
             </svg>
-            <style>{`
-              .ai-x-svg {
-                filter: drop-shadow(0 0 8px #00e6c3);
-                animation: ai-x-rotate 1.2s cubic-bezier(.4,0,.2,1) infinite;
-                transition: filter 0.2s;
-              }
-              button:hover .ai-x-svg {
-                filter: drop-shadow(0 0 16px #a07be6);
-              }
-              @keyframes ai-x-rotate {
-                0% { transform: rotate(0deg); }
-                50% { transform: rotate(20deg); }
-                100% { transform: rotate(0deg); }
-              }
-            `}</style>
           </span>
         ) : (
           <span className="loader-letter"><RiRobot2Line /></span>
