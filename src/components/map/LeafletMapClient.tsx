@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
-import { MapContainer, TileLayer, Circle, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Circle, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import { useTheme } from "@/context/ThemeContext";
 
 // Estilos personalizados para ocultar elementos de Leaflet
 const customMapStyles = `
@@ -13,15 +14,6 @@ const customMapStyles = `
     display: none !important;
   }
 `;
-import { useTheme } from "@/context/ThemeContext";
-
-// Fix para los iconos de Leaflet
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-});
 
 // URLs de los estilos del mapa
 const MAP_STYLES = {
@@ -34,14 +26,6 @@ const MAP_STYLES = {
     attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
   }
 };
-
-// Fix para los iconos de Leaflet
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-});
 
 // Coordenadas iniciales
 const MAIN_LOCATION = { lat: 52.6131, lng: 7.4842 };
@@ -57,8 +41,6 @@ export interface LeafletMapClientProps {
 }
 
 const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite = false }) => {
-  console.log('LeafletMapClient mounted');
-
   const [input, setInput] = useState("");
   const [result, setResult] = useState<string>("");
   const [resultType, setResultType] = useState<"in" | "out" | "notfound" | "">("");
@@ -68,10 +50,19 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
   const isDarkMode = theme === 'dark';
   const mapRef = useRef<L.Map | null>(null);
 
-  // Log cuando cambia el tema
+  // Inicialización de Leaflet
   useEffect(() => {
-    console.log('Current theme:', theme);
-  }, [theme]);// Manejo de la búsqueda
+    if (typeof window !== 'undefined') {
+      delete (L.Icon.Default.prototype as any)._getIconUrl;
+      L.Icon.Default.mergeOptions({
+        iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+        iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+        shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+      });
+    }
+  }, []);
+
+  // Manejo de la búsqueda
   async function handleSearch(e: React.FormEvent) {
     e.preventDefault();
     if (!input.trim()) return;
@@ -128,26 +119,32 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
     overflow: "hidden",
   };
 
-  // Los estilos del mapa se usan desde las constantes LIGHT_STYLE y DARK_STYLE definidas arriba
+  if (typeof window === 'undefined') {
+    return (
+      <div className="w-full h-[400px] min-h-[400px] rounded-xl overflow-hidden border border-white dark:border-gray-800 mb-6 flex items-center justify-center bg-light-100 dark:bg-dark-200">
+        Lade Karte...
+      </div>
+    );
+  }
 
   return (
     <>
       <style>{customMapStyles}</style>
-      <div className="flex w-full mb-2">
-        <div
-          className={`text-base w-fit py-1 px-4 rounded-xl ${result ? "border" : ""
-            } ${resultType === "in"
-              ? "text-green-600 bg-green-600/40"
-              : resultType === "out"
-                ? "text-red-600 bg-red-600/40"
-                : resultType === "notfound"
-                  ? "text-block bg-gray-500/40"
-                  : ""
-            }`}
-          style={{ minWidth: "300px", textAlign: "left" }}
-        >
-          {result}
-        </div>
+      <div className="w-full mb-2">
+        {result && (
+          <div
+            className={`text-base w-full py-1 px-4 rounded-xl ${resultType === "in"
+                ? "text-green-600 bg-green-600/40 border-green-600/40"
+                : resultType === "out"
+                  ? "text-red-600 bg-red-600/40 border-red-600/40"
+                  : resultType === "notfound"
+                    ? "text-gray-600 bg-gray-500/40 border-gray-500/40"
+                    : ""
+              } border`}
+          >
+            {result}
+          </div>
+        )}
       </div>
       <div className="w-full h-[400px] min-h-[400px] rounded-xl overflow-hidden border border-white dark:border-gray-800 mb-6">
         <MapContainer
