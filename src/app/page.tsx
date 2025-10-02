@@ -24,6 +24,7 @@ import MotivationBanner from '@/components/MotivationBanner';
 import { useAIChat } from '@/context/AIChatContext';
 import AIChatMobile from '@/components/ai-assistant/AIChatMobile';
 import { FormPic } from '@/components/form/FormPic';
+import MapWithRadius from '@/components/map/MapWithRadius';
 
 
 export default function Home() {
@@ -43,6 +44,7 @@ export default function Home() {
       {/* <HeroIntro /> */}
       <HowItWorks />
       <TipInfo />
+      <MapWithRadius />
       <SubmitTipButton />
       <AwardProducts />
       <Benefits />

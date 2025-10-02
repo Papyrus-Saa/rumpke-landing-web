@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react'
+import { FiX } from 'react-icons/fi';
 import AIMessage from './AIMessage'
 import ClientMessage from './ClientMessage'
 import TypingLoader from '../loaders/TypingLoader'
@@ -47,16 +48,25 @@ export default function AIChatMobile() {
       setIsLoading(false)
     }
   }
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
+
   return (
     <>
       <div ref={containerRef} className="w-full h-full fixed top-0 right-0 z-20 flex flex-col bg-light-100 dark:bg-dark-300 shadow-ai-l dark:shadow-ai-d rounded-xl">
-        <header className='w-full bg-mint-600 dark:bg-mint-700 py-6 text-center text-white font-medium text-lg shadow-[0px_4px_12px_0px_rgba(0,0,0,0.10)] dark:shadow-[0px_4px_12px_0px_rgba(0,255,180,0.10)] relative'>
-          <span>Unser KI-Assistent hilft!</span>
+        <header
+          className="w-full py-2 text-center text-white font-medium text-lg shadow-[0px_4px_12px_0px_rgba(0,0,0,0.10)] dark:shadow-[0px_4px_12px_0px_rgba(0,255,180,0.10)]  relative animate-gradient-move"
+          style={{
+            background: 'linear-gradient(90deg, var(--color-mint-600), var(--color-mint-700), var(--color-mint-600))',
+            backgroundSize: '200% 200%',
+            transition: 'background 0.3s',
+          }}
+        >
           {messages.length > 0 && (
             <button
               onClick={clearConversation}
-              className="absolute right-12 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors duration-200 cursor-pointer"
+              className="absolute top-3 left-4 bg-white/20 hover:bg-white/40 rounded-full p-2 transition-colors duration-200 cursor-pointer shadow-md"
               title="Unterhaltung löschen"
+              style={{ zIndex: 2 }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,10 +84,52 @@ export default function AIChatMobile() {
               </svg>
             </button>
           )}
+          <div className="flex flex-col items-center justify-center relative">
+            <span className="inline-block animate-ai-icon mb-2">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="8" width="16" height="16" rx="4" fill="#fff" fillOpacity="0.12" stroke="#fff" strokeWidth="2" />
+                <rect x="13" y="13" width="6" height="6" rx="2" fill="#fff" fillOpacity="0.5" />
+                <rect x="10" y="10" width="12" height="12" rx="3" stroke="#fff" strokeWidth="1" fill="none" />
+                <line x1="16" y1="2" x2="16" y2="8" stroke="#fff" strokeWidth="2" />
+                <line x1="16" y1="24" x2="16" y2="30" stroke="#fff" strokeWidth="2" />
+                <line x1="2" y1="16" x2="8" y2="16" stroke="#fff" strokeWidth="2" />
+                <line x1="24" y1="16" x2="30" y2="16" stroke="#fff" strokeWidth="2" />
+                <circle cx="16" cy="16" r="1.5" fill="#fff" />
+              </svg>
+            </span>
+            <span className="drop-shadow-lg mx-auto mt-1 text-base">Dein Immobilien-Assistent – Tipp teilen!</span>
+          </div>
+          <style>{`
+            @keyframes gradient-move {
+              0% { background-position: 0% 50%; }
+              50% { background-position: 100% 50%; }
+              100% { background-position: 0% 50%; }
+            }
+            .animate-gradient-move {
+              animation: gradient-move 3s ease-in-out infinite;
+            }
+            @keyframes ai-icon {
+              0% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 0 #fff); }
+              20% { transform: scale(1.1) rotate(8deg); filter: drop-shadow(0 0 6px #fff); }
+              50% { transform: scale(1.15) rotate(-8deg); filter: drop-shadow(0 0 12px #fff); }
+              80% { transform: scale(1.1) rotate(8deg); filter: drop-shadow(0 0 6px #fff); }
+              100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 0 #fff); }
+            }
+            .animate-ai-icon {
+              animation: ai-icon 2.2s cubic-bezier(.4,0,.2,1) infinite;
+            }
+          `}</style>
         </header>
         <div ref={listRef} className="flex-1 overflow-y-auto overscroll-contain px-4 pt-4 pb-3 xl:px-40  xl:pt-20">
-          <div className='absolute top-1 right-1'>
-            <AIButton visible={visible} toggleChat={toggleChat} />
+          <div className='absolute top-2 right-2'>
+            <button
+              onClick={toggleChat}
+              title="Close chat"
+              className="w-6 h-6 flex items-center justify-center rounded-full border-2 border-mint-700 shadow-md bg-gradient-to-tr from-mint-600 via-mint-400 to-mint-700 text-white hover:scale-110 hover:shadow-xl transition-all duration-200"
+              style={{ boxShadow: '0 2px 8px rgba(0,255,180,0.18)' }}
+            >
+              <FiX size={16} className="drop-shadow" />
+            </button>
           </div>
           <div className="grid grid-cols-12 gap-y-2">
             <AIMessage text="Hi, ich bin hier um dir zu helfen &#128519;" />
@@ -93,6 +145,40 @@ export default function AIChatMobile() {
             )}
           </div>
         </div>
+
+        {/* Legal disclaimer button for mobile */}
+        <div className="w-full px-4 pb-1 bg-gray-00">
+          <button
+            className="block text-xs text-center text-black/60 dark:text-white/60 font-normal underline hover:text-mint-600 transition-colors cursor-pointer"
+            style={{ width: '100%' }}
+            onClick={() => setShowDisclaimer(true)}
+          >
+            Rechtlicher Hinweis: Die Antworten dieses Chatbots dienen ausschließlich allgemeinen Informationszwecken und stellen keine Rechtsberatung dar. Die Eingabe personenbezogener Daten ist nicht erforderlich. Bitte lesen Sie die Hinweise zur Nutzung.
+          </button>
+        </div>
+
+        {/* Modal Disclaimer for mobile */}
+        {showDisclaimer && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+            <div className="bg-light-100 dark:bg-dark-300 rounded-xl shadow-lg max-w-lg w-full mx-4 p-6 relative">
+              <h2 className="text-lg font-semibold mb-2 text-mint-600">Hinweis zur Nutzung des Chatbots / Rechtlicher Disclaimer</h2>
+              <div className="text-sm text-black dark:text-white/80 mb-4 space-y-2">
+                <p>Die Antworten dieses Chatbots dienen ausschließlich allgemeinen Informationszwecken und basieren auf einem vorab definierten Wissenspool. Sie berücksichtigen nicht den konkreten Einzelfall und ersetzen keine individuelle Beratung durch einen qualifizierten Experten.</p>
+                <p>Die vom Chatbot bereitgestellten Informationen stellen keine Rechtsberatung im Sinne des § 2 Abs. 1 RDG dar. Für verbindliche Auskünfte oder rechtliche Bewertungen wenden Sie sich bitte an eine entsprechend befugte Stelle.</p>
+                <p>Die rechtlichen Rahmenbedingungen können sich ändern und sind stets vom jeweiligen Einzelfall abhängig. Es wird empfohlen, bei Unsicherheiten professionelle Beratung in Anspruch zu nehmen.</p>
+                <p>Dieser Chatbot wird von einer Künstlichen Intelligenz (KI) betrieben. Die Eingabe personenbezogener Daten ist nicht erforderlich. Weitere Hinweise zur Verarbeitung etwaiger personenbezogener Daten finden Sie in unserer Datenschutzerklärung.</p>
+              </div>
+              <button
+                className="absolute top-2 right-2 text-mint-600 hover:text-mint-700 text-base font-bold px-2 py-1 rounded transition-colors"
+                onClick={() => setShowDisclaimer(false)}
+                aria-label="Schließen"
+              >
+                Schließen
+              </button>
+            </div>
+          </div>
+        )}
+
         <div className="border-t border-black/10 dark:border-white/10 bg-light-200/90 dark:bg-dark-200/90 supports-[backdrop-filter]:backdrop-blur-md px-4 py-3 pb-[env(safe-area-inset-bottom)]">
           <TextMessageBox onSend={handlePost} />
         </div>

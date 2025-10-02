@@ -34,7 +34,7 @@ const TipInfo = ({ rules = defaultRules }: TipInfoProps) => (
           </li>
         ))}
       </ul>
-      <div className="mt-6 text-center text-sm text-mint-600  font-semibold">
+      <div className="mt-6 text-center text-sm text-red-600  font-semibold">
         Bitte beachte diese Hinweise, damit dein Tipp gültig ist!
       </div>
     </section>
