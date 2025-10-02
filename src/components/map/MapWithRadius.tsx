@@ -44,20 +44,19 @@ const MapWithRadius: React.FC = () => {
   const [isDark, setIsDark] = useState(false);
   const [is3D, setIs3D] = useState(false);
 
-  // Detectar modo oscuro
+
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const mq = window.matchMedia("(prefers-color-scheme: dark)");
-      setIsDark(mq.matches);
-      const handler = (e: MediaQueryListEvent) => setIsDark(e.matches);
-      mq.addEventListener("change", handler);
-      return () => mq.removeEventListener("change", handler);
-    }
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    setIsDark(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsDark(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
   }, []);
 
 
   useEffect(() => {
-    if (!mapContainer.current) return;
+    if (typeof window === "undefined" || !mapContainer.current) return;
     if (mapRef.current) {
       mapRef.current.remove();
       mapRef.current = null;
@@ -74,12 +73,10 @@ const MapWithRadius: React.FC = () => {
       attributionControl: false,
     });
 
-
     new maplibregl.Marker({ color: "#e60000" })
       .setLngLat([MAIN_LOCATION.lng, MAIN_LOCATION.lat])
       .setPopup(new maplibregl.Popup().setText("Hauptstandort"))
       .addTo(mapRef.current);
-
 
     mapRef.current.on("load", () => {
       mapRef.current!.addSource("radius", {
@@ -121,7 +118,6 @@ const MapWithRadius: React.FC = () => {
         mapRef.current && mapRef.current.resize();
       }, 100);
     });
-
 
     const handleResize = () => {
       mapRef.current && mapRef.current.resize();
