@@ -4,8 +4,11 @@ import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import ProfessionalGlobe from "../ProfessionalGlobe";
 
+// Importamos la interfaz de props
+import type { LeafletMapClientProps } from "@/components/map/LeafletMapClient";
+
 // Cargamos el mapa dinámicamente solo en el cliente
-const LeafletMapClient = dynamic(() => import("@/components/map/LeafletMapClient"), {
+const LeafletMapClient = dynamic<LeafletMapClientProps>(() => import("@/components/map/LeafletMapClient"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-[400px] bg-gray-100 dark:bg-gray-800 rounded-xl animate-pulse" />
@@ -30,7 +33,10 @@ const LeafletMap: React.FC = () => {
           {isSatellite ? "Straßenansicht" : "Satellitenansicht"}
         </button>
       </div>
-      <LeafletMapClient isSatellite={isSatellite} is3D={false} />
+      <LeafletMapClient
+        isSatellite={isSatellite}
+        is3D={false}
+      />
       <div className="mb-4 text-sm text-gray-700 dark:text-gray-200">
         <div className="flex items-center justify-between w-full">
           <div className="flex flex-col flex-1">
