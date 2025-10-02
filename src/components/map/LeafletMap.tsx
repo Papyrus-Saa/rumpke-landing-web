@@ -1,16 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import dynamic from "next/dynamic";
 import ProfessionalGlobe from "../ProfessionalGlobe";
-
-// Cargamos el mapa dinámicamente solo en el cliente
-const LeafletMapClient = dynamic(() => import("@/components/map/LeafletMapClient"), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-[400px] bg-gray-100 dark:bg-gray-800 rounded-xl animate-pulse" />
-  ),
-});
+import MapWrapper from "./MapWrapper";
 
 const LeafletMap: React.FC = () => {
   const [isSatellite, setIsSatellite] = useState(false);
@@ -30,12 +22,10 @@ const LeafletMap: React.FC = () => {
           {isSatellite ? "Straßenansicht" : "Satellitenansicht"}
         </button>
       </div>
-      {typeof window !== 'undefined' && (
-        <LeafletMapClient
-          isSatellite={isSatellite}
-          is3D={false}
-        />
-      )}
+      <MapWrapper
+        isSatellite={isSatellite}
+        is3D={false}
+      />
       <div className="mb-4 text-sm text-gray-700 dark:text-gray-200">
         <div className="flex items-center justify-between w-full">
           <div className="flex flex-col flex-1">
