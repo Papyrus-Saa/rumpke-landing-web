@@ -33,6 +33,11 @@ async function geocodeAddress(address: string): Promise<{ lat: number; lng: numb
 }
 
 const MapWithRadius: React.FC = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<Map | null>(null);
   const [input, setInput] = useState("");
@@ -41,31 +46,22 @@ const MapWithRadius: React.FC = () => {
   const [lastAddress, setLastAddress] = useState<string>("");
   const [resultType, setResultType] = useState<"in" | "out" | "notfound" | "">("");
   const [loading, setLoading] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const [isDark] = useState(true);
   const [is3D, setIs3D] = useState(false);
 
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
-    setIsDark(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsDark(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
+
 
 
   useEffect(() => {
-    if (typeof window === "undefined" || !mapContainer.current) return;
+    if (!isClient || !mapContainer.current) return;
     if (mapRef.current) {
       mapRef.current.remove();
       mapRef.current = null;
     }
     mapRef.current = new maplibregl.Map({
       container: mapContainer.current,
-      style: isDark || is3D
-        ? "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
-        : "https://demotiles.maplibre.org/style.json",
+      style: "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
       center: [MAIN_LOCATION.lng, MAIN_LOCATION.lat],
       zoom: is3D ? 10 : 8,
       pitch: is3D ? 60 : 0,
@@ -126,7 +122,7 @@ const MapWithRadius: React.FC = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [isDark, is3D]);
+  }, [isClient, is3D]);
 
 
   useEffect(() => {
@@ -208,11 +204,13 @@ const MapWithRadius: React.FC = () => {
           {is3D ? "Normale Ansicht" : "3D Nachtansicht"}
         </button>
       </div>
-      <div
-        ref={mapContainer}
-        className="w-full h-[400px] min-h-[400px] rounded-xl overflow-hidden border border-white dark:border-gray-800 mb-6"
-        style={{ background: isDark || is3D ? "#222" : "#eaf6ff", position: "relative" }}
-      />
+      {isClient && (
+        <div
+          ref={mapContainer}
+          className="w-full h-[400px] min-h-[400px] rounded-xl overflow-hidden border border-white dark:border-gray-800 mb-6"
+          style={{ background: "#222", position: "relative" }}
+        />
+      )}
       <div className="mb-4 text-sm text-gray-700 dark:text-gray-200">
         <div className="flex items-center justify-between w-full">
           <div className="flex flex-col flex-1">
