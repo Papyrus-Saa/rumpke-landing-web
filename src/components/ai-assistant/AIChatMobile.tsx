@@ -52,9 +52,9 @@ export default function AIChatMobile() {
 
   return (
     <>
-      <div ref={containerRef} className="w-full h-full fixed top-0 right-0 z-[600] flex flex-col bg-light-100 dark:bg-dark-300 shadow-ai-l dark:shadow-ai-d rounded-xl">
+      <div ref={containerRef} className="w-full h-[100dvh] fixed top-0 right-0 z-[600] flex flex-col bg-light-100 dark:bg-dark-300 shadow-ai-l dark:shadow-ai-d">
         <header
-          className="w-full py-2 text-center text-white font-medium text-lg shadow-[0px_4px_12px_0px_rgba(0,0,0,0.10)] dark:shadow-[0px_4px_12px_0px_rgba(0,255,180,0.10)]  relative animate-gradient-move"
+          className="w-full py-2 text-center text-white font-medium text-lg shadow-[0px_4px_12px_0px_rgba(0,0,0,0.10)] dark:shadow-[0px_4px_12px_0px_rgba(0,255,180,0.10)] sticky top-0 z-20 animate-gradient-move"
           style={{
             background: 'linear-gradient(90deg, var(--color-mint-600), var(--color-mint-700), var(--color-mint-600))',
             backgroundSize: '200% 200%',
@@ -85,6 +85,10 @@ export default function AIChatMobile() {
             </button>
           )}
           <div className="flex flex-col items-center justify-center relative">
+            <div className="flex items-center justify-between w-full absolute top-0">
+              <div className="flex-1"></div>
+              <span className='bg-gradient-orange-yellow px-4 rounded-2xl text-white text-sm'>Beta</span>
+            </div>
             <span className="inline-block animate-ai-icon mb-2">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="8" y="8" width="16" height="16" rx="4" fill="#fff" fillOpacity="0.12" stroke="#fff" strokeWidth="2" />
@@ -120,8 +124,8 @@ export default function AIChatMobile() {
             }
           `}</style>
         </header>
-        <div ref={listRef} className="flex-1 overflow-y-auto overscroll-contain px-4 pt-4 pb-3 xl:px-40  xl:pt-20">
-          <div className='absolute top-2 right-2'>
+        <div ref={listRef} className="flex-1 overflow-y-auto overscroll-contain px-4 pt-4 pb-24 xl:px-40 xl:pt-20">
+          <div className='absolute top-14 right-0 z-30'>
             <button
               onClick={toggleChat}
               title="Close chat"
@@ -146,16 +150,6 @@ export default function AIChatMobile() {
           </div>
         </div>
 
-        <div className="w-full px-4 pb-1 bg-gray-00">
-          <button
-            className="block text-xs text-center text-black/60 dark:text-white/60 font-normal underline hover:text-mint-600 transition-colors cursor-pointer"
-            style={{ width: '100%' }}
-            onClick={() => setShowDisclaimer(true)}
-          >
-            Rechtlicher Hinweis: Die Antworten dieses Chatbots dienen ausschließlich allgemeinen Informationszwecken und stellen keine Rechtsberatung dar. Die Eingabe personenbezogener Daten ist nicht erforderlich. Bitte lesen Sie die Hinweise zur Nutzung.
-          </button>
-        </div>
-
         {showDisclaimer && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
             <div className="bg-light-100 dark:bg-dark-300 rounded-xl shadow-lg max-w-lg w-full mx-4 p-6 relative">
@@ -177,11 +171,21 @@ export default function AIChatMobile() {
           </div>
         )}
 
-        <div className="border-t border-black/10 dark:border-white/10 bg-light-200/90 dark:bg-dark-200/90 supports-[backdrop-filter]:backdrop-blur-md px-4 py-3 pb-[env(safe-area-inset-bottom)]">
-          <TextMessageBox onSend={handlePost} />
-        </div>
-        <div className='flex justify-end bg-light-200 dark:bg-dark-200'>
-          <span className='bg-gradient-orange-yellow mr-2 px-4 mb-1 rounded-2xl text-white '>Beta</span>
+        <div className="w-full fixed bottom-0 left-0 right-0">
+          <div className="bg-light-200/90 dark:bg-dark-200/90 supports-[backdrop-filter]:backdrop-blur-md">
+            <div className="px-4 pb-2">
+              <button
+                className="block text-xs text-center text-black/60 dark:text-white/60 font-normal underline hover:text-mint-600 transition-colors cursor-pointer"
+                style={{ width: '100%' }}
+                onClick={() => setShowDisclaimer(true)}
+              >
+                Rechtlicher Hinweis: Die Antworten dieses Chatbots dienen ausschließlich allgemeinen Informationszwecken und stellen keine Rechtsberatung dar. Die Eingabe personenbezogener Daten ist nicht erforderlich. Bitte lesen Sie die Hinweise zur Nutzung.
+              </button>
+            </div>
+            <div className="border-t border-black/10 dark:border-white/10 px-4 py-3 pb-[env(safe-area-inset-bottom)]">
+              <TextMessageBox onSend={handlePost} />
+            </div>
+          </div>
         </div>
       </div>
     </>
