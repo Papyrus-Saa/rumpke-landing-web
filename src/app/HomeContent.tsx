@@ -56,11 +56,11 @@ export default function HomeContent() {
       <TipForm />
       <MoreInfo />
       <MotivationBanner />
-      <div className="hidden xl:block">
+      <div className="hidden md:block">
         {!visible && <AIButton visible={false} toggleChat={toggleChat} />}
         {visible && <AIChat />}
       </div>
-      <div className="xl:hidden">
+      <div className="md:hidden">
         {!visible && <AIButton visible={false} toggleChat={toggleChat} />}
         {visible && <AIChatMobile />}
       </div>
