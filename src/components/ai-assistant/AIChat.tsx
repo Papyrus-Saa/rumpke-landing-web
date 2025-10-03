@@ -75,7 +75,7 @@ export default function AIChat() {
       <div
         ref={containerRef}
         className="
-      w-[400px] h-[600px] fixed md:right-10 bottom-0 2xl:right-56 z-30
+      w-[400px] h-[600px] fixed md:right-10 bottom-0 2xl:right-56 z-[600]
       flex flex-col
       bg-light-100 dark:bg-dark-200 duration-100
       shadow-ai-l dark:shadow-ai-d
