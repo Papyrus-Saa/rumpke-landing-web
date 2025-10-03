@@ -180,8 +180,8 @@ export default function AIChatMobile() {
         <div className="border-t border-black/10 dark:border-white/10 bg-light-200/90 dark:bg-dark-200/90 supports-[backdrop-filter]:backdrop-blur-md px-4 py-3 pb-[env(safe-area-inset-bottom)]">
           <TextMessageBox onSend={handlePost} />
         </div>
-        <div className='flex justify-end'>
-          <span className=' bg-gradient-orange-yellow mr-2 px-4 mb-1 rounded-2xl'>Beta</span>
+        <div className='flex justify-end bg-light-200 dark:bg-dark-200'>
+          <span className='bg-gradient-orange-yellow mr-2 px-4 mb-1 rounded-2xl text-white '>Beta</span>
         </div>
       </div>
     </>

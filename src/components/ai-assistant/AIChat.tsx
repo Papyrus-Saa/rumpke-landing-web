@@ -224,7 +224,7 @@ export default function AIChat() {
         >
           <TextMessageBox onSend={handlePost} />
         </div>
-        <div className='flex justify-end'>
+        <div className='flex justify-end bg-red-600 w-full '>
           <span className=' bg-gradient-orange-yellow mr-2 px-4 mb-1 rounded-2xl text-white'>Beta</span>
         </div>
       </div>
