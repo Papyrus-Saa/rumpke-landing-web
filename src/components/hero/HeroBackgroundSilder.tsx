@@ -84,7 +84,7 @@ export default function HeroBackgroundSlider() {
   }
 
   return (
-    <div className="transition-colors duration-1000 dark:bg-cyan-800/30 relative 2xl:p-1">
+    <div className="transition-colors duration-100  relative 2xl:p-1">
       <div className="embla h-[50vh] lg:h-[70vh] 2xl:rounded-xl overflow-hidden" ref={emblaRef}>
         <div className="embla__container flex">
           {imgs.map((item, idx) => {

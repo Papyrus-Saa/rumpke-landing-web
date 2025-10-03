@@ -10,14 +10,19 @@
 :root {
   --gradient-orange-yellow: linear-gradient(45deg, #ea580c 0%, #ea580c 50%, #facc15 100%);
   --gradient-purple-fuchsia: linear-gradient(90deg, #6d28d9 0%, #a21caf 50%, #f0abfc 100%);
+  --gradient-mint-green: linear-gradient(90deg, #005A73 0%, #10b981 50%, #b3dbe6 100%);
 }
 .dark {
   --gradient-orange-yellow: linear-gradient(45deg, #c2410c 0%, #dc2626 50%, #eab308 100%);
   --gradient-purple-fuchsia: linear-gradient(90deg, #a21caf 0%, #6d28d9 50%, #f0abfc 100%);
+  --gradient-mint-green: linear-gradient(90deg, #00222b 0%, #072c34 50%, #005A73 100%);
 }
 
 .bg-gradient-orange-yellow {
   background: var(--gradient-orange-yellow)
+}
+.bg-gradient-mint-green {
+  background: var(--gradient-mint-green)
 }
 .text-gradient-orange-yellow {
   background: var(--gradient-orange-yellow);

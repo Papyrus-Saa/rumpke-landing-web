@@ -13,8 +13,8 @@ const defaultRules = [
 ];
 
 const TipInfo = ({ rules = defaultRules }: TipInfoProps) => (
-  <div className="w-[90%] mx-auto flex justify-center items-center py-8 lg:px-2">
-    <section className="relative w-full max-w-xl mx-auto rounded bg-light-100 dark:bg-dark-200 p-4 sm:p-6 border-4 border-double border-light-200 dark:border-dark-100 duration-100 shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)]">
+  <div className="w-[90%] mx-auto flex justify-center items-center py-8 lg:px-2 mb-6">
+    <section className="relative w-full max-w-xl mx-auto rounded bg-light-100 dark:bg-dark-200 p-4 sm:p-6 border-4 border-double border-light-200 dark:border-dark-100 duration-100 shadow dark:shadow-subtle-d">
       <div className="absolute -top-6 left-1/2 -translate-x-1/2 flex items-center justify-center">
         <span className="flex justify-center items-center dark:bg-dark-300 bg-light-100 rounded-full p-1 border-3 border-mint-600  duration-100">
           <MdWarningAmber className="text-mint-600  text-xl" aria-label="Warnung" />

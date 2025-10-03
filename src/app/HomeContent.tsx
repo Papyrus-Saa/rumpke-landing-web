@@ -22,6 +22,8 @@ import { useAIChat } from '@/context/AIChatContext';
 import AIChatMobile from '@/components/ai-assistant/AIChatMobile';
 import { FormPic } from '@/components/form/FormPic';
 import LeafletMap from '@/components/map/LeafletMap';
+import AwardsSection from '@/components/awards/AwardsSection';
+
 
 export default function HomeContent() {
   const [showFormPic, setShowFormPic] = useState(false);
@@ -30,9 +32,8 @@ export default function HomeContent() {
   return (
     <div className="2xl:w-full mx-auto duration-100 overflow-x-hidden">
       <HeroBackgroundSlider />
-      <SocialMediaComponent className='lg:hidden' />
+      <AwardsSection/>
       {showFormPic && <FormPic />}
-      <SubmitTipButton />
       <HowItWorks />
       <TipInfo />
       <LeafletMap />
