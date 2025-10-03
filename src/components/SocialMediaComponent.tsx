@@ -38,7 +38,7 @@ const buttonVariants = {
 
 const SocialMediaComponent = ({ className }: { className?: string }) => (
   <div
-    className={`flex justify-center items-center gap-6 py-6 ${className ?? 'bg-white dark:bg-gray-900 sm:justify-end lg:px-16 xl:px-20 2xl:px-70'}`}
+    className={`flex justify-center items-center gap-6 py-4 ${className ?? ''}`}
     data-testid="social-media-container"
   >
     {SOCIALS.map(({ href, icon, ariaLabel, bg, hover }, idx) => (

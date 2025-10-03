@@ -6,7 +6,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useTheme } from "@/context/ThemeContext";
 
-// Estilos personalizados para ocultar elementos de Leaflet
+
 const customMapStyles = `
   .leaflet-control-container .leaflet-bottom.leaflet-right,
   .leaflet-control-container .leaflet-top.leaflet-right,
@@ -15,7 +15,7 @@ const customMapStyles = `
   }
 `;
 
-// URLs de los estilos del mapa
+
 const MAP_STYLES = {
   street: {
     light: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -27,14 +27,14 @@ const MAP_STYLES = {
   }
 };
 
-// Coordenadas iniciales
+
 const MAIN_LOCATION = { lat: 52.6131, lng: 7.4842 };
 const RADIUS_KM = 100;
 
-// Función para convertir km a metros
+
 const kmToMeters = (km: number) => km * 1000;
 
-// Props interface
+
 export interface LeafletMapClientProps {
   is3D: boolean;
   isSatellite?: boolean;
@@ -50,7 +50,7 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
   const isDarkMode = theme === 'dark';
   const mapRef = useRef<L.Map | null>(null);
 
-  // Inicialización de Leaflet
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -62,7 +62,7 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
     }
   }, []);
 
-  // Manejo de la búsqueda
+
   async function handleSearch(e: React.FormEvent) {
     e.preventDefault();
     if (!input.trim()) return;
@@ -82,7 +82,7 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
       const { lat, lon, display_name } = data[0];
       const searchLatLng = new L.LatLng(parseFloat(lat), parseFloat(lon));
 
-      // Calcular distancia
+
       const mainLatLng = new L.LatLng(MAIN_LOCATION.lat, MAIN_LOCATION.lng);
       const distanceInKm = mainLatLng.distanceTo(searchLatLng) / 1000;
 
@@ -104,14 +104,14 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
     setLoading(false);
   }
 
-  // Estilo para el círculo basado en el tema
+
   const circleOptions = {
     color: isDarkMode ? '#005A73' : '#9c00006c',
     fillColor: isDarkMode ? '#00222b' : '#00e6c3',
     fillOpacity: isDarkMode ? 0.3 : 0.15,
   };
 
-  // Estilos y opciones del mapa
+
   const mapStyle = {
     height: "400px",
     width: "100%",
@@ -121,7 +121,7 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
 
   if (typeof window === 'undefined') {
     return (
-      <div className="w-full h-[400px] min-h-[400px] rounded-xl overflow-hidden border border-white dark:border-gray-800 mb-6 flex items-center justify-center bg-light-100 dark:bg-dark-200">
+      <div className="w-full h-[400px] min-h-[400px] rounded-xl overflow-hidden border border-white dark:border-gray-800 mb-6 flex items-center justify-center bg-white dark:bg-dark-200">
         Lade Karte...
       </div>
     );
@@ -134,22 +134,39 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
         {result && (
           <div
             className={`text-base w-full py-1 px-4 rounded-xl ${resultType === "in"
-                ? "text-green-600 bg-green-600/40 border-green-600/40"
-                : resultType === "out"
-                  ? "text-red-600 bg-red-600/40 border-red-600/40"
-                  : resultType === "notfound"
-                    ? "text-gray-600 bg-gray-500/40 border-gray-500/40"
-                    : ""
+              ? "text-green-600 bg-green-600/40 border-green-600/40"
+              : resultType === "out"
+                ? "text-red-600 bg-red-600/40 border-red-600/40"
+                : resultType === "notfound"
+                  ? "text-gray-600 bg-gray-500/40 border-gray-500/40"
+                  : ""
               } border`}
           >
             {result}
           </div>
         )}
       </div>
+      <form className="mb-4 flex gap-2" onSubmit={handleSearch}>
+        <input
+          type="text"
+          className={`border border-light-300 dark:border-gray-700 rounded px-3 py-2 w-full transition-colors duration-100`}
+          placeholder="Postleitzahl oder Adresse eingeben..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button
+          type="submit"
+          className="duration-200 bg-mint-600 hover:bg-mint-700 text-white px-4 py-2 rounded dark:hover:bg-mint-600 dark:bg-mint-700 cursor-pointer"
+          disabled={loading}
+        >
+          {loading ? "Prüfe..." : "Prüfen"}
+        </button>
+      </form>
+
       <div className="w-full h-[400px] min-h-[400px] rounded-xl overflow-hidden border border-white dark:border-gray-800 mb-6">
         <MapContainer
           center={[MAIN_LOCATION.lat, MAIN_LOCATION.lng]}
-          zoom={8}
+          zoom={7}
           style={mapStyle}
           ref={mapRef}
           attributionControl={false}
@@ -175,22 +192,6 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
           )}
         </MapContainer>
       </div>
-      <form className="mb-4 flex gap-2" onSubmit={handleSearch}>
-        <input
-          type="text"
-          className={`border border-light-300 dark:border-gray-700 rounded px-3 py-2 w-full transition-colors duration-100`}
-          placeholder="Postleitzahl oder Adresse eingeben..."
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <button
-          type="submit"
-          className="duration-200 bg-mint-600 hover:bg-mint-700 text-white px-4 py-2 rounded dark:hover:bg-mint-600 dark:bg-mint-700 cursor-pointer"
-          disabled={loading}
-        >
-          {loading ? "Prüfe..." : "Prüfen"}
-        </button>
-      </form>
     </>
   );
 };

@@ -4,7 +4,7 @@ import { titleFonts } from "@/config/fonts";
 
 const Benefits = () => {
   return (
-    <div className="w-full sm:w-[96%] lg:w-[90%] xl:w-[80%] mx-auto transition-all duration-100 mb-6">
+    <div id="benefits" className="w-full sm:w-[96%] lg:w-[90%] xl:w-[80%] mx-auto transition-all duration-100 mb-6 scroll-mt-40 ">
       <section className="w-full max-w-7xl mx-auto px-4 py-8 transition-all duration-100">
         <div className="text-center mb-8 transition-all duration-100 ">
           <span className="inline-block px-4 py-1 bg-mint-600 dark:bg-mint-700 text-white text-xs font-bold tracking-widest uppercase shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] transition-all duration-100 mb-6">
@@ -18,7 +18,7 @@ const Benefits = () => {
           </p>
         </div>
 
-        <div className="w-full mt-10 mb-12 rounded-lg">
+        <div className="w-full mt-10 mb-12 rounded-lg shadow dark:shadow-subtle-d">
           <div className="hidden sm:block overflow-x-auto">
             <div className="rounded-lg overflow-hidden border-gradient-t-2 border-gradient-b-2 border-gradient-r-4 border-gradient-l-2 border-r border-amber-500 ">
               <table className="duration-100 min-w-full w-full bg-light-100 dark:bg-dark-200 ">

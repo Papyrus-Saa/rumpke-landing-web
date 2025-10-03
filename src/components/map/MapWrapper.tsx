@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { LeafletMapClientProps } from './LeafletMapClient';
 import dynamic from 'next/dynamic';
 
-// Importamos el mapa de forma dinámica y sin SSR
+
 const DynamicMap = dynamic(() => import('./LeafletMapClient'), {
   ssr: false,
   loading: () => (
