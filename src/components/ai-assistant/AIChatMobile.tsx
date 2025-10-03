@@ -7,7 +7,7 @@ import TypingLoader from '../loaders/TypingLoader'
 import TextMessageBox from '../chat-input-boxes/TextMessageBox'
 import { rumpkeai_assistant_use_case } from './rumpkeai-assistant-use-case'
 import { useAIChat } from '@/context/AIChatContext'
-import AIButton from './AIButton'
+
 
 export default function AIChatMobile() {
   const { visible, toggleChat, messages, setMessages, clearConversation } = useAIChat();
@@ -52,7 +52,7 @@ export default function AIChatMobile() {
 
   return (
     <>
-      <div ref={containerRef} className="w-full h-full fixed top-0 right-0 z-20 flex flex-col bg-light-100 dark:bg-dark-300 shadow-ai-l dark:shadow-ai-d rounded-xl">
+      <div ref={containerRef} className="w-full h-full fixed top-0 right-0 z-[600] flex flex-col bg-light-100 dark:bg-dark-300 shadow-ai-l dark:shadow-ai-d rounded-xl">
         <header
           className="w-full py-2 text-center text-white font-medium text-lg shadow-[0px_4px_12px_0px_rgba(0,0,0,0.10)] dark:shadow-[0px_4px_12px_0px_rgba(0,255,180,0.10)]  relative animate-gradient-move"
           style={{
@@ -146,7 +146,6 @@ export default function AIChatMobile() {
           </div>
         </div>
 
-        {/* Legal disclaimer button for mobile */}
         <div className="w-full px-4 pb-1 bg-gray-00">
           <button
             className="block text-xs text-center text-black/60 dark:text-white/60 font-normal underline hover:text-mint-600 transition-colors cursor-pointer"
@@ -157,7 +156,6 @@ export default function AIChatMobile() {
           </button>
         </div>
 
-        {/* Modal Disclaimer for mobile */}
         {showDisclaimer && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
             <div className="bg-light-100 dark:bg-dark-300 rounded-xl shadow-lg max-w-lg w-full mx-4 p-6 relative">
@@ -181,6 +179,9 @@ export default function AIChatMobile() {
 
         <div className="border-t border-black/10 dark:border-white/10 bg-light-200/90 dark:bg-dark-200/90 supports-[backdrop-filter]:backdrop-blur-md px-4 py-3 pb-[env(safe-area-inset-bottom)]">
           <TextMessageBox onSend={handlePost} />
+        </div>
+        <div className='flex justify-end'>
+          <span className=' bg-gradient-orange-yellow mr-2 px-4 mb-1 rounded-2xl'>Beta</span>
         </div>
       </div>
     </>
