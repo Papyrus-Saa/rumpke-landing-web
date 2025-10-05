@@ -27,7 +27,7 @@ const TextMessageBox = ({ onSend }: TextMessageBoxProps) => {
     <form
 
       onSubmit={handleSendMessage}
-      className="flex flex-row items-center h-12 rounded-xl duration-100 dark:bg-dark-100 bg-light-200  w-full px-1 m-2">
+      className="flex flex-row items-center h-12 rounded-xl duration-100 dark:bg-dark-100 bg-light-200  w-full m-1">
 
       <div className="flex-grow ">
 
@@ -38,7 +38,7 @@ const TextMessageBox = ({ onSend }: TextMessageBoxProps) => {
             autoFocus
             name="message"
             className="flex w-full border rounded-xl dark:text-light-100 text-dark-300 focus:outline-none focus:ring-2 focus:ring-mint-600 focus:border-transparent pl-4 pr-12 h-10"
-            placeholder="Nachricht/Frage"
+            placeholder="Stell deine Frage..."
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
@@ -48,7 +48,7 @@ const TextMessageBox = ({ onSend }: TextMessageBoxProps) => {
       </div>
 
       <div>
-        <button type="submit" className="ml-2 bg-mint-600 hover:bg-mint-800 text-white font-bold py-2 px-4 rounded-xl cursor-pointer">
+        <button type="submit" className="m-1 bg-mint-600 hover:bg-mint-800 text-white font-bold py-2 px-2 rounded-xl cursor-pointer">
           <FaArrowRight />
         </button>
       </div>

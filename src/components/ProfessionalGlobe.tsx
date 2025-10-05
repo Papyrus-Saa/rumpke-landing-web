@@ -36,8 +36,8 @@ const ProfessionalGlobe: React.FC<ProfessionalGlobeProps> = ({ width = 64, heigh
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
         backgroundColor="rgba(0,0,0,0)"
         showAtmosphere={true}
-        atmosphereColor="#3399ff"
-        atmosphereAltitude={0.15}
+        atmosphereColor="#000000"
+        atmosphereAltitude={0.5}
       />
       <span style={{ marginTop: 2, fontSize: 10, color: '#8b8b8b', opacity: 0.7, fontWeight: 400 }}>
         {loadTime && `Zeit: ${loadTime}`}

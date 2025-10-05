@@ -4,7 +4,7 @@ import { titleFonts } from "@/config/fonts";
 
 const Benefits = () => {
   return (
-    <div id="benefits" className="w-full sm:w-[96%] lg:w-[90%] xl:w-[80%] mx-auto transition-all duration-100 mb-6 scroll-mt-40 ">
+    <div id="benefits" className="w-full sm:w-[96%] lg:w-[90%] xl:w-[80%] mx-auto transition-all duration-100 mb-6 ">
       <section className="w-full max-w-7xl mx-auto px-4 py-8 transition-all duration-100">
         <div className="text-center mb-8 transition-all duration-100 ">
           <span className="inline-block px-4 py-1 bg-mint-600 dark:bg-mint-700 text-white text-xs font-bold tracking-widest uppercase shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] transition-all duration-100 mb-6">
@@ -33,8 +33,13 @@ const Benefits = () => {
                 </thead>
                 <tbody>
                   {BENEFITS.map((b, i) => {
-                    const pr = b.value * 0.06;
-                    const gewinn = pr * 0.07;
+                    let gewinn;
+                    if (b.value <= 350000) {
+                      gewinn = 1550; // Valor fijo para el primer nivel
+                    } else {
+                      const pr = b.value * 0.06;
+                      gewinn = pr * 0.09; // 9% para los niveles superiores
+                    }
                     return (
                       <tr key={i} className=" hover:bg-light-200 dark:hover:bg-dark-100 transition-colors">
                         <td className="px-6 py-3 text-xs sm:text-sm align-top">{i + 1}</td>
@@ -56,8 +61,13 @@ const Benefits = () => {
           {/* Mobile stacked cards */}
           <div className="block sm:hidden space-y-4">
             {BENEFITS.map((b, i) => {
-              const pr = b.value * 0.06;
-              const gewinn = pr * 0.07;
+              let gewinn;
+              if (b.value <= 350000) {
+                gewinn = 1550; // Valor fijo para el primer nivel
+              } else {
+                const pr = b.value * 0.06;
+                gewinn = pr * 0.09; // 9% para los niveles superiores
+              }
               return (
                 <div key={i} className="rounded-xl duration-100 bg-white dark:bg-dark-200 shadow p-4 flex flex-col gap-2 border border-[var(--color-light-200)] dark:border-[var(--color-dark-200)]">
                   <div className="flex justify-between items-center">

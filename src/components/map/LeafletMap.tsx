@@ -34,7 +34,7 @@ const LeafletMap: React.FC = () => {
               Die Region gilt als ein Umkreis von 100 km um die Adresse: 49844 Bawinkel.
             </span>
           </div>
-          <div className="ml-4 flex-shrink-1 flex items-center justify-center" style={{ width: 64, height: 64 }}>
+          <div className="hidden ml-4 flex-shrink-1 sm:flex items-center justify-center" style={{ width: 64, height: 64 }}>
             <ProfessionalGlobe width={64} height={64} rotationSpeed={0.5} />
           </div>
         </div>
