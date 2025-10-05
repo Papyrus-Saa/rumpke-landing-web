@@ -35,10 +35,10 @@ const Benefits = () => {
                   {BENEFITS.map((b, i) => {
                     let gewinn;
                     if (b.value <= 350000) {
-                      gewinn = 1550; // Valor fijo para el primer nivel
+                      gewinn = 1550;
                     } else {
                       const pr = b.value * 0.06;
-                      gewinn = pr * 0.09; // 9% para los niveles superiores
+                      gewinn = pr * 0.09;
                     }
                     return (
                       <tr key={i} className=" hover:bg-light-200 dark:hover:bg-dark-100 transition-colors">
@@ -58,15 +58,14 @@ const Benefits = () => {
               </table>
             </div>
           </div>
-          {/* Mobile stacked cards */}
           <div className="block sm:hidden space-y-4">
             {BENEFITS.map((b, i) => {
               let gewinn;
               if (b.value <= 350000) {
-                gewinn = 1550; // Valor fijo para el primer nivel
+                gewinn = 1550;
               } else {
                 const pr = b.value * 0.06;
-                gewinn = pr * 0.09; // 9% para los niveles superiores
+                gewinn = pr * 0.09;
               }
               return (
                 <div key={i} className="rounded-xl duration-100 bg-white dark:bg-dark-200 shadow p-4 flex flex-col gap-2 border border-[var(--color-light-200)] dark:border-[var(--color-dark-200)]">

@@ -126,18 +126,18 @@ const WhyTrustUs: React.FC = () => {
             >
               <IoClose size={24} />
             </button>
-            <Zoom>
-              <div className="relative w-full h-[85vh] md:h-auto md:max-h-[80vh] rounded-lg overflow-hidden">
+            <div className="relative w-full h-[70vh] md:h-[80vh] rounded-lg overflow-hidden flex items-center justify-center bg-white dark:bg-dark-200">
+              <Zoom>
                 <Image
                   src={selectedBadge.certificateImage!}
                   alt="Zertifikat"
                   width={1200}
                   height={800}
-                  className="w-full h-full object-contain"
+                  className="w-auto max-w-full max-h-[70vh] md:max-h-[80vh] object-contain mx-auto"
                   priority
                 />
-              </div>
-            </Zoom>
+              </Zoom>
+            </div>
           </div>
         </div>
       )}
