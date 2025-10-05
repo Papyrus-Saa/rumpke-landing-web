@@ -8,6 +8,7 @@ import TextMessageBox from '../chat-input-boxes/TextMessageBox'
 import { rumpkeai_assistant_use_case } from './rumpkeai-assistant-use-case'
 import AIButton from './AIButton'
 import { useAIChat } from '@/context/AIChatContext'
+import { FiInfo } from 'react-icons/fi'
 
 
 export default function AIChat() {
@@ -83,37 +84,21 @@ export default function AIChat() {
       "
       >
         <header
-          className="w-full py-2 text-center text-white font-medium text-lg shadow-[0px_4px_12px_0px_rgba(0,0,0,0.10)] dark:shadow-[0px_4px_12px_0px_rgba(0,255,180,0.10)] rounded-t-xl relative animate-gradient-move"
+          className="w-full py-2 text-white font-medium text-lg shadow-[0px_4px_12px_0px_rgba(0,0,0,0.10)] dark:shadow-[0px_4px_12px_0px_rgba(0,255,180,0.10)] rounded-t-xl relative animate-gradient-move"
           style={{
             background: 'linear-gradient(90deg, var(--color-mint-600), var(--color-mint-700), var(--color-mint-600))',
             backgroundSize: '200% 200%',
             transition: 'background 0.3s',
           }}
         >
-          {messages.length > 0 && (
+          <div className="flex justify-between items-center px-4">
             <button
-              onClick={clearConversation}
-              className="absolute top-3 left-4 bg-white/20 hover:bg-white/40 rounded-full p-2 transition-colors duration-200 cursor-pointer shadow-md"
-              title="Unterhaltung löschen"
-              style={{ zIndex: 2 }}
+              className="w-6 h-6 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/40 transition-colors cursor-pointer"
+              onClick={() => setShowDisclaimer(true)}
+              title="Rechtlicher Hinweis"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                />
-              </svg>
+              <FiInfo size={16} className="drop-shadow" />
             </button>
-          )}
-          <div className="flex flex-col items-center justify-center relative">
             <span className="inline-block animate-ai-icon mb-2">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="8" y="8" width="16" height="16" rx="4" fill="#fff" fillOpacity="0.12" stroke="#fff" strokeWidth="2" />
@@ -126,7 +111,14 @@ export default function AIChat() {
                 <circle cx="16" cy="16" r="1.5" fill="#fff" />
               </svg>
             </span>
-            <span className="drop-shadow-lg mx-auto mt-1 text-base">Dein Immobilien-Assistent – Tipp teilen!</span>
+            <AIButton
+              visible={visible}
+              toggleChat={toggleChat}
+            />
+          </div>
+
+          <div className="flex flex-col items-center">
+            <span className="drop-shadow-lg text-base">Dein Immobilien-Assistent – Tipp teilen!</span>
           </div>
           <style>{`
             @keyframes gradient-move {
@@ -148,6 +140,7 @@ export default function AIChat() {
               animation: ai-icon 2.2s cubic-bezier(.4,0,.2,1) infinite;
             }
           `}</style>
+
         </header>
         <div
           ref={listRef}
@@ -156,12 +149,7 @@ export default function AIChat() {
           px-4 pt-4 pb-3
         "
         >
-          <div className='absolute top-1 right-1'>
-            <AIButton
-              visible={visible}
-              toggleChat={toggleChat}
-            />
-          </div>
+          <span className='bg-gradient-orange-yellow px-3 py-1 rounded-2xl text-white text-xs absolute right-4 top-[110px]'>Beta</span>
           <div className="grid grid-cols-2 gap-y-2">
             <AIMessage text="Hi, ich bin hier um dir zu helfen &#128519;" />
             {messages.map((m, i) =>
@@ -179,31 +167,18 @@ export default function AIChat() {
             )}
           </div>
         </div>
-
-
-        <div className="w-full px-4 pb-1 bg-gray-00">
-          <button
-            className=" block text-xs text-center text-black/60 dark:text-white/60 font-normal underline hover:text-mint-600 transition-colors cursor-pointer"
-            style={{ width: '100%' }}
-            onClick={() => setShowDisclaimer(true)}
-          >
-            Rechtlicher Hinweis: Dieser Chatbot wird von einer KI betrieben und gibt keine Rechtsberatung. Die Eingabe personenbezogener Daten ist nicht erforderlich. Bitte lesen Sie folgende Hinweise.
-          </button>
-        </div>
-
-
-        {showDisclaimer && (
+       {showDisclaimer && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
             <div className="bg-light-100 dark:bg-dark-300 rounded-xl shadow-lg max-w-lg w-full mx-4 p-6 relative">
               <h2 className="text-lg font-semibold mb-2 text-mint-600">Hinweis zur Nutzung des Chatbots / Rechtlicher Disclaimer</h2>
-              <div className="text-sm text-black dark:text-white/80 mb-4 space-y-2">
-                <p>Die über diesen Chatbot bereitgestellten Informationen dienen ausschließlich allgemeinen Informationszwecken. Sie basieren auf einem vorab definierten Wissenspool und erfolgen ohne Berücksichtigung des konkreten Einzelfalls. Die vom Chatbot gegebenen Auskünfte stellen ausdrücklich keine rechtliche Beratung im Sinne des § 2 Abs. 1 RDG dar und können eine individuelle rechtliche oder fachliche Prüfung durch einen hierzu qualifizierten Experten nicht ersetzen.</p>
-                <p>Bitte beachten Sie, dass rechtliche Bewertungen stets vom jeweiligen Einzelfall und dessen spezifischen Umständen abhängen. Auch können sich rechtliche Rahmenbedingungen jederzeit ändern. Es wird daher dringend empfohlen, im Bedarfsfall einen Rechtsanwalt oder eine sonstige zur Rechtsberatung befugte Stelle zu konsultieren.</p>
-                <p>Die von Poll Immobilien GmbH übernimmt keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der vom Chatbot gegebenen Informationen.</p>
-                <p>Dieser Chatbot wird von einer Künstlichen Intelligenz (KI) betrieben. Die Eingabe personenbezogener Daten ist nicht erforderlich. Sollten Sie personenbezogene Daten eingeben, finden Sie weitere Hinweise zur Verarbeitung dieser Daten in unserer Datenschutzerklärung.</p>
+              <div className="text-sm text-black dark:text-white/80 mb-14 space-y-2">
+                <p>Die Antworten dieses Chatbots dienen ausschließlich allgemeinen Informationszwecken und basieren auf einem vorab definierten Wissenspool. Sie berücksichtigen nicht den konkreten Einzelfall und ersetzen keine individuelle Beratung durch einen qualifizierten Experten.</p>
+                <p>Die vom Chatbot bereitgestellten Informationen stellen keine Rechtsberatung im Sinne des § 2 Abs. 1 RDG dar. Für verbindliche Auskünfte oder rechtliche Bewertungen wenden Sie sich bitte an eine entsprechend befugte Stelle.</p>
+                <p>Die rechtlichen Rahmenbedingungen können sich ändern und sind stets vom jeweiligen Einzelfall abhängig. Es wird empfohlen, bei Unsicherheiten professionelle Beratung in Anspruch zu nehmen.</p>
+                <p>Dieser Chatbot wird von einer Künstlichen Intelligenz (KI) betrieben. Die Eingabe personenbezogener Daten ist nicht erforderlich. Weitere Hinweise zur Verarbeitung etwaiger personenbezogener Daten finden Sie in unserer Datenschutzerklärung.</p>
               </div>
               <button
-                className="absolute top-2 right-2 text-mint-600 hover:text-mint-700 text-base font-bold px-2 py-1 rounded transition-colors cursor-pointer"
+                className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-mint-600 hover:bg-mint-700 text-white font-medium px-6 py-2 rounded-full transition-colors shadow-lg"
                 onClick={() => setShowDisclaimer(false)}
                 aria-label="Schließen"
               >
@@ -212,6 +187,30 @@ export default function AIChat() {
             </div>
           </div>
         )}
+        <div className="relative mb-2">
+          {messages.length > 0 && (
+            <button
+              onClick={clearConversation}
+              className="absolute right-4 -top-7 w-6 h-6 flex items-center justify-center rounded-full bg-mint-600 hover:bg-mint-700 text-white transition-colors duration-200 cursor-pointer shadow-md"
+              title="Unterhaltung löschen"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                />
+              </svg>
+            </button>
+          )}
+        </div>
         <div
           className="
           duration-100
@@ -223,9 +222,6 @@ export default function AIChat() {
         "
         >
           <TextMessageBox onSend={handlePost} />
-        </div>
-        <div className='flex justify-end bg-red-600 w-full '>
-          <span className=' bg-gradient-orange-yellow mr-2 px-4 mb-1 rounded-2xl text-white'>Beta</span>
         </div>
       </div>
     </>

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 const QuickLinksBar = () => {
   return (
-    <div className=' w-full flex flex-col justify-center items-center gap-4 py-4 lg:py-6'>
+    <div className=' w-full flex flex-col justify-center items-center gap-4 py-4 lg:py-6 text-white'>
       <Link href="/privacy" className="text-sm hover:underline">
         Datenschutzerklärung
       </Link>
