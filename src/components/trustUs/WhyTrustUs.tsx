@@ -1,10 +1,11 @@
 import { FaUniversity, FaCertificate, FaShieldAlt } from "react-icons/fa";
 import { IoEyeOutline, IoClose } from "react-icons/io5";
 import Image from "next/image";
-import { useState } from "react";
+import { useTrustUsModal } from "./useTrustUsModal";
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 import './zoom.css';
+
 
 export interface Badge {
   id: number;
@@ -12,39 +13,24 @@ export interface Badge {
   icon: React.ReactNode;
   description: string;
   certificateImage?: string;
+  details?: Array<{
+    title: string;
+    items: string[];
+  }>;
 }
-
-const badges: Badge[] = [
-  {
-    id: 1,
-    name: "Zertifikat Immobilienmakler",
-    icon: <FaCertificate className="text-mint-600  text-3xl" />,
-    description: "IHK-zertifizierte Immobilienmaklerin mit umfassender Expertise im Immobilienmarkt.",
-    certificateImage: "/certificates/real-estate-agent-cert.jpg"
-  },
-  {
-    id: 2,
-    name: "Zertifikat Wertermittlung",
-    icon: <FaCertificate className="text-mint-600  text-3xl" />,
-    description: "Spezialisierte Ausbildung in der professionellen Immobilienbewertung.",
-    certificateImage: "/certificates/property-valuation-cert.jpg"
-  },
-  {
-    id: 3,
-    name: "Vertrauenswürdigkeit",
-    icon: <FaShieldAlt className="text-mint-600  text-3xl" />,
-    description: "Höchste Zuverlässigkeit und absolute Diskretion bei allen Immobilienangelegenheiten. Langjährige Erfahrung und kontinuierliche Weiterbildung garantieren eine professionelle und vertrauensvolle Betreuung.",
-  },
-];
 
 
 
 const WhyTrustUs: React.FC = () => {
-  const [selectedBadge, setSelectedBadge] = useState<Badge | null>(null);
-
-  const handleOpenImage = (badge: Badge) => {
-    setSelectedBadge(badge);
-  };
+  const {
+    badges,
+    selectedBadge,
+    showTrustModal,
+    openBadgeModal,
+    closeBadgeModal,
+    openTrustModal,
+    closeTrustModal,
+  } = useTrustUsModal();
 
   return (
     <section
@@ -93,10 +79,19 @@ const WhyTrustUs: React.FC = () => {
                   <div className="mb-3">{badge.icon}</div>
                   <span className="text-base font-semibold text-mint-600 text-center mb-2">{badge.name}</span>
                   <p className="text-xs text-gray-600 dark:text-gray-300 text-center">{badge.description}</p>
+                  {badge.details && (
+                    <button
+                      onClick={() => openTrustModal()}
+                      className="mt-2 flex items-center gap-2 text-xs text-mint-600 hover:text-cyan-500 dark:text-mint-500 dark:hover:text-mint-400 cursor-pointer"
+                    >
+                      <IoEyeOutline />
+                      <span>Mehr anzeigen</span>
+                    </button>
+                  )}
                 </div>
                 {badge.certificateImage && (
                   <button
-                    onClick={() => handleOpenImage(badge)}
+                    onClick={() => openBadgeModal(badge)}
                     className="mt-auto flex items-center gap-2 text-xs text-mint-600 hover:text-cyan-500 dark:text-mint-500 dark:hover:text-mint-400 cursor-pointer"
                   >
                     <IoEyeOutline />
@@ -113,14 +108,14 @@ const WhyTrustUs: React.FC = () => {
       {selectedBadge && (
         <div
           className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedBadge(null)}
+          onClick={closeBadgeModal}
         >
           <div
             className="relative w-full max-w-4xl mx-auto bg-transparent"
             onClick={e => e.stopPropagation()}
           >
             <button
-              onClick={() => setSelectedBadge(null)}
+              onClick={closeBadgeModal}
               className="absolute top-4 right-4 z-20 p-2 rounded-full bg-gray-800/50 text-white hover:bg-gray-800/70 transition-colors"
               aria-label="Schließen"
             >
@@ -138,6 +133,37 @@ const WhyTrustUs: React.FC = () => {
                 />
               </Zoom>
             </div>
+          </div>
+        </div>
+      )}
+
+      {showTrustModal && badges.find(b => b.details) && (
+        <div
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={closeTrustModal}
+        >
+          <div
+            className="relative w-full max-w-2xl mx-auto bg-white dark:bg-dark-200 rounded-2xl shadow-lg p-8"
+            onClick={e => e.stopPropagation()}
+          >
+            <button
+              onClick={closeTrustModal}
+              className="absolute top-4 right-4 z-20 p-1 rounded-full  dark:hover:bg-mint-700 hover:bg-light-100  transition-colors cursor-pointer shadow"
+              aria-label="Schließen"
+            >
+              <IoClose size={24} />
+            </button>
+            <h3 className="text-2xl font-extrabold text-mint-600 mb-6 text-center drop-shadow">Lehrgangsinhalte</h3>
+            {badges.find(b => b.details)?.details?.map((section, idx) => (
+              <div key={idx} className="mb-6">
+                <h4 className="font-semibold text-mint-600 mb-2 text-lg">{section.title}</h4>
+                <ul className="grid gap-2 ml-6 text-gray-700 dark:text-gray-200">
+                  {section.items.map((item, i) => (
+                    <li key={i} className="bg-mint-100 dark:bg-mint-900 rounded px-3 py-1 text-sm">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       )}
