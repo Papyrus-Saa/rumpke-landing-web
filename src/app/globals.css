@@ -130,15 +130,15 @@
 --color-mint-700: #04432f;
 --color-secondary: #cfcfcf; */
 
---color-light-100: #F5F5F5;
---color-light-200: #E8E8E8;
---color-light-300: #CCCCCC;
+--color-light-100: #FAFAFA;   /* casi blanco, apenas más oscuro que #FFFFFF */
+--color-light-200: #F2F2F2;   /* un poco más oscuro, gris muy claro */
+--color-light-300: #E5E5E5;   /* gris claro, más visible pero aún suave */
 --color-mint-600: #005A73;
 --color-secondary-l: #b3dbe6;
 
---color-dark-100: #020609;
---color-dark-200: #03090b;
---color-dark-300: #010507;
+--color-dark-300: #010507;   /* más oscuro */
+--color-dark-200: #080d10;   /* un poco más claro que dark-300 */
+--color-dark-100: #10171a;   /* un poco más claro que dark-200 */
 --color-mint-700: #01151a;
 --color-secondary-d: #072c34;
 
