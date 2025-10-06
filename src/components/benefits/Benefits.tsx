@@ -10,7 +10,7 @@ const Benefits = () => {
           <span className="inline-block px-4 py-1 bg-mint-600 dark:bg-mint-700 text-white text-xs font-bold tracking-widest uppercase shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] transition-all duration-100 mb-6">
             Prämienstaffel
           </span>
-          <h3 className={`text-2xl font-bold text-mint-600 dark:text-mint-300 drop-shadow transition-all duration-100 mb-4 ${titleFonts.className}`}>
+          <h3 className={`text-2xl font-bold  dark:text-mint-300 drop-shadow transition-all duration-100 mb-4 ${titleFonts.className}`}>
             Deine Belohnung für deinen Tipp
           </h3>
           <p className="text-gray-700 dark:text-gray-200 font-medium transition-all duration-100">

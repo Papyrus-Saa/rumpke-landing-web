@@ -80,7 +80,7 @@ export default function RootLayout({
             <div className="duration-100 w-full text-gray-800 dark:text-gray-300 mx-auto bg-light-100 dark:bg-black font-sans">
               <KeywordCarousel />
               <div className="duration-100 bg-white 2xl:w-[85%] dark:bg-dark-300 mx-auto">
-                <div className="dark:shadow-[var(--shadow-subtle-d)] shadow-[var(--shadow-subtle-l)]">
+                <div className="dark:shadow-subtle-d shadow-subtle-l">
                   <Header />
                   <RainbowProvider>
                     {children}

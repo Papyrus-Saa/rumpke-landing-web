@@ -61,7 +61,7 @@ const BlockAnimation = () => {
           <Span>P</Span>
         </GridWrapper>
       </div>
-      <FaArrowDown className='text-2xl text-mint-600' />
+      <FaArrowDown className='text-2xl ' />
       <p className='text-gray-600 font-semibold'>Fülle das Formular aus!</p>
     </div>
   );

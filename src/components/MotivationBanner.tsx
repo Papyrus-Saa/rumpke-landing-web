@@ -10,22 +10,22 @@ type TimelineStep = {
 
 const timeline: TimelineStep[] = [
   {
-    icon: <FaHome className="duration-100 text-mint-600  text-3xl" />,
+    icon: <FaHome className="duration-100   text-3xl" />,
     title: "Rumpke Immobilien",
     desc: "Die erfahrene Immobilienbüro aus der Region – zuverlässig, transparent und persönlich.",
   },
   {
-    icon: <FaLightbulb className="duration-100 text-mint-600  text-3xl" />,
+    icon: <FaLightbulb className="duration-100   text-3xl" />,
     title: "Initiative: Ich schenk dir was",
     desc: "Eine Aktion von Rumpke Immobilien, um gemeinsam mit dir neue Chancen zu entdecken und echte Dankbarkeit zu zeigen.",
   },
   {
-    icon: <FaHandshake className="duration-100 text-mint-600  text-3xl" />,
+    icon: <FaHandshake className="duration-100   text-3xl" />,
     title: "Gemeinsam mehr erreichen",
     desc: "Mit deinem Tipp hilfst du, Immobilienbesitzer und Interessenten zusammenzubringen – und wirst dafür belohnt.",
   },
   {
-    icon: <FaGift className="duration-100  text-mint-600  text-3xl" />,
+    icon: <FaGift className="duration-100    text-3xl" />,
     title: "Dein Geschenk wartet",
     desc: "Für jeden erfolgreichen Tipp erhältst du eine exklusive Prämie als Dankeschön.",
   },
@@ -33,11 +33,11 @@ const timeline: TimelineStep[] = [
 
 const MotivationBanner: React.FC = () => (
   <section className="py-8 sm:py-10 w-full flex flex-col items-center ">
-  <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-bold text-mint-600 mb-4 sm:mb-6 px-2 w-full">
+  <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 px-2 w-full">
       Ich schenke dir was – Eine Initiative von Rumpke Immobilien
     </h2>
     <p className="text-center text-base sm:text-lg text-gray-700 dark:text-gray-200 mb-6 sm:mb-10 max-w-2xl w-full px-2">
-      Diese Seite ist Teil einer besonderen Aktion von <span className="font-semibold text-mint-600 ">
+      Diese Seite ist Teil einer besonderen Aktion von <span className="font-semibold text-mint-600 underline">
         <a
           href="https://www.rumpke-immobilien.de/"
           target="_blank"
@@ -53,12 +53,12 @@ const MotivationBanner: React.FC = () => (
       {timeline.map((step) => (
         <div
           key={step.title}
-          className="duration-100 flex flex-col items-center shadow dark:shadow-subtle-d border-mint-600 rounded-2xl text-center px-3 sm:px-4 py-5 sm:py-6 relative flex-1 min-w-[220px] max-w-xs m-2 hover:bg-mint-600/20 mx-auto"
+          className="duration-100 flex flex-col items-center shadow dark:shadow-subtle-d  rounded-2xl text-center px-3 sm:px-4 py-5 sm:py-6 relative flex-1 min-w-[220px] max-w-xs m-2  mx-auto"
         >
-          <div className="duration-100 z-10 rounded-full p-2 shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] mb-3 sm:mb-4 border-2 border-mint-600 flex items-center justify-center">
+          <div className="duration-100 z-10 rounded-full p-2 shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] mb-3 sm:mb-4 border-2  flex items-center justify-center">
             {step.icon}
           </div>
-          <h2 className="duration-100 text-base sm:text-lg font-semibold text-mint-600 mb-1 sm:mb-2 w-full text-center">{step.title}</h2>
+          <h2 className="duration-100 text-base sm:text-lg font-semibold mb-1 sm:mb-2 w-full text-center">{step.title}</h2>
           <p className="duration-100 text-gray-700 dark:text-gray-200 text-sm sm:text-base w-full text-center">{step.desc}</p>
         </div>
       ))}

@@ -9,24 +9,18 @@ import { motion } from 'framer-motion';
 const SOCIALS = [
   {
     href: 'https://www.facebook.com/profile.php?id=61572884870790&rdid=V4DdluER74BYp4cE&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16zyHEySPr%2F#',
-    icon: <FaFacebookF size={15} />,
+    icon: <FaFacebookF size={14} />,
     ariaLabel: 'Facebook',
-    bg: 'bg-[#1877F3]',
-    hover: 'hover:bg-[#1456b8]',
   },
   {
     href: 'https://www.instagram.com/rumpkeimmobilien/',
-    icon: <FaInstagram size={15} />,
+    icon: <FaInstagram size={14} />,
     ariaLabel: 'Instagram',
-    bg: 'bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500',
-    hover: 'hover:from-pink-600 hover:via-red-600 hover:to-yellow-600',
   },
   {
     href: 'https://linkedin.com',
-    icon: <FaLinkedinIn size={15} />,
+    icon: <FaLinkedinIn size={14} />,
     ariaLabel: 'LinkedIn',
-    bg: 'bg-[#0077B5]',
-    hover: 'hover:bg-[#005582]',
   },
 ];
 
@@ -38,10 +32,10 @@ const buttonVariants = {
 
 const SocialMediaComponent = ({ className }: { className?: string }) => (
   <div
-    className={`flex justify-center items-center gap-6 py-4 ${className ?? ''}`}
+    className={`flex justify-center items-center gap-6 py-2 ${className ?? ''}`}
     data-testid="social-media-container"
   >
-    {SOCIALS.map(({ href, icon, ariaLabel, bg, hover }, idx) => (
+    {SOCIALS.map(({ href, icon, ariaLabel }, idx) => (
       <motion.a
         key={href}
         href={href}
@@ -53,7 +47,7 @@ const SocialMediaComponent = ({ className }: { className?: string }) => (
         animate="animate"
         whileHover="whileHover"
         transition={{ type: 'spring', stiffness: 400, damping: 20, delay: idx * 0.1 }}
-        className={`rounded w-6 h-6 flex items-center justify-center shadow-lg text-white ${bg} ${hover} transition-all duration-100`}
+        className="inline-flex items-center justify-center w-6 h-6 p-0 bg-transparent border border-white/20 rounded-md cursor-pointer text-white/90 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/20 dark:text-white/80 dark:hover:text-white dark:hover:bg-white/10 dark:focus:ring-white/20 transition-all duration-200 ease-out"
       >
         {icon}
       </motion.a>

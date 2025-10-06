@@ -98,12 +98,12 @@ const AwardsSection = () => {
                                    border-r-[8px] border-r-transparent" />
                     </motion.div>
                   )}
-                  <div className="absolute inset-0 bg-gradient-mint-green opacity-0 blur-xl group-hover:opacity-10 transition-all duration-700 ease-out" />
+                  <div className="absolute inset-0 bg-gradient-mint-green opacity-0 blur-xl group-hover:opacity-10 transition-all duration-700 ease-out"/>
                   <div className="duration-100 relative bg-light-100 dark:bg-dark-200 rounded-2xl p-4 md:p-6 flex flex-col items-center justify-center h-full shadow-lg hover:shadow-xl shadow-mint-600/5 dark:shadow-mint-700/5 border border-mint-600/10 dark:border-mint-700/10 overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-mint-green transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
                     <motion.div
-                      className="text-3xl md:text-4xl mb-3 text-mint-600"
+                      className="text-3xl md:text-4xl mb-3 t"
                       animate={{
                         rotateY: [0, 360],
                       }}
@@ -118,10 +118,10 @@ const AwardsSection = () => {
                       <Icon />
                     </motion.div>
 
-                    <span className="text-xs md:text-sm font-medium text-mint-600 ">
+                    <span className="text-xs md:text-sm font-medium ">
                       {award.name}
                     </span>
-                    <span className="text-[10px] md:text-xs text-mint-600/60 /60 mt-1 text-center">
+                    <span className="text-[10px] md:text-xs  mt-1 text-center">
                       {award.description}
                     </span>
 
@@ -138,7 +138,7 @@ const AwardsSection = () => {
             transition={{ delay: 0.8 }}
             className="text-center mt-6"
           >
-            <span className="inline-flex items-center gap-2 text-sm text-mint-600/70 ">
+            <span className="inline-flex items-center gap-2 text-sm">
               <span className="w-12 h-[1px] bg-gradient-orange-yellow opacity-50" />
               Für erfolgreiche Immobilientipps
               <span className="w-12 h-[1px] bg-gradient-orange-yellow opacity-50" />

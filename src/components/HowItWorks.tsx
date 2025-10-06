@@ -43,7 +43,7 @@ const HowItWorks = () => (
                 key={idx}
                 className={`flex items-center gap-4 rounded-xl px-4 w-full py-1 mx-auto bg-light-100 dark:bg-dark-200 transition-all duration-100 text-base sm:text-lg ${step.className}`}
               >
-                <span className="sm:text-2xl text-mint-600 dark:text-mint-200">{step.icon}</span>
+                <span className="sm:text-2xl dark:text-mint-200">{step.icon}</span>
                 <span>{step.title}</span>
               </li>
             ))}

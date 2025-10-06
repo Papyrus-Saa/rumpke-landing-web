@@ -178,7 +178,7 @@ export default function AIChat() {
                 <p>Dieser Chatbot wird von einer Künstlichen Intelligenz (KI) betrieben. Die Eingabe personenbezogener Daten ist nicht erforderlich. Weitere Hinweise zur Verarbeitung etwaiger personenbezogener Daten finden Sie in unserer Datenschutzerklärung.</p>
               </div>
               <button
-                className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-mint-600 hover:bg-mint-700 text-white font-medium px-6 py-2 rounded-full transition-colors shadow-lg"
+                className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-mint-600 hover:bg-mint-700 text-white font-medium px-6 py-2 rounded-full transition-colors shadow-lg cursor-pointer"
                 onClick={() => setShowDisclaimer(false)}
                 aria-label="Schließen"
               >
