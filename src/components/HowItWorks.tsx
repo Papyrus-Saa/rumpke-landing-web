@@ -55,7 +55,7 @@ const HowItWorks = () => (
             alt="How it works"
             width={360}
             height={320}
-            className="duration-100 rounded shadow w-full max-w-xs sm:max-w-sm lg:max-w-xs border-amber-50 dark:border-dark-100 border-4"
+            className="duration-100 rounded-full shadow w-full max-w-xs sm:max-w-sm lg:max-w-xs border-amber-50 dark:border-dark-200 border-2"
             sizes="(max-width: 1024px) 80vw, 280px"
           />
         </div>
