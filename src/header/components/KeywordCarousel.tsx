@@ -13,6 +13,8 @@ const keywords = [
   "Diskrete Vermittlung",
   "Rumpke – Ihr starker Partner",
   "Jetzt Tipp abgeben und Vorteile sichern",
+  "Wir sind",
+  "Ich schenke dir was",
 ];
 
 export default function KeywordCarousel() {

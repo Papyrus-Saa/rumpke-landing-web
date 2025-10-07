@@ -23,6 +23,7 @@ const LeafletMap: React.FC = () => {
         </button>
       </div>
       <MapWrapper
+      
         isSatellite={isSatellite}
         is3D={false}
       />
