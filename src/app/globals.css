@@ -19,10 +19,13 @@
 }
 
 .bg-gradient-orange-yellow {
-  background: var(--gradient-orange-yellow)
+  background: var(--gradient-orange-yellow);
 }
 .bg-gradient-mint-green {
-  background: var(--gradient-mint-green)
+  background: var(--gradient-mint-green);
+}
+.bg-gradient-purple-fuchsia {
+  background: var(--gradient-purple-fuchsia);
 }
 .text-gradient-orange-yellow {
   background: var(--gradient-orange-yellow);

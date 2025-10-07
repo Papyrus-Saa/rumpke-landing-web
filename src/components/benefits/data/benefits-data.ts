@@ -39,7 +39,7 @@ export const BENEFITS: Benefit[] = [
   {
     amount: "ab ca. 1.000.000 €",
     value: 1000000,
-    title: "Luxusgeschenk nach Wunsch",
+    title: "Exklusivgeschenk",
     desc: "Ob Fernreise, Outdoor-Küche oder Designerstück – du entscheidest, was dein exklusives Geschenk sein soll.",
   },
 ];

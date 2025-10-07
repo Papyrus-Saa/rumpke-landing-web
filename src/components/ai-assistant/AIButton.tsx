@@ -15,7 +15,7 @@ const AIButton: React.FC<AIButtonProps> = ({ visible, toggleChat }) => {
   return (
     <button
       title="KI-Assistent öffnen/schließen"
-      className={`${buttonClass} z-50 w-6 h-6 flex items-center justify-center rounded-full cursor-pointer transition-shadow duration-100 focus:outline-none ${visible ? 'bg-gradient-to-tr from-cyan-900 via-mint-600 to-purple-900 shadow-lg border-2 border-mint-600' : 'text-white bg-gradient-to-tr from-purple-900 via-cyan-900 to-pink-900 shadow-orange-500 shadow-[0_0_5px_2px_rgba(0,0,0,0.65)] hover:shadow-xl'}`}
+      className={`${buttonClass} z-[600] w-6 h-6 flex items-center justify-center rounded-full cursor-pointer transition-shadow duration-100 focus:outline-none ${visible ? 'bg-gradient-to-tr from-cyan-900 via-mint-600 to-purple-900 shadow-lg border-2 border-mint-600' : 'text-white bg-gradient-to-tr from-purple-900 via-cyan-900 to-pink-900 shadow-orange-500 shadow-[0_0_5px_2px_rgba(0,0,0,0.65)] hover:shadow-xl'}`}
       style={visible ? { position: 'relative', overflow: 'hidden' } : {}}
       onClick={toggleChat}
     >

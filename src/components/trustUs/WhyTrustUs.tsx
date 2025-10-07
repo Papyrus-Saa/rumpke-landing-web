@@ -75,24 +75,24 @@ const WhyTrustUs: React.FC = () => {
                 key={badge.id}
                 className="duration-100 w-full flex flex-col items-center bg-light-200 dark:bg-dark-300 rounded-2xl shadow-subtle-l dark:shadow-subtle-d p-6 transition hover:scale-105 h-[210px]"
               >
-                <div className="flex-1 flex flex-col items-center">
+                <div className="flex-1 flex flex-col items-center w-full">
                   <div className="mb-3">{badge.icon}</div>
                   <span className="text-base font-semibold text-mint-600 text-center mb-2">{badge.name}</span>
                   <p className="text-xs text-gray-600 dark:text-gray-300 text-center">{badge.description}</p>
-                  {badge.details && (
-                    <button
-                      onClick={() => openTrustModal()}
-                      className="mt-2 flex items-center gap-2 text-xs text-mint-600 hover:text-cyan-500 dark:text-mint-500 dark:hover:text-mint-400 cursor-pointer"
-                    >
-                      <IoEyeOutline />
-                      <span>Mehr anzeigen</span>
-                    </button>
-                  )}
                 </div>
+                {badge.details && (
+                  <button
+                    onClick={() => openTrustModal()}
+                    className="mt-4 flex items-center gap-2 text-xs text-mint-600 hover:text-cyan-500 dark:text-mint-500 dark:hover:text-mint-400 cursor-pointer w-full justify-center"
+                  >
+                    <IoEyeOutline />
+                    <span>Mehr anzeigen</span>
+                  </button>
+                )}
                 {badge.certificateImage && (
                   <button
                     onClick={() => openBadgeModal(badge)}
-                    className="mt-auto flex items-center gap-2 text-xs text-mint-600 hover:text-cyan-500 dark:text-mint-500 dark:hover:text-mint-400 cursor-pointer"
+                    className="mt-2 flex items-center gap-2 text-xs text-mint-600 hover:text-cyan-500 dark:text-mint-500 dark:hover:text-mint-400 cursor-pointer w-full justify-center"
                   >
                     <IoEyeOutline />
                     <span>Zertifikat ansehen</span>
@@ -148,7 +148,7 @@ const WhyTrustUs: React.FC = () => {
           >
             <button
               onClick={closeTrustModal}
-              className="absolute top-4 right-4 z-20 p-1 rounded-full  dark:hover:bg-mint-700 hover:bg-light-100  transition-colors cursor-pointer shadow"
+              className="absolute top-4 right-4 z-20 p-1 rounded-full dark:hover:bg-mint-700 hover:bg-light-100  transition-colors cursor-pointer shadow"
               aria-label="Schließen"
             >
               <IoClose size={24} />

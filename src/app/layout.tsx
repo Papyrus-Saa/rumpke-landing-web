@@ -81,8 +81,8 @@ export default function RootLayout({
               <KeywordCarousel />
               <div className="duration-100 bg-white 2xl:w-[85%] dark:bg-dark-300 mx-auto">
                 <div className="dark:shadow-subtle-d shadow-subtle-l">
-                  <Header />
                   <RainbowProvider>
+                  <Header />
                     {children}
                   </RainbowProvider>
                   <div className="bg-mint-600 dark:bg-mint-700 duration-100 text-white">

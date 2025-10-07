@@ -4,6 +4,7 @@ import './styles.css';
 import imgs from '@/data/images';
 import Image from 'next/image';
 import React, { useState, useEffect, useCallback } from 'react';
+import { SubmitTipButton } from '../SubmitTipButton';
 
 export default function HeroBackgroundSlider() {
   const colors = React.useMemo(() => [
