@@ -29,7 +29,7 @@ const WhyTrustUsButton = () => {
 
   return (
     <div
-      className="text-center p-2 duration-100 dark:bg-dark-100 bg-light-100 hover:bg-mint-600/40"
+      className="text-center p-2 duration-100 dark:bg-dark-100 bg-light-200 hover:bg-mint-600/40"
     >
       <div className="w-full justify-between flex  lg:px-16 xl:px-20 2xl:px-72">
         <button
@@ -57,7 +57,7 @@ const WhyTrustUsButton = () => {
           >
             <button
               onClick={() => setVisible(false)}
-              className="absolute sm:top-1 sm:right-1 top-2 right-2 hover:shadow rounded-full text-white hover:bg-gray-700 dark:text-gray-400 dark:hover:text-gray-200 cursor-pointer"
+              className="absolute sm:top-1 sm:right-1 top-2 right-2 hover:shadow rounded-full text-black hover:bg-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:text-white cursor-pointer"
             >
               <IoCloseOutline size={24} />
             </button>

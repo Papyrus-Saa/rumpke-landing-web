@@ -36,7 +36,7 @@ const WhyTrustUs: React.FC = () => {
     <section
       id="why-trust-us"
       className="w-full mx-auto mt-6 mb-10 sm:p-12 md:p-6 xl:px-6 transition-opacity duration-100 overflow-auto max-h-screen ">
-      <div className="duration-100 bg-light-100 dark:bg-dark-200 shadow-shadow-subtle-l dark:shadow-shadow-subtle-d flex flex-col lg:flex-row items-center gap-10 p-4 sm:rounded-2xl">
+      <div className="duration-100 bg-light-100 dark:bg-dark-200 shadow-subtle-l dark:shadow-subtle-d flex flex-col lg:flex-row items-center gap-10 p-4 sm:rounded-2xl">
         <div className="flex flex-col items-center md:items-start md:w-1/3 ">
           <div className="duration-100 relative w-70 h-56 shadow-shadow-subtle-l dark:shadow-shadow-subtle-d border-4 dark:border-gray-800 border-amber-50 mb-4 bg-white dark:bg-dark-200">
             <Image
@@ -139,7 +139,7 @@ const WhyTrustUs: React.FC = () => {
 
       {showTrustModal && badges.find(b => b.details) && (
         <div
-          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 "
           onClick={closeTrustModal}
         >
           <div
