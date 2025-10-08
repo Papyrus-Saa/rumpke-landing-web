@@ -166,7 +166,7 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
         />
         <button
           type="submit"
-          className="duration-200 bg-mint-600 hover:bg-mint-700 text-white px-4 py-2 rounded dark:hover:bg-mint-600 dark:bg-mint-700 cursor-pointer"
+          className="duration-200 bg-mint-600 hover:bg-mint-600/80 text-white px-4 py-2 rounded  cursor-pointer"
           disabled={loading}
         >
           {loading ? "Prüfe..." : "Prüfen"}

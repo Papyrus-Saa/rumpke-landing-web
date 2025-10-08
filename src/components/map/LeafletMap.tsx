@@ -23,7 +23,7 @@ const LeafletMap: React.FC = () => {
         </button>
       </div>
       <MapWrapper
-      
+
         isSatellite={isSatellite}
         is3D={false}
       />
@@ -36,7 +36,7 @@ const LeafletMap: React.FC = () => {
             </span>
           </div>
           <div className="hidden ml-4 flex-shrink-1 sm:flex items-center justify-center" style={{ width: 64, height: 64 }}>
-            <ProfessionalGlobe width={64} height={64} rotationSpeed={0.5} />
+            <ProfessionalGlobe width={44} height={44} rotationSpeed={0.5} />
           </div>
         </div>
       </div>
