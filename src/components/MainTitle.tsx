@@ -3,7 +3,7 @@ import React from 'react'
 
 const MainTitle = () => {
   return (
-    <div className={`${titleFonts.className} fixed right-2 bottom-1 duration-100 text-center text-xs text-gray-300 dark:text-gray-900`}>Ich schenke dir was</div>
+    <div className={`${titleFonts.className} fixed right-2 bottom-1 duration-100 text-center text-xs text-gray-300 dark:text-gray-800`}>Ich schenke dir was</div>
   )
 }
 

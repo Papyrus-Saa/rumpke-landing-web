@@ -31,17 +31,17 @@ const HowItWorks = () => (
     <h1 className="text-xl md:text-3xl text-center font-bold mb-6 sm:mb-8 px-2 w-full">
       Dein Tipp <span style={{ color: '#005A73' }}> | </span> Ich <span style={{ color: '#005A73' }}>schenke</span> dir was <span className='text-2xl'></span>
     </h1>
-    <div className="dark:bg-dark-100 bg-light-100 xl:w-[80%] 2xl:w-[70%] sm:w-[90%] w-full lg:p-6 mb-6 mx-auto shadow dark:shadow-subtle-d border dark:border-dark-200 rounded-lg border-light-200 transition-all duration-100">
+    <div className="dark:bg-dark-200 bg-light-100 xl:w-[80%] 2xl:w-[70%] sm:w-[90%] w-full lg:p-6 mb-6 mx-auto shadow dark:shadow-subtle-d border dark:border-dark-200 rounded-lg border-light-200 transition-all duration-100">
       <h3 className={`${titleFonts.className} py-1 ml-2 mb-4 sm:text-lg text-center`}>
         So einfach geht<span className="text-mint-600">&apos;</span>s
       </h3>
-      <div className="relative bg-light-200 dark:bg-dark-200 transition-all duration-100 p-4 flex flex-col lg:flex-row justify-center items-center gap-4 sm:gap-6">
+      <div className="relative bg-light-200 dark:bg-dark-100 transition-all duration-100 p-4 flex flex-col lg:flex-row justify-center items-center gap-4 sm:gap-6">
         <div className="w-full lg:w-1/2 flex items-center">
           <ul className="space-y-4 mb-6 lg:mb-0 w-full">
             {steps.map((step, idx) => (
               <li
                 key={idx}
-                className={`flex items-center gap-4 rounded-xl px-4 w-full py-2 mx-auto bg-light-100 dark:bg-dark-300 transition-all duration-100 text-base sm:text-lg ${step.className}`}
+                className={`flex items-center gap-4 rounded-xl px-4 w-full py-2 mx-auto bg-light-100 dark:bg-dark-200 transition-all duration-100 text-base sm:text-lg ${step.className}`}
               >
                 <span className="sm:text-2xl dark:text-mint-200">{step.icon}</span>
                 <span>{step.title}</span>
