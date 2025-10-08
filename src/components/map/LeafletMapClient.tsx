@@ -143,6 +143,16 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
               } border`}
           >
             {result}
+            {resultType === "in" && (
+              <div className="mt-1 dark:text-green-400 text-green-700 font-medium inline-flex items-center gap-2 flex-wrap ml-4">
+                Du kannst deinen Tipp abgeben! <span aria-label="smile" role="img">😊</span>
+              </div>
+            )}
+            {resultType === "out" && (
+              <div className="mt-1 text-red-700 dark:text-red-400 font-medium inline-flex items-center gap-2 flex-wrap ml-4">
+                Leider kannst du für diese Adresse keinen Tipp abgeben. <span aria-label="sad" role="img">😔</span>
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -156,7 +166,7 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
         />
         <button
           type="submit"
-          className="duration-200 bg-mint-600 hover:bg-mint-700 text-white px-4 py-2 rounded dark:hover:bg-mint-600 dark:bg-mint-700 cursor-pointer"
+          className="duration-200 bg-mint-600 hover:bg-mint-600/80 text-white px-4 py-2 rounded  cursor-pointer"
           disabled={loading}
         >
           {loading ? "Prüfe..." : "Prüfen"}

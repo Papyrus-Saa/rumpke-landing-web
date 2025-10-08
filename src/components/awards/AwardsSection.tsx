@@ -98,9 +98,9 @@ const AwardsSection = () => {
                                    border-r-[8px] border-r-transparent" />
                     </motion.div>
                   )}
-                  <div className="absolute inset-0 bg-gradient-mint-green opacity-0 blur-xl group-hover:opacity-10 transition-all duration-700 ease-out"/>
-                  <div className="duration-100 relative bg-light-100 dark:bg-dark-200 rounded-2xl p-4 md:p-6 flex flex-col items-center justify-center h-full shadow-lg hover:shadow-xl shadow-mint-600/5 dark:shadow-mint-700/5 border border-mint-600/10 dark:border-mint-700/10 overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-mint-green transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-mint-green opacity-0 blur-xl group-hover:opacity-10 dark:group-hover:opacity-20 transition-all duration-700 ease-out" />
+                  <div className="duration-100 relative bg-light-100 dark:bg-dark-200 rounded-2xl p-4 md:p-6 flex flex-col items-center justify-center h-full shadow-lg shadow-mint-600/10 dark:shadow-mint-700 border border-mint-600/10 dark:border-mint-700/10 overflow-hidden hover:shadow-amber-600 hover:shadow-sm">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-mint-green transform origin-left scale-x-0 group-hover:scale-x-100 dark:group-hover:opacity-80 transition-transform duration-500" />
 
                     <motion.div
                       className="text-3xl md:text-4xl mb-3 t"
@@ -125,7 +125,7 @@ const AwardsSection = () => {
                       {award.description}
                     </span>
 
-                    <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-mint-green opacity-0 group-hover:opacity-5 transform translate-y-full group-hover:translate-y-0 transition-all duration-500" />
+                    <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-mint-green opacity-0 group-hover:opacity-10 dark:group-hover:opacity-20 transform translate-y-full group-hover:translate-y-0 transition-all duration-500" />
                   </div>
                 </motion.div>
               );

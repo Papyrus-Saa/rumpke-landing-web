@@ -86,7 +86,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
   };
 
   const inputBase =
-    "w-full rounded-2xl px-4 py-2 outline-none bg-[oklch(98%_0_0)] dark:bg-dark-100 bg-light-200 border-black/10 dark:border-white/10 placeholder:opacity-60 focus:ring-2 focus:ring-mint-600 dark:focus:ring-mint-700 focus:border-transparent border-2 border-transparent duration-100";
+    "w-full px-4 py-2 rounded-lg  outline-none duration-100 bg-white dark:bg-dark-200 border border-gray-300 dark:border-gray-700 shadow-sm focus:border-mint-600 dark:focus:border-mint-600 focus:ring-2 focus:ring-mint-600 dark:focus:ring-mint-700 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-all duration-200";
 
   const labelCls = "block text-sm font-medium mb-1";
   const errorCls = "text-sm text-red-500 mt-1";

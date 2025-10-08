@@ -34,9 +34,11 @@ const AIButton: React.FC<AIButtonProps> = ({ visible, toggleChat }) => {
             </svg>
           </span>
         ) : (
-          <span className="loader-letter"><RiRobot2Line /></span>
+          <span className="loader-letter"><RiRobot2Line />
+
+          </span>
+
         )}
-        <div className="loader" />
       </div>
     </button>
   );
