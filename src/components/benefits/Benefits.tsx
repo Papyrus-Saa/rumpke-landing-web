@@ -7,7 +7,7 @@ const Benefits = () => {
     <div id="benefits" className="w-full sm:w-[96%] lg:w-[90%] xl:w-[80%] mx-auto transition-all duration-100 mb-6 scroll-mt-22 xl:scroll-mt-30">
       <section className="w-full max-w-7xl mx-auto px-4 py-8 transition-all duration-100">
         <div className="text-center mb-8 transition-all duration-100 ">
-          <span className="inline-block px-4 py-1 bg-mint-600 dark:bg-mint-700 text-white text-xs font-bold tracking-widest uppercase shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] transition-all duration-100 mb-6">
+          <span className="inline-block px-4 py-1 bg-mint-600 text-white text-xs font-bold tracking-widest uppercase shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] transition-all duration-100 mb-6">
             Prämienstaffel
           </span>
           <h3 className={`text-2xl font-bold  dark:text-mint-300 drop-shadow transition-all duration-100 mb-4 ${titleFonts.className}`}>
@@ -75,7 +75,7 @@ const Benefits = () => {
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-xs">Kaufpreis</span>
-                    <span className="text-xs text-mint-600 dark:text-mint-300">{b.amount}</span>
+                    <span className="text-xs font-medium text-mint-600 dark:text-mint-300">{b.amount}</span>
                   </div>
                   <div className="flex justify-between items-center gap-2">
                     <span className="duration-100 text-xs text-gray-800 dark:text-gray-100">Prämie</span>
