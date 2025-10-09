@@ -110,8 +110,8 @@
 
 @theme {
 
-
-/* --color-light-100: #f9f8ff;
+/*
+--color-light-100: #f9f8ff;
 --color-light-200: #e6e3fa;
 --color-light-300: #cfc7e7;
 --color-mint-600: #a07be6;
@@ -133,16 +133,16 @@
 --color-mint-700: #04432f;
 --color-secondary: #cfcfcf; */
 
---color-light-100: #FAFAFA;   /* casi blanco, apenas más oscuro que #FFFFFF */
---color-light-200: #F2F2F2;   /* un poco más oscuro, gris muy claro */
---color-light-300: #E5E5E5;   /* gris claro, más visible pero aún suave */
+--color-light-100: #FAFAFA;
+--color-light-200: #F2F2F2;
+--color-light-300: #E5E5E5;
 --color-mint-600: #005A73;
 --color-secondary-l: #b3dbe6;
 
---color-dark-300: #010507;   /* más oscuro */
---color-dark-200: #0a1013;  /* un poco más claro que #080d10 */
---color-dark-100: #121b21;  /* solo un poquitico más claro que dark-200 */  /* un poco más claro que dark-200 */
---color-mint-700: #01151a;
+--color-dark-300: #010507;
+--color-dark-200: #0a1013;
+--color-dark-100: #121b21;
+--color-mint-700: #03303a;
 --color-secondary-d: #072c34;
 
 --shadow-subtle-l:  0 8px 22px 0 rgba(44, 62, 80, 0.18), 0 4px 16px 0 rgba(180, 180, 180, 0.12), 0 2px 8px 0 rgba(140,111,199,0.22);

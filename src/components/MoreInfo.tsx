@@ -5,7 +5,7 @@ const MoreInfo = () => {
         href="https://rumpke-immobilien.de/"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-mint-600 dark:bg-mint-700 text-white font-semibold shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] transition-all duration-200 hover:bg-mint-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-mint-600 dark:focus:ring-mint-700 focus:ring-offset-2"
+        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-mint-600  text-white font-semibold shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] transition-all duration-200 hover:bg-mint-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-mint-600 dark:focus:ring-mint-700 focus:ring-offset-2"
       >
         <svg
           className="w-5 h-5"
