@@ -4,10 +4,10 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import { mainFont, titleFonts } from "@/config/fonts";
-import Header from "@/header/components/Header";
+import Header from "@/components/header/components/Header";
 import { ThemeProvider } from "@/context/ThemeContext";
 import Footer from "@/components/Footer";
-import KeywordCarousel from "@/header/components/KeywordCarousel";
+import KeywordCarousel from "@/components/header/components/KeywordCarousel";
 import QuickLinksBar from "@/components/quick-links-bar/QuickLinksBar";
 import { RainbowProvider } from "@/hooks/useRainBow";
 import CookieConsentClient from "@/components/cookie/CookieConsentClient";
@@ -82,13 +82,13 @@ export default function RootLayout({
               <div className="duration-100 bg-white 2xl:w-[85%] dark:bg-dark-300 mx-auto">
                 <div className="dark:shadow-subtle-d shadow-subtle-l">
                   <RainbowProvider>
-                  <Header />
+                    <Header />
                     {children}
                   </RainbowProvider>
                   <div className="bg-mint-600 dark:bg-mint-700 duration-100 text-white">
                     <QuickLinksBar />
                     <Footer />
-              <MainTitle />
+                    <MainTitle />
                   </div>
                 </div>
               </div>

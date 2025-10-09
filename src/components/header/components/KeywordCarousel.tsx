@@ -25,7 +25,7 @@ export default function KeywordCarousel() {
           {keywords.map((word, idx) => (
             <span
               key={idx}
-              className="duration-100 mx-4 text-xs sm:text-sm dark:text-[rgba(0,255,180,0.20)] text-gray-400"
+              className="duration-100 mx-4 text-xs sm:text-sm dark:text-[rgba(0,255,180,0.20)] text-gray-400 select-none"
             >
               {word}
             </span>
@@ -33,7 +33,7 @@ export default function KeywordCarousel() {
           {keywords.map((word, idx) => (
             <span
               key={`dup-${idx}`}
-              className="duration-100 mx-4 text-xs sm:text-sm dark:text-[rgba(0,255,180,0.20)] text-gray-400"
+              className="duration-100 mx-4 text-xs sm:text-sm dark:text-[rgba(0,255,180,0.20)] text-gray-400 select-none"
             >
               {word}
             </span>
