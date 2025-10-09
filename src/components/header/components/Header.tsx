@@ -1,7 +1,7 @@
 
 'use client'
 
-import Logo from "@/header/components/Logo"
+import Logo from "@/components/header/components/Logo"
 import ThemeSwitch from "@/components/ThemeSwitch"
 import SocialMediaComponent from "@/components/SocialMediaComponent"
 import Contributors from "@/components/contributors/Contributors"
