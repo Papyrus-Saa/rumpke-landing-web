@@ -89,7 +89,7 @@ const AwardsSection = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className="absolute -top-12 left-1/2 transform -translate-x-1/2 z-50 bg-black/90 dark:bg-light-200 text-white dark:text-black px-4 py-2 rounded-lg text-sm whitespace-nowrap"
+                      className="absolute -top-12 left-1/2 transform -translate-x-1/2 z-50 bg-gradient-orange-yellow p-1 rounded-lg text-sm whitespace-nowrap text-white"
                     >
                       Klicken für mehr Info
                       <div className="absolute left-1/2 transform -translate-x-1/2 top-full
@@ -99,7 +99,7 @@ const AwardsSection = () => {
                     </motion.div>
                   )}
                   <div className="absolute inset-0 bg-gradient-mint-green opacity-0 blur-xl group-hover:opacity-10 dark:group-hover:opacity-20 transition-all duration-700 ease-out" />
-                  <div className="duration-100 relative bg-light-100 dark:bg-dark-200 rounded-2xl p-4 md:p-6 flex flex-col items-center justify-center h-full shadow-lg shadow-mint-600/10 dark:shadow-mint-700 border border-mint-600/10 dark:border-mint-700/10 overflow-hidden hover:shadow-amber-600 hover:shadow-sm">
+                  <div className="duration-100 relative bg-light-100 dark:bg-dark-200 rounded-2xl p-4 md:p-6 flex flex-col items-center justify-center h-full shadow shadow-mint-600/10 dark:shadow-mint-700 border border-mint-600/10 dark:border-mint-700/10 overflow-hidden hover:shadow-amber-600 hover:shadow-sm">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-mint-green transform origin-left scale-x-0 group-hover:scale-x-100 dark:group-hover:opacity-80 transition-transform duration-500" />
 
                     <motion.div

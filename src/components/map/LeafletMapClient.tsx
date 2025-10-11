@@ -158,8 +158,9 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
       </div>
       <form className="mb-4 flex gap-2" onSubmit={handleSearch}>
         <input
+          id="address-input"
           type="text"
-          className={`border border-light-300 dark:border-gray-700 rounded px-3 py-2 w-full transition-colors duration-100`}
+          className={`border border-light-300 dark:border-gray-700 rounded px-3 py-2 w-full transition-colors duration-100 scroll-mb-60`}
           placeholder="Postleitzahl oder Adresse eingeben..."
           value={input}
           onChange={(e) => setInput(e.target.value)}

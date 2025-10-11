@@ -38,7 +38,7 @@ export function useSubmit() {
         const j = await res.json().catch(() => ({ message: res.statusText }));
         throw new Error(j.message || 'Es ist ein Fehler aufgetreten. Bitte lade die Seite neu. Wenn das Problem weiterhin besteht, versuche es später erneut.');
       }
-      setSuccess('Vielen Dank! Deine Angaben wurden übermittelt. 😊');
+      setSuccess('Vielen Dank für deine Empfehlung! Wir haben deine Angaben erhalten und unser Team prüft diese zeitnah. Du erhältst in Kürze eine Rückmeldung von uns. Deine Daten sind bei uns sicher und werden vertraulich behandelt. 😊');
       return { ok: true, result };
     } catch (e) {
       const errorMsg = (e instanceof Error) ? e.message : String(e);

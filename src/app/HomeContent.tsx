@@ -7,7 +7,7 @@ import HeroBackgroundSlider from '@/components/hero/HeroBackgroundSilder';
 import AwardsSection from '@/components/awards/AwardsSection';
 import { FormPic } from '@/components/form/FormPic';
 import HowItWorks from '@/components/HowItWorks';
-import TipInfo from '@/components/TipInfo';
+import TipInfo from '@/components/tip-info/TipInfo';
 import dynamic from 'next/dynamic';
 
 const LeafletMap = dynamic(() => import('@/components/map/LeafletMap'), {
@@ -28,6 +28,7 @@ import MotivationBanner from '@/components/MotivationBanner';
 import AIButton from '@/components/ai-assistant/AIButton';
 import AIChat from '@/components/ai-assistant/AIChat';
 import AIChatMobile from '@/components/ai-assistant/AIChatMobile';
+import { TipInfoSectionButton } from '@/components/tip-info/TipInfoSectionButton';
 
 export default function HomeContent() {
   const [showFormPic, setShowFormPic] = useState(false);
@@ -36,6 +37,7 @@ export default function HomeContent() {
   return (
     <HomeContentWrapper>
       <HeroBackgroundSlider />
+      <TipInfoSectionButton/>
       <AwardsSection />
       {showFormPic && <FormPic />}
       <HowItWorks />
