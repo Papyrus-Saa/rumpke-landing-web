@@ -1,22 +1,36 @@
-import React from "react";
+'use client';
 
-export const TipInfoSectionButton: React.FC = () => {
+import React from "react";
+import { MdLocationOn } from "react-icons/md";
+
+
+interface Props {
+  title: string;
+}
+
+export const TipInfoSectionButton: React.FC<Props> = ({ title }) => {
   const handleScroll = () => {
-    const el = document.getElementById("tip-info");
+    const el = document.getElementById("address-input");
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      setTimeout(() => {
+        el.focus();
+      }, 350);
     }
   };
 
   return (
-    <button
-      type="button"
-      onClick={handleScroll}
-      className="text-xs px-2 py-2 rounded-xl font-semibold cursor-pointer text-red-600 shadow-subtle-l dark:shadow-subtle-d duration-200 ml-2 mt-2 2xl:ml-6 hover:bg-light-200 dark:hover:bg-dark-100 hover:shadow-none"
-      aria-label="Ist mein Tipp gültig?"
-    >
-      Ist mein Tipp gültig?
-    </button>
+    <div className="flex flex-col justify-center items-center">
+      <button
+        type="button"
+        onClick={handleScroll}
+        className="rounded bg-red-700 text-white hover:bg-red-500 text-xs p-1 font-semibold cursor-pointer duration-200 mb-1"
+        aria-label="Ist mein Tipp gültig?"
+      >
+        <MdLocationOn className="text-lg" />
+      </button>
+      <p className="text-xs dark:text-[#808080] text-[#7c7c7c]">{title}</p>
+    </div>
   );
 };
 

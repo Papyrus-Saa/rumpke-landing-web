@@ -32,12 +32,25 @@ import { TipInfoSectionButton } from '@/components/tip-info/TipInfoSectionButton
 
 export default function HomeContent() {
   const [showFormPic, setShowFormPic] = useState(false);
+  const [showFixedButton, setShowFixedButton] = useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setShowFixedButton(window.scrollY > 800);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   const { visible, toggleChat } = useAIChat();
 
   return (
     <HomeContentWrapper>
       <HeroBackgroundSlider />
-      <TipInfoSectionButton/>
+      <div className='sm:flex my-2 ml-2'>
+        <TipInfoSectionButton
+          title="Kontrolliere den Postleitzahl"
+        />
+      </div>
       <AwardsSection />
       {showFormPic && <FormPic />}
       <HowItWorks />
@@ -66,6 +79,13 @@ export default function HomeContent() {
         {!visible && <AIButton visible={false} toggleChat={toggleChat} />}
         {visible && <AIChatMobile />}
       </div>
+      {showFixedButton && (
+        <div className='fixed bottom-1 left-10 2xl:left-38 z-[600] hidden md:block'>
+          <TipInfoSectionButton
+            title="Ist mein Tipp gültig?"
+          />
+        </div>
+      )}
     </HomeContentWrapper>
   );
 }
