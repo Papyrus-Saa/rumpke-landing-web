@@ -160,7 +160,7 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
         <input
           id="address-input"
           type="text"
-          className={`border border-light-300 dark:border-gray-700 rounded px-3 py-2 w-full transition-colors duration-100 scroll-mb-60`}
+          className={`border border-light-300 dark:border-gray-700 rounded px-3 py-2 w-full transition-colors duration-100`}
           placeholder="Postleitzahl oder Adresse eingeben..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
