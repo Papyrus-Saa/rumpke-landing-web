@@ -12,7 +12,7 @@ export const TipInfoSectionButton: React.FC<Props> = ({ title }) => {
   const handleScroll = () => {
     const el = document.getElementById("address-input");
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
       setTimeout(() => {
         el.focus();
       }, 350);

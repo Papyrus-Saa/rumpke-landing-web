@@ -20,7 +20,7 @@ const AwardProducts = () => {
                   className="relative flex-shrink-0 flex flex-col items-center shadow dark:shadow-subtle-d"
                 >
                   <div
-                    className="w-full opacity-70 hover:opacity-100 transition-opacity duration-300"
+                    className="w-full "
                     style={{ aspectRatio: '1 / 1', width: '100%', maxWidth: '360px', minWidth: '180px', margin: '0 auto', borderRadius: '0.5rem', overflow: 'hidden' }}
                   >
                     <Image
