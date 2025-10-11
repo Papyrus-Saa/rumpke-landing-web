@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { useTheme } from "@/context/ThemeContext";
-import styled from 'styled-components';
 import { RiSunLine, RiMoonClearLine } from 'react-icons/ri';
 
 const ThemeSwitch = () => {
