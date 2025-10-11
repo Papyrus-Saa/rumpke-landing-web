@@ -22,7 +22,7 @@ export const SubmitTipButton = () => {
 
         className="
     duration-100
-    text-white py-2 rounded-xl px-1 font-bold cursor-pointer
+    text-white py-2 rounded-xl px-1 cursor-pointer
     shadow-md transition-all
     hover:shadow-lg hover:scale-105
     focus:outline-none focus:ring-2 focus:ring-offset-2
