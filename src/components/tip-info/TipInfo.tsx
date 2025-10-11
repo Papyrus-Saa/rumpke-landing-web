@@ -11,19 +11,19 @@ export interface TipInfoProps {
 const defaultRules: ReactNode[] = [
   "Wir wissen bisher noch nichts von dem geplanten Verkauf.",
   "Das Ganze ist noch nicht offiziell (kein Schild im Garten, keine Anzeige im Internet).",
-  <div className=" w-full flex justify-between items-center">
-      <span>Es liegt in einer Region, in der wir aktiv sind.</span>
-      <button
-        type="button"
-        onClick={() => {
-          const el = document.getElementById('address-input');
-          if (el) {
-            el.focus();
-            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
-        }}
-        className="p-1 ml-14 cursor-pointer rounded bg-light-300 dark:bg-dark-200 dark:text-white text-xs font-semibold shadow hover:bg-mint-600 hover:text-white transition duration-150"
-      >Prüfen</button>
+  <div key="region-check" className=" w-full flex justify-between items-center">
+    <span>Es liegt in einer Region, in der wir aktiv sind.</span>
+    <button
+      type="button"
+      onClick={() => {
+        const el = document.getElementById('address-input');
+        if (el) {
+          el.focus();
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }}
+      className="p-1 ml-14 cursor-pointer rounded bg-light-300 dark:bg-dark-200 dark:text-white text-xs font-semibold shadow hover:bg-mint-600 hover:text-white transition duration-150"
+    >Prüfen</button>
   </div>,
 ];
 

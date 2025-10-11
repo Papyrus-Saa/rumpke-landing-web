@@ -26,8 +26,5 @@ const ThemeSwitch = () => {
   );
 }
 
-const StyledWrapper = styled.div``;
-`;
-`;
 
 export default ThemeSwitch;
