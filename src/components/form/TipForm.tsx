@@ -97,7 +97,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
         id='contact-form'
         onSubmit={handleSubmit(onSubmit)}
         className={
-          "mx-auto max-w-2xl rounded-3xl shadow dark:shadow-subtle-d space-y-5 p-4 md:p-8 duration-100 bg-light-100 dark:bg-dark-200 sm:w-[80%] mb-2 scroll-mt-40"
+          "mx-auto max-w-2xl rounded-xl shadow dark:shadow-subtle-d space-y-5 p-4 md:p-8 duration-100 bg-light-100 dark:bg-dark-200 sm:w-[80%] mb-2 scroll-mt-40"
         }
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}

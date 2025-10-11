@@ -116,12 +116,12 @@ const WhyTrustUs: React.FC = () => {
           >
             <button
               onClick={closeBadgeModal}
-              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-gray-800/50 text-white hover:bg-gray-800/70 transition-colors"
+              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-gray-800/50 text-white hover:bg-gray-800 transition-color cursor-pointer hover:shadow-ai-l dark:hover:shadow-ai-d"
               aria-label="Schließen"
             >
               <IoClose size={24} />
             </button>
-            <div className="relative w-full h-[70vh] md:h-[80vh] rounded-lg overflow-hidden flex items-center justify-center bg-white dark:bg-dark-200">
+            <div className="relative w-full h-[70vh] md:h-[80vh] rounded-lg overflow-hidden flex items-center justify-center bg-dark-100">
               <Zoom>
                 <Image
                   src={selectedBadge.certificateImage!}

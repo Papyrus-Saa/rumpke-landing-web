@@ -16,7 +16,7 @@ const timeline: TimelineStep[] = [
   },
   {
     icon: <FaLightbulb className="duration-100   text-3xl" />,
-    title: "Initiative: Ich schenk dir was",
+    title: "Initiative: Ich schenke dir was",
     desc: "Eine Aktion von Rumpke Immobilien, um gemeinsam mit dir neue Chancen zu entdecken und echte Dankbarkeit zu zeigen.",
   },
   {
