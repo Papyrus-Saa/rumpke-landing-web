@@ -4,7 +4,8 @@ import { MdWarningAmber } from "react-icons/md";
 
 
 import { ReactNode } from "react";
-import { TipInfoSectionButton } from "./TipInfoSectionButton";
+import { MapInfoSectionButton } from "../map/MapInfoSectionButton";
+
 
 export interface TipRule {
   key: string;
@@ -29,7 +30,7 @@ const defaultRules: TipRule[] = [
     content: (
       <div className="w-[100%] flex justify-between items-center ">
         <span className="flex-grow">Es liegt in einer Region, in der wir aktiv sind.</span>
-        <TipInfoSectionButton title="Prüfen" />
+        <MapInfoSectionButton title="Prüfen" />
       </div>
     )
   }

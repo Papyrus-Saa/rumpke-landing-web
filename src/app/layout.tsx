@@ -13,12 +13,6 @@ import { RainbowProvider } from "@/hooks/useRainBow";
 import CookieConsentClient from "@/components/cookie/CookieConsentClient";
 import { AIChatProvider } from "@/context/AIChatContext";
 import MainTitle from "@/components/MainTitle";
-import { TipInfoSectionButton } from "@/components/tip-info/TipInfoSectionButton";
-
-
-
-
-
 
 
 export const metadata: Metadata = {
