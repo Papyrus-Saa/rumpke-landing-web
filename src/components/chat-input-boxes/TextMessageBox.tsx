@@ -33,7 +33,7 @@ const TextMessageBox = ({ onSend }: TextMessageBoxProps) => {
 
         <div className="relative w-full">
 
-          <input type="text"
+          <input type="text" inputMode="text"
             autoComplete="off"
             autoFocus
             name="message"
