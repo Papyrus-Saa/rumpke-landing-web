@@ -130,7 +130,8 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
   return (
     <>
       <style>{customMapStyles}</style>
-      <div className="w-full mb-2">
+      <div
+        className="w-full mb-2">
         {result && (
           <div
             className={`text-base w-full py-1 px-4 rounded-xl ${resultType === "in"
@@ -157,7 +158,7 @@ const LeafletMapClient: React.FC<LeafletMapClientProps> = ({ is3D, isSatellite =
         )}
       </div>
       <form
-      className="mb-4 flex gap-2" onSubmit={handleSearch}>
+        className="mb-4 flex gap-2" onSubmit={handleSearch}>
         <input
           id="address-input"
           type="text"

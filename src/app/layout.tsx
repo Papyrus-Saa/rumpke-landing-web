@@ -13,12 +13,6 @@ import { RainbowProvider } from "@/hooks/useRainBow";
 import CookieConsentClient from "@/components/cookie/CookieConsentClient";
 import { AIChatProvider } from "@/context/AIChatContext";
 import MainTitle from "@/components/MainTitle";
-import { TipInfoSectionButton } from "@/components/tip-info/TipInfoSectionButton";
-
-
-
-
-
 
 
 export const metadata: Metadata = {
@@ -78,7 +72,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <AIChatProvider>
-            <div className="duration-100 w-full text-gray-800 dark:text-gray-300 mx-auto bg-light-100 dark:bg-black font-sans">
+            <div className="duration-100 w-full text-gray-800 dark:text-gray-300 mx-auto bg-light-100 dark:bg-[#000000] font-sans">
               <KeywordCarousel />
               <div className="duration-100 bg-white rounded 2xl:w-[85%] dark:bg-dark-300 mx-auto">
                 <div className="dark:shadow-subtle-d shadow-subtle-l">

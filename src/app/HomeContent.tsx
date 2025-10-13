@@ -28,7 +28,10 @@ import MotivationBanner from '@/components/MotivationBanner';
 import AIButton from '@/components/ai-assistant/AIButton';
 import AIChat from '@/components/ai-assistant/AIChat';
 import AIChatMobile from '@/components/ai-assistant/AIChatMobile';
+import { MapInfoSectionButton } from '@/components/map/MapInfoSectionButton';
 import { TipInfoSectionButton } from '@/components/tip-info/TipInfoSectionButton';
+
+
 
 export default function HomeContent() {
   const [showFormPic, setShowFormPic] = useState(false);
@@ -36,7 +39,7 @@ export default function HomeContent() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setShowFixedButton(window.scrollY > 800);
+      setShowFixedButton(window.scrollY > 2200);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -46,10 +49,8 @@ export default function HomeContent() {
   return (
     <HomeContentWrapper>
       <HeroBackgroundSlider />
-      <div className='sm:flex my-2 ml-2'>
-        <TipInfoSectionButton
-          title="Kontrolliere den Postleitzahl"
-        />
+      <div className='sm:flex my-2 ml-2 mt-6'>
+        <TipInfoSectionButton />
       </div>
       <AwardsSection />
       {showFormPic && <FormPic />}
@@ -80,8 +81,8 @@ export default function HomeContent() {
         {visible && <AIChatMobile />}
       </div>
       {showFixedButton && (
-        <div className='fixed bottom-1 left-10 2xl:left-38 z-[600] hidden md:block'>
-          <TipInfoSectionButton
+        <div className='fixed bottom-1 left-10 md:left-2 2xl:left-38 z-50 hidden md:block'>
+          <MapInfoSectionButton
             title="Ist mein Tipp gültig?"
           />
         </div>

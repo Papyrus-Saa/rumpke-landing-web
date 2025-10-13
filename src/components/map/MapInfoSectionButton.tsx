@@ -1,16 +1,21 @@
 'use client';
 
 import React from "react";
-import { MdHelpOutline } from "react-icons/md";
+import { MdLocationOn } from "react-icons/md";
 
 
+interface Props {
+  title: string;
+}
 
-
-export const TipInfoSectionButton = () => {
+export const MapInfoSectionButton: React.FC<Props> = ({ title }) => {
   const handleScroll = () => {
-    const el = document.getElementById("tip-info");
+    const el = document.getElementById("address-input");
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => {
+        el.focus();
+      }, 350);
     }
   };
 
@@ -22,9 +27,9 @@ export const TipInfoSectionButton = () => {
         className="rounded bg-red-700 text-white hover:bg-red-500 text-xs p-1 font-semibold cursor-pointer duration-200 mb-1"
         aria-label="Ist mein Tipp gültig?"
       >
-        <MdHelpOutline className="text-lg" />
+        <MdLocationOn className="text-lg" />
       </button>
-      <p className="text-xs dark:text-[#808080] text-[#7c7c7c]">Ist dein Tipp gültig?</p>
+      <p className="text-xs dark:text-[#808080] text-[#7c7c7c]">{title}</p>
     </div>
   );
 };
