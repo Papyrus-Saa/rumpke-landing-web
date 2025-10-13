@@ -29,19 +29,18 @@ const WhyTrustUsButton = () => {
 
   return (
     <div
-      className="text-center p-2 duration-300 dark:bg-dark-100 bg-light-200 hover:bg-mint-600/40"
+      className="text-center p-2 duration-100 dark:bg-dark-100 bg-light-100 hover:bg-mint-600/40"
     >
       <div className="w-full justify-between flex  lg:px-16 xl:px-20 2xl:px-72">
         <button
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={() => { }}
-          className={"text-xs cursor-pointer flex justify-end  text-green-500"}
+          onClick={handleMouseEnter}
+          className={"duration-100 text-xs cursor-pointer flex justify-end font-semibold text-green-600 hover:text-green-400"}
         >
           Warum uns vertrauen?
         </button>
         <button
           onClick={handleClick}
-          className={"text-xs cursor-pointer flex justify-end text-gradient-orange-yellow border-l-4 border-r-4 px-2 border-amber-600 rounded-xl hover:border-amber-500"}
+          className={"duration-100 text-xs cursor-pointer  text-green-600 font-semibold hover:text-green-400" }
           >
           Jetzt Tipp abgeben
         </button>

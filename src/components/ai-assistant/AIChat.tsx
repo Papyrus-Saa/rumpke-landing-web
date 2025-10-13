@@ -146,7 +146,7 @@ export default function AIChat() {
           ref={listRef}
           className="
           flex-1 overflow-y-auto overscroll-contain
-          px-4 pt-4 pb-3
+          px-4 pt-4 pb-3 scroll
         "
         >
           <span className='bg-gradient-orange-yellow px-3 py-1 rounded-2xl text-white text-xs absolute right-4 top-[110px]'>Beta</span>
