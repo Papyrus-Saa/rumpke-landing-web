@@ -180,7 +180,7 @@ export default function AIChatMobile() {
                 </button>
               )}
             </div>
-            <div className="border-t border-black/10 dark:border-white/10 px-4 py-3 pb-[env(safe-area-inset-bottom)]">
+            <div className="border-t border-black/10 dark:border-white/10 px-4 py-3">
               <TextMessageBox onSend={handlePost} />
             </div>
           </div>
