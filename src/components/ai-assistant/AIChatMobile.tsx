@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import { FiX, FiInfo } from 'react-icons/fi';
+import BetaBadge from './BetaBadge'
 import AIMessage from './AIMessage'
 import ClientMessage from './ClientMessage'
 import TypingLoader from '../loaders/TypingLoader'
@@ -117,7 +118,7 @@ export default function AIChatMobile() {
           `}</style>
         </header>
         <div ref={listRef} className="flex-1 overflow-y-auto overscroll-contain px-4 pb-24 xl:px-40 mt-[100px]">
-          <span className='bg-gradient-orange-yellow px-3 py-1 rounded-2xl text-white text-xs absolute right-4 top-[90px]'>Beta</span>
+          <BetaBadge className="absolute right-4 top-[90px]" />
           <div className="grid grid-cols-12 gap-y-2">
             <AIMessage text="Hi, ich bin hier um dir zu helfen &#128519;" />
             {messages.map((m, i) =>

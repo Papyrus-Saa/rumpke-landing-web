@@ -7,6 +7,7 @@ import TypingLoader from '../loaders/TypingLoader'
 import TextMessageBox from '../chat-input-boxes/TextMessageBox'
 import { rumpkeai_assistant_use_case } from './rumpkeai-assistant-use-case'
 import AIButton from './AIButton'
+import BetaBadge from './BetaBadge'
 import { useAIChat } from '@/context/AIChatContext'
 import { FiInfo } from 'react-icons/fi'
 
@@ -114,6 +115,7 @@ export default function AIChat() {
             <AIButton
               visible={visible}
               toggleChat={toggleChat}
+              showBadge={false}
             />
           </div>
 
@@ -149,7 +151,7 @@ export default function AIChat() {
           px-4 pt-4 pb-3 scroll
         "
         >
-          <span className='bg-gradient-orange-yellow px-3 py-1 rounded-2xl text-white text-xs absolute right-4 top-[110px]'>Beta</span>
+          <BetaBadge className="absolute right-4 top-[110px]" />
           <div className="grid grid-cols-2 gap-y-2">
             <AIMessage text="Hi, ich bin hier um dir zu helfen &#128519;" />
             {messages.map((m, i) =>
@@ -167,7 +169,7 @@ export default function AIChat() {
             )}
           </div>
         </div>
-       {showDisclaimer && (
+        {showDisclaimer && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
             <div className="bg-light-100 dark:bg-dark-300 rounded-xl shadow-lg max-w-lg w-full mx-4 p-6 relative">
               <h2 className="text-lg font-semibold mb-2 text-mint-600">Hinweis zur Nutzung des Chatbots / Rechtlicher Disclaimer</h2>
