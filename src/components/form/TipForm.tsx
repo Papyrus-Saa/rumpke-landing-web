@@ -62,6 +62,54 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
     if (selectedPrize) setValue('prize', selectedPrize);
   }, [selectedPrize, setValue]);
 
+  // Prefill from URL query params (e.g. /qr?name=Juan&contact=555)
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const mappings: Array<[keyof TipFormData, string]> = [
+        ['name', 'name'],
+        ['contact', 'contact'],
+        ['address', 'address'],
+        ['ownerRelation', 'ownerRelation'],
+        ['propertyAddress', 'propertyAddress'],
+        ['ownerName', 'ownerName'],
+        ['ownerContact', 'ownerContact'],
+        ['prize', 'prize']
+      ];
+
+      // simple max length policy per field
+      const maxLen: Record<string, number> = {
+        name: 100,
+        contact: 100,
+        address: 200,
+        ownerRelation: 80,
+        propertyAddress: 200,
+        ownerName: 100,
+        ownerContact: 100,
+        prize: 20
+      };
+
+      mappings.forEach(([field, param]) => {
+        const raw = params.get(param);
+        if (!raw) return;
+        let v = raw.trim();
+        const max = maxLen[param] ?? 100;
+        if (v.length > max) v = v.slice(0, max);
+
+        // For prize, only allow configured values
+        if (field === 'prize') {
+          const allowed = PRAEMIEN.map(p => p.value);
+          if (!allowed.includes(v as any)) return;
+        }
+
+        // setValue typing is strict, cast to any for dynamic field name
+        setValue(field as any, v as any);
+      });
+    } catch (err) {
+      // ignore
+    }
+  }, [setValue]);
+
   function setError(message: string) {
     setLocalError(message);
   }
@@ -96,6 +144,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
       <motion.form
         id='contact-form'
         onSubmit={handleSubmit(onSubmit)}
+        autoComplete="on"
         className={
           "mx-auto max-w-2xl rounded-xl shadow dark:shadow-subtle-d space-y-5 p-4 md:p-8 duration-100 bg-light-100 dark:bg-dark-200 sm:w-[80%] mb-2 scroll-mt-40"
         }
@@ -114,6 +163,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
           <label className={labelCls} htmlFor="prize"><span className='text-gradient-orange-yellow'>Prämie auswählen *</span></label>
           <select
             id="prize"
+            autoComplete="off"
             className={`${inputBase} ${rainbowActive ? 'rainbow-border' : ''}`}
             {...register('prize', { required: 'Prämie auswählen ist erforderlich' })}
             aria-invalid={!!errors.prize}
@@ -129,6 +179,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
           <label className={labelCls} htmlFor="name">Vorname & Nachname *</label>
           <input
             id="name"
+            autoComplete="name"
             className={inputBase}
             placeholder="Vorname Nachname"
             {...register('name', { required: 'Name ist erforderlich' })}
@@ -139,6 +190,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
           <label className={labelCls} htmlFor="contact">Kontakt (E-Mail oder Telefon) *</label>
           <input
             id="contact"
+            autoComplete="email"
             className={inputBase}
             placeholder="E-Mail oder Telefon"
             {...register('contact', { required: 'Kontakt ist erforderlich' })}
@@ -149,6 +201,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
           <label className={labelCls} htmlFor="address">Adresse *</label>
           <input
             id="address"
+            autoComplete="street-address"
             className={inputBase}
             placeholder="Straße Nr., PLZ Ort"
             {...register('address', { required: 'Adresse ist erforderlich' })}
@@ -159,6 +212,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
           <label className={labelCls} htmlFor="ownerRelation">Beziehung zum Eigentümer *</label>
           <input
             id="ownerRelation"
+            autoComplete="organization"
             className={inputBase}
             placeholder="z. B. Nachbar, Makler, Freund…"
             {...register('ownerRelation', { required: 'Beziehung ist erforderlich' })}
@@ -169,6 +223,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
           <label className={labelCls} htmlFor="propertyAddress">Adresse der Immobilie *</label>
           <input
             id="propertyAddress"
+            autoComplete="street-address"
             className={inputBase}
             placeholder="Straße Nr., PLZ Ort"
             {...register('propertyAddress', { required: 'Adresse der Immobilie ist erforderlich' })}
@@ -179,6 +234,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
           <label className={labelCls} htmlFor="ownerName">Name des Eigentümers (optional)</label>
           <input
             id="ownerName"
+            autoComplete="name"
             className={inputBase}
             placeholder="Eigentümer Name"
             {...register('ownerName')}
@@ -188,6 +244,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
           <label className={labelCls} htmlFor="ownerContact">Kontakt des Eigentümers (optional)</label>
           <input
             id="ownerContact"
+            autoComplete="tel"
             className={inputBase}
             placeholder="Eigentümer Kontakt"
             {...register('ownerContact')}
