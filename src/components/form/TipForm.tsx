@@ -278,8 +278,8 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
           <div className="sm:ml-auto mx-auto">
             <button
               type="submit"
-              // disabled={loading}
-              disabled={true}
+              disabled={loading}
+              // disabled={true}
               className={
                 "inline-flex items-center justify-center rounded px-3 py-1 sm:py-1 font-medium text-white shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] hover:brightness-110 active:brightness-95 disabled:opacity-60 disabled:cursor-not-allowed transition cursor-pointer w-full bg-gradient-to-tr grad bg-gradient-orange-yellow"
               }
