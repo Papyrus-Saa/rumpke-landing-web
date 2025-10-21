@@ -62,53 +62,6 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
     if (selectedPrize) setValue('prize', selectedPrize);
   }, [selectedPrize, setValue]);
 
-  // Prefill from URL query params (e.g. /qr?name=Juan&contact=555)
-  useEffect(() => {
-    try {
-      const params = new URLSearchParams(window.location.search);
-      const mappings: Array<[keyof TipFormData, string]> = [
-        ['name', 'name'],
-        ['contact', 'contact'],
-        ['address', 'address'],
-        ['ownerRelation', 'ownerRelation'],
-        ['propertyAddress', 'propertyAddress'],
-        ['ownerName', 'ownerName'],
-        ['ownerContact', 'ownerContact'],
-        ['prize', 'prize']
-      ];
-
-      // simple max length policy per field
-      const maxLen: Record<string, number> = {
-        name: 100,
-        contact: 100,
-        address: 200,
-        ownerRelation: 80,
-        propertyAddress: 200,
-        ownerName: 100,
-        ownerContact: 100,
-        prize: 20
-      };
-
-      mappings.forEach(([field, param]) => {
-        const raw = params.get(param);
-        if (!raw) return;
-        let v = raw.trim();
-        const max = maxLen[param] ?? 100;
-        if (v.length > max) v = v.slice(0, max);
-
-        // For prize, only allow configured values
-        if (field === 'prize') {
-          const allowed = PRAEMIEN.map(p => p.value);
-          if (!allowed.includes(v as any)) return;
-        }
-
-        // setValue typing is strict, cast to any for dynamic field name
-        setValue(field as any, v as any);
-      });
-    } catch (err) {
-      // ignore
-    }
-  }, [setValue]);
 
   function setError(message: string) {
     setLocalError(message);
