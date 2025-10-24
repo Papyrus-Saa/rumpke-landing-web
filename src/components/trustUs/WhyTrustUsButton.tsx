@@ -11,9 +11,10 @@ import { useRainbow } from "@/hooks/useRainBow";
 
 const WhyTrustUsButton = () => {
   const pathname = usePathname();
-  if (pathname !== "/") return null;
-
   const { triggerRainbow } = useRainbow();
+  const [visible, setVisible] = useState(false);
+
+  if (pathname !== "/") return null;
 
   const handleClick = () => {
     const el = document.getElementById('contact-form');
@@ -23,7 +24,6 @@ const WhyTrustUsButton = () => {
     }
   };
 
-  const [visible, setVisible] = useState(false);
   const handleMouseEnter = () => {
     if (!visible) {
       setVisible(true);
@@ -34,7 +34,7 @@ const WhyTrustUsButton = () => {
     <div
       className="text-center p-2 duration-100 dark:bg-dark-100 bg-light-100 hover:bg-mint-600/40"
     >
-      <div className="w-full justify-between flex lg:px-16 xl:px-20 2xl:px-72">
+      <div className="w-full justify-between flex  lg:px-16 xl:px-20 2xl:px-72">
         <button
           disabled
           title="Wartungsarbeiten – bald wieder verfügbar"
