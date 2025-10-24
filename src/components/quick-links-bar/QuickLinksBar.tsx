@@ -9,10 +9,10 @@ const QuickLinksBar = () => {
       <Link href="/privacy" className="text-sm hover:underline">
         Datenschutzerklärung
       </Link>
-      <Link href="/imprint" className="text-sm hover:underline">
+      <Link href="/impressum" className="text-sm hover:underline">
         Impressum
       </Link>
-      <Link href={"/terms"} className="text-sm hover:underline">
+      <Link href={"/agb"} className="text-sm hover:underline">
         AGB
       </Link>
     </div>

@@ -3,7 +3,7 @@
 
 
 
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const SOCIALS = [
@@ -17,11 +17,6 @@ const SOCIALS = [
     icon: <FaInstagram size={14} />,
     ariaLabel: 'Instagram',
   },
-  {
-    href: 'https://linkedin.com',
-    icon: <FaLinkedinIn size={14} />,
-    ariaLabel: 'LinkedIn',
-  },
 ];
 
 const buttonVariants = {
@@ -32,7 +27,7 @@ const buttonVariants = {
 
 const SocialMediaComponent = ({ className }: { className?: string }) => (
   <div
-    className={`flex justify-center items-center gap-6 py-2 ${className ?? ''}`}
+    className={`flex justify-center items-center gap-4 py-2 ${className ?? ''}`}
     data-testid="social-media-container"
   >
     {SOCIALS.map(({ href, icon, ariaLabel }, idx) => (

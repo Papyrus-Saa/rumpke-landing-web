@@ -4,24 +4,33 @@ import Link from 'next/link'
 
 const page = () => {
   return (
-    <div className="px-4 py-8  mx-auto">
-      <header className="text-center mb-2">
-        <h1 className="text-3xl font-bold mb-2">Hey — schön, dass du hier bist! <span aria-hidden>😊</span></h1>
-        <p className="text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">Hier können Angaben zur Immobilie und Kontaktdaten übermittelt werden. Das Ausfüllen dauert ca. 1 Minute. Alternativ ist die Abgabe des Tipps auch über unsere Hauptwebsite möglich — bitte den Button nutzen.</p>
+    <div className="px-2 md:px-0 py-8  mx-auto">
+      <header className="text-center mb-6">
+        <h1 className="text-xl md:text-3xl font-bold my-10">Hey — schön, dass du hier bist! <span aria-hidden>😊</span></h1>
+        <p className="text-xs md:text-l text-gradient-orange-yellow font-bold max-w-3xl mx-auto mb-6">Hier können Angaben zur Immobilie und Kontaktdaten übermittelt werden. Das Ausfüllen dauert ca. 1 Minute.</p>
         <div className="mt-4">
-          <Link href="/" title="Öffnet die Website mit weiteren Informationen zum Tipp-Prozess" aria-label="Zur Website - weitere Informationen" className="inline-flex items-center bg-gradient-orange-yellow text-white px-4 py-2 rounded-lg shadow">
+          <Link href="/" title="Öffnet die Website mit weiteren Informationen zum Tipp-Prozess" aria-label="Zur Website - weitere Informationen" className="inline-flex items-center bg-gradient-orange-yellow text-white px-2 py-1 mb-6 rounded-lg shadow">
             Zur Website
             <span className="ml-3 inline-block animate-bounce" aria-hidden>
               👉
             </span>
           </Link>
-          <p className="text-green-500 text-xs mt-2 max-w-3xl mx-auto">Mehr Informationen zum Ablauf finden Sie auf unserer Website.</p>
+          <p className="text-green-500 text-xs font-bold mt-2 max-w-3xl mx-auto">Mehr Informationen zum Ablauf finden Sie auf unserer Website.</p>
         </div>
       </header>
-
       <main>
         <TipForm />
       </main>
+      <div className="max-w-2xl mx-auto mt-3 p-3 rounded-md  bg-light-200 dark:bg-dark-200 text-sm text-gray-700 dark:text-gray-200">
+        <strong className="block text-sm font-semibold text-center mb-2 bg-red-500/80 dark:bg-red-500/40 text-white">Wichtig für deinen Tipp!</strong>
+        <ul className="list-disc list-inside leading-snug text-xs">
+          <li>Wir wissen bisher noch nichts von dem geplanten Verkauf.</li>
+          <li>Das Ganze ist noch nicht offiziell (kein Schild im Garten, keine Anzeige im Internet).</li>
+          <li>Es liegt in einer Region, in der wir aktiv sind.</li>
+        </ul>
+        <p className="mt-2 text-xs">Die Region gilt als ein Umkreis von <strong>100 km</strong> um die Adresse: <strong>49844 Bawinkel</strong>.</p>
+        <p className="mt-2 text-xs">Du kannst auf unserer Website im Kartenbereich prüfen, ob die Adresse oder die Postleitzahl gültig ist. Drücke dazu den Button <em>Zur Website</em> oben.</p>
+      </div>
     </div>
   )
 }
