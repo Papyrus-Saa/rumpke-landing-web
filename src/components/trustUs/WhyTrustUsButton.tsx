@@ -46,7 +46,7 @@ const WhyTrustUsButton = () => {
         </button>
         <button
           onClick={handleClick}
-          className={"duration-100 text-xs cursor-pointer  text-green-600 font-semibold hover:text-green-400 select-none"}
+          className={"duration-100 text-xs cursor-pointer text-green-600 font-semibold hover:text-green-400 select-none"}
         >
           Jetzt Tipp abgeben
         </button>

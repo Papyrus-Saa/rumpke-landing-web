@@ -10,7 +10,7 @@ import { useScrolled } from "@/hooks/useScrolled"
 
 
 
-const SCROLL_THRESHOLD = 8
+const SCROLL_THRESHOLD = 8;
 
 
 export default function Header() {

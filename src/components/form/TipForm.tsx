@@ -7,17 +7,20 @@ import Turnstile from 'react-turnstile'
 import { useState } from 'react';
 import { useRainbow } from '@/hooks/useRainBow';
 
-type TipFormData = {
-  name: string;
-  contact: string;
-  address: string;
-  ownerRelation: string;
-  propertyAddress: string;
-  ownerName?: string;
-  ownerContact?: string;
-  prize: "Urlaub" | "E-Bike" | "Gutschein" | "Küche";
+export type TipFormData = {
+  tippgeberName: string;
+  tippgeberKontakt: string;
+  tippgeberAdresse: string;
+  beziehungEigentuemer: string;
+  immobilienAdresse: string;
+  plzOderStadt: string;
+  eigentuemerName?: string;
+  eigentuemerKontakt?: string;
+  praemie: "Urlaub" | "E-Bike" | "Gutschein" | "Küche";
   terms: boolean;
   captchaToken: string;
+  neueEigenschaft1?: string;
+  neueEigenschaft2?: string;
 };
 
 interface TipFormProps {
@@ -32,23 +35,25 @@ const PRAEMIEN = [
 ];
 
 export default function TipForm({ selectedPrize }: TipFormProps) {
-
-
   const [localError, setLocalError] = useState<string | null>(null);
   const { submit, loading, success, error: submitError } = useSubmit();
   const errorRef = useRef<HTMLDivElement>(null);
 
   const { rainbowActive } = useRainbow();
+
   const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm<TipFormData>({
     defaultValues: {
-      name: '',
-      contact: '',
-      address: '',
-      ownerRelation: '',
-      propertyAddress: '',
-      ownerName: '',
-      ownerContact: '',
-      prize: selectedPrize,
+      tippgeberName: '',
+      tippgeberKontakt: '',
+      tippgeberAdresse: '',
+      beziehungEigentuemer: '',
+      immobilienAdresse: '',
+      plzOderStadt: '',
+      eigentuemerName: '',
+      eigentuemerKontakt: '',
+      praemie: selectedPrize,
+      terms: false,
+      captchaToken: '',
     }
   });
 
@@ -59,9 +64,8 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
   }, [submitError, localError]);
 
   useEffect(() => {
-    if (selectedPrize) setValue('prize', selectedPrize);
+    if (selectedPrize) setValue('praemie', selectedPrize);
   }, [selectedPrize, setValue]);
-
 
   function setError(message: string) {
     setLocalError(message);
@@ -112,97 +116,118 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
             {submitError || localError}
           </div>
         )}
+
+        {/* Prämie auswählen */}
         <div>
-          <label className={labelCls} htmlFor="prize"><span className='text-gradient-orange-yellow'>Prämie auswählen *</span></label>
+          <label className={labelCls} htmlFor="praemie"><span className='text-gradient-orange-yellow'>Prämie auswählen *</span></label>
           <select
-            id="prize"
+            id="praemie"
             autoComplete="off"
             className={`${inputBase} ${rainbowActive ? 'rainbow-border' : ''}`}
-            {...register('prize', { required: 'Prämie auswählen ist erforderlich' })}
-            aria-invalid={!!errors.prize}
+            {...register('praemie', { required: 'Prämie auswählen ist erforderlich' })}
+            aria-invalid={!!errors.praemie}
           >
             <option value="">Bitte wählen…</option>
             {PRAEMIEN.map(p => (
               <option key={p.value} value={p.value}>{p.label}</option>
             ))}
           </select>
-          {errors.prize && <p className={errorCls}>{errors.prize.message}</p>}
+          {errors.praemie && <p className={errorCls}>{errors.praemie.message}</p>}
         </div>
+
+        {/* Daten des Tippgebers */}
+        <h3 className="mt-6 mb-2 text-lg font-semibold text-mint-600">Daten des Tippgebers</h3>
         <div>
-          <label className={labelCls} htmlFor="name">Vorname & Nachname *</label>
+          <label className={labelCls} htmlFor="tippgeberName">Vorname & Nachname *</label>
           <input
-            id="name"
+            id="tippgeberName"
             autoComplete="name"
             className={inputBase}
             placeholder="Vorname Nachname"
-            {...register('name', { required: 'Name ist erforderlich' })}
+            {...register('tippgeberName', { required: 'Name ist erforderlich' })}
           />
-          {errors.name && <p className={errorCls}>{errors.name.message}</p>}
+          {errors.tippgeberName && <p className={errorCls}>{errors.tippgeberName.message}</p>}
         </div>
         <div>
-          <label className={labelCls} htmlFor="contact">Kontakt (E-Mail oder Telefon) *</label>
+          <label className={labelCls} htmlFor="tippgeberKontakt">Kontakt (E-Mail oder Telefon) *</label>
           <input
-            id="contact"
+            id="tippgeberKontakt"
             autoComplete="email"
             className={inputBase}
             placeholder="E-Mail oder Telefon"
-            {...register('contact', { required: 'Kontakt ist erforderlich' })}
+            {...register('tippgeberKontakt', { required: 'Kontakt ist erforderlich' })}
           />
-          {errors.contact && <p className={errorCls}>{errors.contact.message}</p>}
+          {errors.tippgeberKontakt && <p className={errorCls}>{errors.tippgeberKontakt.message}</p>}
         </div>
         <div>
-          <label className={labelCls} htmlFor="address">Adresse *</label>
+          <label className={labelCls} htmlFor="tippgeberAdresse">Adresse *</label>
           <input
-            id="address"
+            id="tippgeberAdresse"
             autoComplete="street-address"
             className={inputBase}
-            placeholder="Straße Nr., PLZ Ort"
-            {...register('address', { required: 'Adresse ist erforderlich' })}
+            placeholder="Straße Nr."
+            {...register('tippgeberAdresse', { required: 'Adresse ist erforderlich' })}
           />
-          {errors.address && <p className={errorCls}>{errors.address.message}</p>}
+          {errors.tippgeberAdresse && <p className={errorCls}>{errors.tippgeberAdresse.message}</p>}
         </div>
         <div>
-          <label className={labelCls} htmlFor="ownerRelation">Beziehung zum Eigentümer *</label>
+          <label className={labelCls} htmlFor="beziehungEigentuemer">Beziehung zum Eigentümer *</label>
           <input
-            id="ownerRelation"
+            id="beziehungEigentuemer"
             autoComplete="organization"
             className={inputBase}
             placeholder="z. B. Nachbar, Makler, Freund…"
-            {...register('ownerRelation', { required: 'Beziehung ist erforderlich' })}
+            {...register('beziehungEigentuemer', { required: 'Beziehung ist erforderlich' })}
           />
-          {errors.ownerRelation && <p className={errorCls}>{errors.ownerRelation.message}</p>}
+          {errors.beziehungEigentuemer && <p className={errorCls}>{errors.beziehungEigentuemer.message}</p>}
         </div>
+
+        {/* Daten der Immobilie */}
+        <h3 className="mt-6 mb-2 text-lg font-semibold text-mint-600 text">Daten der Immobilie</h3>
         <div>
-          <label className={labelCls} htmlFor="propertyAddress">Adresse der Immobilie *</label>
+          <label className={labelCls} htmlFor="immobilienAdresse">Adresse *</label>
           <input
-            id="propertyAddress"
+            id="immobilienAdresse"
             autoComplete="street-address"
             className={inputBase}
-            placeholder="Straße Nr., PLZ Ort"
-            {...register('propertyAddress', { required: 'Adresse der Immobilie ist erforderlich' })}
+            placeholder="Straße, Nr."
+            {...register('immobilienAdresse', { required: 'Adresse der Immobilie ist erforderlich' })}
           />
-          {errors.propertyAddress && <p className={errorCls}>{errors.propertyAddress.message}</p>}
+          {errors.immobilienAdresse && <p className={errorCls}>{errors.immobilienAdresse.message}</p>}
         </div>
         <div>
-          <label className={labelCls} htmlFor="ownerName">Name des Eigentümers (optional)</label>
+          <label className={labelCls} htmlFor="plzOderStadt">PLZ/Stadt *</label>
           <input
-            id="ownerName"
+            id="plzOderStadt"
+            autoComplete="postal-code"
+            className={inputBase}
+            placeholder="PLZ oder Stadt"
+            {...register('plzOderStadt', { required: 'PLZ oder Stadt ist erforderlich' })}
+          />
+          {errors.plzOderStadt && <p className={errorCls}>{errors.plzOderStadt.message}</p>}
+        </div>
+        <div>
+          <label className={labelCls} htmlFor="eigentuemerName">Name des Eigentümers (optional)</label>
+          <input
+            id="eigentuemerName"
             autoComplete="name"
             className={inputBase}
             placeholder="Eigentümer Name"
-            {...register('ownerName')}
+            {...register('eigentuemerName')}
           />
         </div>
         <div>
-          <label className={labelCls} htmlFor="ownerContact">Kontakt des Eigentümers (optional)</label>
+          <label className={labelCls} htmlFor="eigentuemerKontakt">Kontakt des Eigentümers (optional)</label>
           <input
-            id="ownerContact"
+            id="eigentuemerKontakt"
             autoComplete="tel"
             className={inputBase}
             placeholder="Eigentümer Kontakt"
-            {...register('ownerContact')}
+            {...register('eigentuemerKontakt')}
           />
         </div>
+
+        {/* Términos y captcha */}
         <div className="flex flex-col gap-2">
           <label className="flex items-center gap-2 text-base font-medium" htmlFor="terms">
             <input
@@ -232,7 +257,6 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
             <button
               type="submit"
               disabled={loading}
-              // disabled={true}
               className={
                 "inline-flex items-center justify-center rounded px-3 py-1 sm:py-1 font-medium text-white shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] hover:brightness-110 active:brightness-95 disabled:opacity-60 disabled:cursor-not-allowed transition cursor-pointer w-full bg-gradient-to-tr grad bg-gradient-orange-yellow"
               }
@@ -252,4 +276,3 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
     </div>
   );
 }
-

@@ -2,14 +2,15 @@
 import { useState } from 'react'
 
 export type TipFormData = {
-  name: string;
-  contact: string;
-  address: string;
-  ownerRelation: string;
-  propertyAddress: string;
-  ownerName?: string;
-  ownerContact?: string;
-  prize: "Urlaub" | "E-Bike" | "Gutschein" | "Küche";
+  tippgeberName: string;
+  tippgeberKontakt: string;
+  tippgeberAdresse: string;
+  plzOderStadt: string;
+  beziehungEigentuemer: string;
+  immobilienAdresse: string;
+  eigentuemerName?: string;
+  eigentuemerKontakt?: string;
+  praemie: "Urlaub" | "E-Bike" | "Gutschein" | "Küche";
   terms: boolean;
   captchaToken: string;
 };
