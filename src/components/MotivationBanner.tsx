@@ -12,7 +12,7 @@ const timeline: TimelineStep[] = [
   {
     icon: <FaHome className="duration-100   text-3xl" />,
     title: "Rumpke Immobilien",
-    desc: "Die erfahrene Immobilienbüro aus der Region – zuverlässig, transparent und persönlich.",
+    desc: "Das erfahrene Immobilienbüro aus der Region – zuverlässig, transparent und persönlich.",
   },
   {
     icon: <FaLightbulb className="duration-100   text-3xl" />,
