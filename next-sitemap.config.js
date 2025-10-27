@@ -5,7 +5,7 @@ module.exports = {
   changefreq: 'weekly',
   priority: 0.7,
   sitemapSize: 7000,
-  exclude: ['/404', '/500', '/impressum', '/privacy', '/agb'],
+  exclude: ['/404', '/500', '/impressum', '/datenschutz', '/agb'],
   robotsTxtOptions: {
     additionalSitemaps: [
       'https://www.ichschenkedirwas.de/sitemap.xml',
