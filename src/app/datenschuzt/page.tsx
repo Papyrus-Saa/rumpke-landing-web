@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PrivacyPage = () => {
+const DatenschutzPage = () => {
   return (
     <main className="w-full min-h-[80vh] flex justify-center items-center py-10 px-2">
       <section className="w-full max-w-xl bg-white dark:bg-dark-200 rounded-2xl shadow-lg p-8 sm:p-16 flex flex-col justify-center items-center">
@@ -15,4 +15,4 @@ const PrivacyPage = () => {
   );
 }
 
-export default PrivacyPage;
+export default DatenschutzPage;

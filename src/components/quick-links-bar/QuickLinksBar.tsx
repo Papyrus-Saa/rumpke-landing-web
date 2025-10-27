@@ -6,7 +6,7 @@ import React from 'react'
 const QuickLinksBar = () => {
   return (
     <div className=' w-full flex flex-col justify-center items-center gap-4 py-4 lg:py-6 text-white'>
-      <Link href="/privacy" className="text-sm hover:underline">
+      <Link href="/datenschutz" className="text-sm hover:underline">
         Datenschutzerklärung
       </Link>
       <Link href="/impressum" className="text-sm hover:underline">
