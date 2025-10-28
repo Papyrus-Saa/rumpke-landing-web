@@ -149,13 +149,20 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
           {errors.tippgeberName && <p className={errorCls}>{errors.tippgeberName.message}</p>}
         </div>
         <div>
-          <label className={labelCls} htmlFor="tippgeberKontakt">Kontakt (E-Mail oder Telefon) *</label>
+          <label className={labelCls} htmlFor="tippgeberKontakt">E-Mail-Adresse *</label>
           <input
             id="tippgeberKontakt"
+            type="email"
             autoComplete="email"
             className={inputBase}
-            placeholder="E-Mail oder Telefon"
-            {...register('tippgeberKontakt', { required: 'Kontakt ist erforderlich' })}
+            placeholder="E-Mail-Adresse"
+            {...register('tippgeberKontakt', {
+              required: 'E-Mail ist erforderlich',
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: 'Bitte eine gültige E-Mail-Adresse eingeben.'
+              }
+            })}
           />
           {errors.tippgeberKontakt && <p className={errorCls}>{errors.tippgeberKontakt.message}</p>}
         </div>
