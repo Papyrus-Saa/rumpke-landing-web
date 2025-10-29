@@ -7,8 +7,8 @@ Next.js project for real estate lead management and collection.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Papyrus-Saa/rumpke-inmo.git
-   cd rumpke-leads-collector
+   git clone https://github.com/Papyrus-Saa/rumpke-immo-frontend
+   cd rumpke-immo-frontend
    ```
 2. Install dependencies:
    ```bash
