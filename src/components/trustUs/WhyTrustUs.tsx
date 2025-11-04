@@ -38,9 +38,9 @@ const WhyTrustUs: React.FC = () => {
       className="w-full mx-auto mt-6 mb-10 sm:p-12 md:p-6 xl:px-6 transition-opacity duration-100 overflow-auto max-h-screen ">
       <div className="duration-100 bg-light-100 dark:bg-dark-200 shadow-subtle-l dark:shadow-subtle-d flex flex-col lg:flex-row items-center gap-10 p-4 sm:rounded-2xl">
         <div className="flex flex-col items-center md:items-start md:w-1/3 ">
-          <div className="duration-100 relative w-70 h-56 shadow-shadow-subtle-l dark:shadow-shadow-subtle-d border-4 dark:border-gray-800 border-amber-50 mb-4 bg-white dark:bg-dark-200">
+          <div className="duration-100 relative w-70 h-76 shadow-shadow-subtle-l dark:shadow-shadow-subtle-d border-4 dark:border-gray-800 border-amber-50 mb-4 bg-white dark:bg-dark-200">
             <Image
-              src="/howItWorksPic.jpg"
+              src="/whyTrustUsPic.jpg"
               alt="Ann-Christin Rumpke"
               fill
               className="object-cover"
@@ -48,7 +48,7 @@ const WhyTrustUs: React.FC = () => {
               priority
             />
           </div>
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left ml-2">
             <h3 className="text-xl font-bold text-mint-600  mb-1">Ann-Christin Rumpke</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">Geprüfte Immobilienmaklerin & Wertermittlerin</p>
             <span className="inline-block bg-mint-100 bg-mint-600 dark:bg-mint-600 px-3 py-1 rounded-full text-xs font-semibold mb-2 text-white">

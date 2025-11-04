@@ -36,12 +36,10 @@ const WhyTrustUsButton = () => {
     >
       <div className="w-full justify-between flex  lg:px-16 xl:px-20 2xl:px-72">
         <button
-          disabled
-          title="Wartungsarbeiten – bald wieder verfügbar"
           onClick={handleMouseEnter}
-          className={"duration-100 text-xs cursor-not-allowed flex justify-end items-center font-semibold text-green-600 hover:text-green-400 select-none gap-2"}
+          className={"duration-100 text-xs cursor-pointer flex justify-end items-center font-semibold text-green-600 hover:text-green-400 select-none gap-2"}
         >
-          <FaBan className="text-red-500" />
+
           Warum uns vertrauen?
         </button>
         <button
