@@ -6,8 +6,8 @@ const page = () => {
   return (
     <div className="px-2 md:px-0 py-8  mx-auto">
       <header className="text-center mb-6">
-        <h1 className="text-xl md:text-3xl font-bold my-10">Hey — schön, dass du hier bist! <span aria-hidden>😊</span></h1>
-        <p className="text-xs md:text-l text-gradient-orange-yellow font-bold max-w-3xl mx-auto mb-6">Hier können Angaben zur Immobilie und Kontaktdaten übermittelt werden. Das Ausfüllen dauert ca. 1 Minute.</p>
+        <h1 className="text-2xl md:text-5xl font-extrabold my-10 text-gradient-orange-yellow">Willkommen bei Ich schenke dir was</h1>
+        <p className="text-md md:text-l text-gradient-orange-yellow font-bold max-w-3xl mx-auto mb-6">Hier können Angaben zur Immobilie und Kontaktdaten übermittelt werden. Das Ausfüllen dauert ca. 1 Minute.</p>
         <div className="mt-4">
           <Link href="/" title="Öffnet die Website mit weiteren Informationen zum Tipp-Prozess" aria-label="Zur Website - weitere Informationen" className="inline-flex items-center bg-gradient-orange-yellow text-white px-2 py-1 mb-6 rounded-lg shadow">
             Zur Website

@@ -39,6 +39,7 @@ export default function Header() {
         <div className="w-full mx-auto">
           <Contributors total={total} />
         </div>
+        
       </header>
     </>
   );
