@@ -1,8 +1,13 @@
 import TipForm from '@/components/form/TipForm'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 const page = () => {
+  const router = useRouter()
+  useEffect(() => {
+    router.replace('/')
+  }, [router])
   return (
     <div className="md:px-0 py-8  mx-auto">
       <header className="text-center mb-6">
