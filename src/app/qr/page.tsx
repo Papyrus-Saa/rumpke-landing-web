@@ -1,3 +1,5 @@
+'use client'
+
 import TipForm from '@/components/form/TipForm'
 import React, { useEffect } from 'react'
 import Link from 'next/link'
