@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+RUMPKE Landing Web
 
-## Getting Started
+Public landing page for Rumpke Immobilien digital lead generation.
 
-First, run the development server:
+Built with Next.js and connected to a secure NestJS backend API for email handling and form validation.
 
-```bash
+Overview
+
+This project is the public-facing landing page for collecting property leads.
+
+Architecture:
+
+Frontend (Next.js)
+→ Backend API (NestJS)
+→ Email service (SMTP / transactional email)
+
+The frontend is fully decoupled from the backend and communicates via a secure API endpoint.
+
+AI Assistant (Beta) (OpenAI Integration)
+
+This project includes a lightweight AI assistant powered by OpenAI.
+
+The assistant:
+
+Answers questions about the program and how it works
+
+Provides contextual guidance for users
+
+Clearly informs users that responses are AI-generated
+
+Does not store personal conversation data
+
+Safety & Transparency
+
+Users are explicitly informed they are interacting with an AI assistant
+
+No legal or binding advice is provided
+
+The assistant is limited to predefined context about the program
+
+This feature demonstrates integration of AI services into a production-ready web application.
+
+Tech Stack
+
+Next.js (App Router)
+
+TypeScript
+
+Server Actions / API calls
+
+Environment-based configuration
+
+SEO optimized metadata
+
+Production-ready deployment (Vercel / Strato)
+
+Security & Validation
+
+Client-side validation
+
+Backend validation (class-validator)
+
+CORS restrictions
+
+Rate limiting (handled in backend)
+
+Captcha integration (Cloudflare Turnstile)
+
+Honeypot field for bot detection
+
+Performance & SEO
+
+Optimized images (next/image)
+
+Font optimization
+
+Proper metadata and OpenGraph tags
+
+Production build optimization
+
+Local Development
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Application runs at:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+http://localhost:3000
 
-## Learn More
+Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Create a .env.local file:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+NEXT_PUBLIC_API_URL=http://localhost:3001
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+Never commit secrets.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Production
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployed via modern hosting platform with:
+
+HTTPS
+
+Custom domain
+
+CDN
+
+Environment separation (dev/staging/prod)
+
+Future Improvements
+
+Internationalization
+
+Analytics dashboard
+
+A/B testing
+
+Conversion tracking
