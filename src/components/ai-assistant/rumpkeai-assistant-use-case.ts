@@ -7,8 +7,13 @@ export const rumpkeai_assistant_use_case = async (prompt: string) => {
       },
       body: JSON.stringify({ prompt })
     });
-    if (!resp.ok) throw new Error();
     const data = await resp.json();
+    if (!resp.ok) {
+      if (data && data.error) {
+        return { error: data.error };
+      }
+      return { error: { code: 'UNKNOWN', message: resp.statusText || 'Unknown error', details: {} } };
+    }
     return {
       message: {
         role: 'assistant',
@@ -17,9 +22,10 @@ export const rumpkeai_assistant_use_case = async (prompt: string) => {
     };
   } catch {
     return {
-      message: {
-        role: 'assistant',
-        content: 'Beim Verarbeiten deiner Anfrage ist ein Fehler aufgetreten.'
+      error: {
+        code: 'NETWORK_ERROR',
+        message: 'Beim Verarbeiten deiner Anfrage ist ein Fehler aufgetreten.',
+        details: {}
       }
     };
   }

@@ -112,7 +112,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
         {(submitError || localError) && (
           <div
             ref={errorRef}
-            className="rounded-xl border border-red-500/20 bg-red-500/10 p-3 text-sm mt-2">
+            className="mx-auto mb-3 mt-1 flex items-center justify-center w-fit px-4 py-2 rounded-full bg-red-100 border border-red-300 text-red-700 text-xs font-medium shadow-sm text-center">
             {submitError || localError}
           </div>
         )}
