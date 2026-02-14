@@ -98,3 +98,6 @@ Deployed via modern hosting platform with:
 - A/B testing
 - Conversion tracking
 
+## License
+
+This project is private and not licensed for redistribution.
