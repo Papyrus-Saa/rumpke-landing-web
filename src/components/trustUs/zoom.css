@@ -1,0 +1,38 @@
+/* Estilos personalizados para react-medium-image-zoom */
+[data-rmiz] {
+  position: relative;
+}
+
+.rmiz-container {
+  width: 100%;
+  height: 100%;
+}
+
+[data-rmiz-content] {
+  background-color: transparent;
+}
+
+[data-rmiz-modal-overlay] {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+[data-rmiz-modal-img] {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.rmiz-btn-zoom,
+.rmiz-btn-unzoom {
+  background-color: transparent;
+  color: #ffffff;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.rmiz-btn-zoom:hover,
+.rmiz-btn-unzoom:hover {
+  opacity: 1;
+}

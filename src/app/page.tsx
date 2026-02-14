@@ -1,20 +1,16 @@
+"use client";
 
-'use client'
+import dynamic from "next/dynamic";
 
+const HomeContent = dynamic(() => import("./HomeContent"), {
+  ssr: false,
+  loading: () => (
+    <div className="animate-pulse">
+      <div className="w-full h-[400px] bg-gray-200 dark:bg-gray-800" />
+    </div>
+  ),
+});
 
-import { ThemeProvider } from '@/context/ThemeContext';
-import Header from '@/header/Header';
-
-
-
-
-export default function Home() {
-  return (
-
-    <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-stone-900 text-black dark:text-white transition-colors">
-        <Header />
-      </div>
-    </ThemeProvider>
-  );
+export default function Page() {
+  return <HomeContent />;
 }

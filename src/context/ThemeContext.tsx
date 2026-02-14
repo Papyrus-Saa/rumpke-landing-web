@@ -3,7 +3,7 @@
 import { createContext, useContext, ReactNode } from "react";
 import { useThemeMode, Theme } from "@/hooks/useThemeMode";
 
-// Tipo del contexto
+
 type ThemeContextType = {
   theme: Theme;
   toggleTheme: () => void;
@@ -31,6 +31,6 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
 export function useTheme(): ThemeContextType {
   const context = useContext(ThemeContext);
-  if (!context) throw new Error("useTheme must be used within a ThemeProvider");
+  if (!context) throw new Error();
   return context;
 }

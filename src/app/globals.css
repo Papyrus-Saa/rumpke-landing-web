@@ -1,4 +1,148 @@
+
+.shadow-orange-yellow {
+  box-shadow: 0 4px 24px 0 #fb923c, 0 2px 8px 0 #fde047, 0 1px 4px 0 #f59e42;
+}
+.shadow-purple-fuchsia {
+  box-shadow: 0 4px 24px 0 #6d28d9, 0 2px 8px 0 #a21caf, 0 1px 4px 0 #f0abfc;
+}
+
+
+:root {
+  --gradient-orange-yellow: linear-gradient(45deg, #ea580c 0%, #ea580c 50%, #facc15 100%);
+  --gradient-purple-fuchsia: linear-gradient(90deg, #6d28d9 0%, #a21caf 50%, #f0abfc 100%);
+  --gradient-mint-green: linear-gradient(90deg, #005A73 0%, #10b981 50%, #b3dbe6 100%);
+}
+.dark {
+  --gradient-orange-yellow: linear-gradient(45deg, #c2410c 0%, #dc2626 50%, #eab308 100%);
+  --gradient-purple-fuchsia: linear-gradient(90deg, #a21caf 0%, #6d28d9 50%, #f0abfc 100%);
+  --gradient-mint-green: linear-gradient(90deg, #00222b 0%, #072c34 50%, #005A73 100%);
+}
+
+.bg-gradient-orange-yellow {
+  background: var(--gradient-orange-yellow);
+}
+.bg-gradient-mint-green {
+  background: var(--gradient-mint-green);
+}
+.bg-gradient-purple-fuchsia {
+  background: var(--gradient-purple-fuchsia);
+}
+.text-gradient-orange-yellow {
+  background: var(--gradient-orange-yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.text-gradient-purple-fuchsia {
+  background: var(--gradient-purple-fuchsia);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.text-gradient-purple-fuchsia {
+  background: var(--gradient-purple-fuchsia);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-mint-green {
+  background: var(--gradient-mint-green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@keyframes rainbow-border {
+  0% { border-color: #ff0000; }
+  16% { border-color: #ff9900; }
+  33% { border-color: #ffff00; }
+  50% { border-color: #33ff00; }
+  66% { border-color: #00ccff; }
+  83% { border-color: #9900ff; }
+  100% { border-color: #ff0000; }
+}
+
+.rainbow-border {
+  border-width: 1px;
+  border-style: solid;
+  animation: rainbow-border 1.5s linear infinite;
+  transition: border-color 1.5s ease-out, border-width 1.5s ease-out;
+}
+
+
+@theme {
+
+/*
+--color-light-100: #f9f8ff;
+--color-light-200: #e6e3fa;
+--color-light-300: #cfc7e7;
+--color-mint-600: #a07be6;
+--color-secondary-l: #C1E67B;
+--color-dark-100: #181332;
+--color-dark-200: #120e26;
+--color-dark-300: #080817;
+--color-mint-700: #3a215a;
+--color-secondary-d: #415A21; */
+
+/* --color-light-100: #f6faf7;
+--color-light-200: #e3ede6;
+--color-light-300: #cfd8cf;
+--color-mint-600: #10b981;
+--color-secondary: #eaeaea;
+--color-dark-100: #16251a;
+--color-dark-200: #101a12;
+--color-dark-300: #070d08;
+--color-mint-700: #04432f;
+--color-secondary: #cfcfcf; */
+
+--color-light-100: #FAFAFA;
+--color-light-200: #F2F2F2;
+--color-light-300: #E5E5E5;
+--color-mint-600: #005A73;
+--color-secondary-l: #b3dbe6;
+
+--color-dark-300: #030c0d;
+--color-dark-200: #0a1013;
+--color-dark-100: #121b21;
+--color-mint-700: #03303a;
+--color-secondary-d: #072c34;
+
+--shadow-subtle-l:  0 8px 22px 0 rgba(44, 62, 80, 0.18), 0 4px 16px 0 rgba(180, 180, 180, 0.12), 0 2px 8px 0 rgba(140,111,199,0.22);
+--shadow-subtle-d: 0 6px 22px 0 rgba(44, 62, 80, 0.18), 0 1px 6px 0 rgba(180, 180, 200, 0.12), 0 1px 6px 0 rgba(140,111,199,0.22);
+
+
+--shadow-ai-l: 0 8px 32px 0 rgba(44, 62, 80, 0.18), 0 4px 16px 0 rgba(180, 180, 180, 0.12);
+--shadow-ai-d: 0 8px 32px 0 rgba(60, 60, 60, 0.38), 0 4px 16px 0 rgba(0, 0, 0, 0.32);
+}
+
+
+
+.rainbow-border-animated {
+  --angle: 0deg;
+  border-width: 1px;
+  border-style: double;
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: rotate 6s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
