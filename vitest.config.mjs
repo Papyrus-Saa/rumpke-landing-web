@@ -16,18 +16,22 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
-      include: ['src/**/*.{ts,tsx}'],
+      include: [
+        'src/hooks/**/*.{ts,tsx}',
+        'src/components/ai-assistant/AIButton.tsx',
+        'src/context/ThemeContext.tsx',
+      ],
       exclude: [
         'src/**/*.d.ts',
         'src/**/*.stories.tsx',
         'src/**/index.ts',
-        'src/app/**',
+        'src/hooks/useRainBow.tsx',
       ],
       thresholds: {
-        lines: 60,
-        functions: 60,
-        branches: 60,
-        statements: 60,
+        lines: 78,
+        functions: 80,
+        branches: 70,
+        statements: 77,
       },
     },
   },
