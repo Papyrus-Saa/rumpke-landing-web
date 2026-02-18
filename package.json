@@ -12,6 +12,9 @@
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage"
   },
+  "overrides": {
+    "@exodus/bytes": "1.13.0"
+  },
   "dependencies": {
     "@cesium/widgets": "^13.2.0",
     "@emotion/react": "^11.14.0",
