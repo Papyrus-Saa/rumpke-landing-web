@@ -72,6 +72,57 @@ Application runs at:
 
 http://localhost:3000
 
+## Testing
+
+This project includes comprehensive unit and integration tests using **Vitest** and **React Testing Library**.
+
+### Running Tests
+
+```bash
+# Watch mode (development)
+npm run test
+
+# Visual UI dashboard
+npm run test:ui
+
+# Single run (CI/CD)
+npm run test:run
+
+# Coverage report
+npm run test:coverage
+```
+
+### Test Coverage
+
+- **69 tests** across hooks, components, and integrations
+- **100% code coverage** on all tested modules
+- All external libraries tested directly (not mocked)
+
+### Testing Guidelines
+
+For detailed testing documentation, methodology, and best practices, see [TESTING.md](./TESTING.md).
+
+Key testing principles:
+- Test user behavior, not implementation
+- Use React Testing Library's `screen` API for queries
+- Follow AAA pattern (Arrange-Act-Assert)
+- Mock only browser APIs, not external libraries
+- Achieve 100% coverage on all tested files
+
+### Test Files
+
+```
+src/__tests__/
+├── unit/hooks/
+│   ├── useThemeMode.test.ts
+│   ├── useScrolled.test.ts
+│   └── useRandomColoredWord.test.tsx
+├── integration/components/
+│   ├── AIButton.test.tsx
+│   └── ThemeContext.test.tsx
+└── e2e/
+```
+
 ## Environment Variables
 
 Create a `.env.local` file:

@@ -1,0 +1,211 @@
+
+> rumpke-leads-collector@0.1.0 test:run
+> vitest run
+
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90mC:/Users/GBT H510M_NVDA/Desktop/ann-project/rumpke-landing-web[39m
+
+ [31m❯[39m src/__tests__/unit/hooks/useTipFormCount.test.ts [2m([22m[2m0 test[22m[2m)[22m
+ [32m✓[39m src/__tests__/unit/hooks/useRandomColoredWord.test.tsx [2m([22m[2m12 tests[22m[2m)[22m[32m 74[2mms[22m[39m
+ [32m✓[39m src/__tests__/unit/hooks/useScrolled.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 84[2mms[22m[39m
+ [31m❯[39m src/__tests__/unit/hooks/useScroller.test.ts [2m([22m[2m15 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 123[2mms[22m[39m
+       [32m✓[39m should return a ref object[32m 26[2mms[22m[39m
+       [32m✓[39m should have null initial ref value[32m 3[2mms[22m[39m
+[31m       [31m×[31m should check for reduced motion preference[39m[32m 12[2mms[22m[39m
+       [32m✓[39m should not duplicate items when reduced motion is preferred[32m 14[2mms[22m[39m
+       [32m✓[39m should set data-animated attribute when no reduced motion[32m 5[2mms[22m[39m
+       [32m✓[39m should not set data-animated when reduced motion is preferred[32m 4[2mms[22m[39m
+       [32m✓[39m should duplicate children in scroller__inner[32m 12[2mms[22m[39m
+       [32m✓[39m should set aria-hidden on duplicated items[32m 4[2mms[22m[39m
+       [32m✓[39m should handle empty scroller__inner gracefully[32m 5[2mms[22m[39m
+       [32m✓[39m should handle missing scroller__inner gracefully[32m 4[2mms[22m[39m
+       [32m✓[39m should handle null scroller reference[32m 3[2mms[22m[39m
+       [32m✓[39m should work with proper scroller structure[32m 5[2mms[22m[39m
+       [32m✓[39m should preserve original item content in duplicates[32m 10[2mms[22m[39m
+       [32m✓[39m should create independent refs for multiple instances[32m 5[2mms[22m[39m
+       [32m✓[39m should mark duplicates as hidden from screen readers[32m 4[2mms[22m[39m
+ [31m❯[39m src/__tests__/unit/hooks/useSubmit.test.ts [2m([22m[2m22 tests[22m[2m | [22m[31m2 failed[39m[2m)[22m[32m 143[2mms[22m[39m
+       [32m✓[39m should initialize with default state[32m 26[2mms[22m[39m
+       [32m✓[39m should provide submit function[32m 3[2mms[22m[39m
+       [32m✓[39m should submit data and return success[32m 9[2mms[22m[39m
+       [32m✓[39m should send POST request to correct endpoint[32m 12[2mms[22m[39m
+       [32m✓[39m should exclude terms field from request body[32m 8[2mms[22m[39m
+[31m       [31m×[31m should set loading state during submission[39m[32m 19[2mms[22m[39m
+       [32m✓[39m should clear loading state after success[32m 3[2mms[22m[39m
+       [32m✓[39m should handle error response with message[32m 3[2mms[22m[39m
+       [32m✓[39m should handle error response without custom message[32m 4[2mms[22m[39m
+       [32m✓[39m should handle generic error fallback[32m 4[2mms[22m[39m
+       [32m✓[39m should clear loading state after error[32m 6[2mms[22m[39m
+       [32m✓[39m should handle fetch network error[32m 3[2mms[22m[39m
+       [32m✓[39m should handle generic network error[32m 3[2mms[22m[39m
+       [32m✓[39m should handle non-Error exceptions[32m 3[2mms[22m[39m
+       [32m✓[39m should clear loading state after network error[32m 2[2mms[22m[39m
+       [32m✓[39m should clear previous error on new submission[32m 3[2mms[22m[39m
+       [32m✓[39m should clear previous success on new submission[32m 3[2mms[22m[39m
+[31m       [31m×[31m should handle multiple sequential submissions[39m[32m 5[2mms[22m[39m
+       [32m✓[39m should use custom API URL from environment[32m 5[2mms[22m[39m
+       [32m✓[39m should use default API URL when env not set[32m 4[2mms[22m[39m
+       [32m✓[39m should handle optional fields[32m 3[2mms[22m[39m
+       [32m✓[39m should handle all praemie types[32m 4[2mms[22m[39m
+ [32m✓[39m src/__tests__/unit/hooks/useThemeMode.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 146[2mms[22m[39m
+ [32m✓[39m src/__tests__/unit/hooks/useTrustUsModal.test.ts [2m([22m[2m38 tests[22m[2m)[22m[32m 130[2mms[22m[39m
+ [32m✓[39m src/__tests__/integration/components/AIButton.test.tsx [2m([22m[2m26 tests[22m[2m)[22m[33m 627[2mms[22m[39m
+ [32m✓[39m src/__tests__/integration/components/ThemeContext.test.tsx [2m([22m[2m24 tests[22m[2m)[22m[33m 985[2mms[22m[39m
+ [31m❯[39m src/__tests__/unit/hooks/useSwiperGlModule.test.ts [2m([22m[2m27 tests[22m[2m | [22m[31m2 failed[39m[2m)[22m[33m 1132[2mms[22m[39m
+       [32m✓[39m should initialize with empty mods array[32m 29[2mms[22m[39m
+       [32m✓[39m should initialize with ready false[32m 3[2mms[22m[39m
+       [32m✓[39m should return object with mods and ready properties[32m 3[2mms[22m[39m
+       [32m✓[39m should load default swiper-gl module[32m 67[2mms[22m[39m
+       [32m✓[39m should load when no modulePath provided[32m 73[2mms[22m[39m
+       [32m✓[39m should set ready to true after loading[32m 78[2mms[22m[39m
+       [32m✓[39m should populate mods array with loaded module[32m 79[2mms[22m[39m
+       [32m✓[39m should accept custom module paths[32m 77[2mms[22m[39m
+       [32m✓[39m should use provided path as default[32m 78[2mms[22m[39m
+       [32m✓[39m should handle unsupported module paths[32m 15[2mms[22m[39m
+       [32m✓[39m should set ready to false on error[32m 15[2mms[22m[39m
+       [32m✓[39m should handle module import failures gracefully[32m 16[2mms[22m[39m
+       [32m✓[39m should load module with default export[32m 62[2mms[22m[39m
+       [32m✓[39m should handle modules with and without default export[32m 76[2mms[22m[39m
+       [32m✓[39m should prevent state updates after unmount[32m 110[2mms[22m[39m
+[31m       [31m×[31m should use alive flag to prevent updates after unmount[39m[32m 7[2mms[22m[39m
+       [32m✓[39m should maintain independent state for multiple instances[32m 72[2mms[22m[39m
+       [32m✓[39m should each have their own module instance[32m 78[2mms[22m[39m
+       [32m✓[39m should have proper loading sequence[32m 79[2mms[22m[39m
+[31m       [31m×[31m should emit ready state before mods are populated[39m[32m 2[2mms[22m[39m
+       [32m✓[39m should always return an object with mods and ready[32m 1[2mms[22m[39m
+       [32m✓[39m should have mods as array type[32m 1[2mms[22m[39m
+       [32m✓[39m should have ready as boolean type[32m 0[2mms[22m[39m
+       [32m✓[39m should handle empty module path string[32m 11[2mms[22m[39m
+       [32m✓[39m should handle null-like module exports[32m 78[2mms[22m[39m
+       [32m✓[39m should handle rapid mount/unmount cycles[32m 3[2mms[22m[39m
+       [32m✓[39m should throw error for unsupported module[32m 13[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Suites 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/unit/hooks/useTipFormCount.test.ts[2m [ src/__tests__/unit/hooks/useTipFormCount.test.ts ][22m
+[31m[1mError[22m: Failed to resolve import "@/components/trustUs/useTipFormCount" from "src/__tests__/unit/hooks/useTipFormCount.test.ts". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mC:/Users/GBT H510M_NVDA/Desktop/ann-project/rumpke-landing-web/src/__tests__/unit/hooks/useTipFormCount.test.ts[39m:3:32
+[33m  1  |  import { describe, it, expect, beforeEach, vi, afterEach } from "vitest";
+  2  |  import { renderHook, act } from "@testing-library/react";
+  3  |  import { useTipFormCount } from "@/components/trustUs/useTipFormCount";
+     |                                   ^
+  4  |  describe("useTipFormCount - API Polling Endpoint", () => {
+  5  |    const mockFetch = vi.fn();[39m
+[90m [2m❯[22m TransformPluginContext._formatLog ../../../../GBT%20H510M_NVDA/Desktop/ann-project/rumpke-landing-web/node_modules/vite/dist/node/chunks/config.js:[2m28999:43[22m[39m
+[90m [2m❯[22m TransformPluginContext.error ../../../../GBT%20H510M_NVDA/Desktop/ann-project/rumpke-landing-web/node_modules/vite/dist/node/chunks/config.js:[2m28996:14[22m[39m
+[90m [2m❯[22m normalizeUrl ../../../../GBT%20H510M_NVDA/Desktop/ann-project/rumpke-landing-web/node_modules/vite/dist/node/chunks/config.js:[2m27119:18[22m[39m
+[90m [2m❯[22m ../../../../GBT%20H510M_NVDA/Desktop/ann-project/rumpke-landing-web/node_modules/vite/dist/node/chunks/config.js:[2m27177:32[22m[39m
+[90m [2m❯[22m TransformPluginContext.transform ../../../../GBT%20H510M_NVDA/Desktop/ann-project/rumpke-landing-web/node_modules/vite/dist/node/chunks/config.js:[2m27145:4[22m[39m
+[90m [2m❯[22m EnvironmentPluginContainer.transform ../../../../GBT%20H510M_NVDA/Desktop/ann-project/rumpke-landing-web/node_modules/vite/dist/node/chunks/config.js:[2m28797:14[22m[39m
+[90m [2m❯[22m loadAndTransform ../../../../GBT%20H510M_NVDA/Desktop/ann-project/rumpke-landing-web/node_modules/vite/dist/node/chunks/config.js:[2m22670:26[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯[22m[39m
+
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 5 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/unit/hooks/useScroller.test.ts[2m > [22museScroller - Infinite Scroll Hook[2m > [22mReduced Motion Preference[2m > [22mshould check for reduced motion preference
+[31m[1mAssertionError[22m: expected "vi.fn()" to be called with arguments: [ '(prefers-reduced-motion: reduce)' ][90m
+
+Number of calls: [1m0[22m
+[31m[39m
+[36m [2m❯[22m src/__tests__/unit/hooks/useScroller.test.ts:[2m41:30[22m[39m
+    [90m 39| [39m      [34mrenderHook[39m(() [33m=>[39m [34museScroller[39m())[33m;[39m
+    [90m 40| [39m
+    [90m 41| [39m      expect(matchMediaMock).toHaveBeenCalledWith('(prefers-reduced-mo…
+    [90m   | [39m                             [31m^[39m
+    [90m 42| [39m    })[33m;[39m
+    [90m 43| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/unit/hooks/useSubmit.test.ts[2m > [22museSubmit - API Endpoint Tests[2m > [22mSuccessful API Call[2m > [22mshould set loading state during submission
+[31m[1mAssertionError[22m: expected false to be true // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- true[39m
+[31m+ false[39m
+
+[36m [2m❯[22m src/__tests__/unit/hooks/useSubmit.test.ts:[2m118:40[22m[39m
+    [90m116| [39m      [35mconst[39m submitPromise [33m=[39m [34mact[39m([35masync[39m () [33m=>[39m {
+    [90m117| [39m        [35mconst[39m promise [33m=[39m result[33m.[39mcurrent[33m.[39m[34msubmit[39m(validFormData)[33m;[39m
+    [90m118| [39m        [34mexpect[39m(result[33m.[39mcurrent[33m.[39mloading)[33m.[39m[34mtoBe[39m([35mtrue[39m)[33m;[39m
+    [90m   | [39m                                       [31m^[39m
+    [90m119| [39m        [34mresolveResponse[39m({
+    [90m120| [39m          ok[33m:[39m [35mtrue[39m[33m,[39m
+[90m [2m❯[22m node_modules/@testing-library/react/dist/act-compat.js:[2m47:24[22m[39m
+[90m [2m❯[22m process.env.NODE_ENV.exports.act node_modules/react/cjs/react.development.js:[2m814:22[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/react/dist/act-compat.js:[2m46:25[22m[39m
+[90m [2m❯[22m src/__tests__/unit/hooks/useSubmit.test.ts:[2m116:29[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/unit/hooks/useSubmit.test.ts[2m > [22museSubmit - API Endpoint Tests[2m > [22mState Management[2m > [22mshould handle multiple sequential submissions
+[31m[1mAssertionError[22m: expected { ok: true, …(1) } to deeply equal { ok: true, result: 'first' }[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[2m    "ok": true,[22m
+[31m+   "result": {[39m
+[2m      "result": "first",[22m
+[31m+   },[39m
+[2m  }[22m
+
+[36m [2m❯[22m src/__tests__/unit/hooks/useSubmit.test.ts:[2m341:23[22m[39m
+    [90m339| [39m      })[33m;[39m
+    [90m340| [39m
+    [90m341| [39m      [34mexpect[39m(result1)[33m.[39m[34mtoEqual[39m({ ok[33m:[39m [35mtrue[39m[33m,[39m result[33m:[39m [32m'first'[39m })[33m;[39m
+    [90m   | [39m                      [31m^[39m
+    [90m342| [39m
+    [90m343| [39m      mockFetch[33m.[39m[34mmockResolvedValueOnce[39m({
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/unit/hooks/useSwiperGlModule.test.ts[2m > [22museSwiperGlModule - Dynamic Module Loading[2m > [22mMemory Leak Prevention[2m > [22mshould use alive flag to prevent updates after unmount
+[31m[1mAssertionError[22m: expected [Function] to not throw an error but 'Error: A function to advance timers w…' was thrown[39m
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: A function to advance timers was called but the timers APIs are not mocked. Call `vi.useFakeTimers()` in the test file first."
+
+[36m [2m❯[22m src/__tests__/unit/hooks/useSwiperGlModule.test.ts:[2m189:14[22m[39m
+    [90m187| [39m        [90m// Simulate time passing[39m
+    [90m188| [39m        vi[33m.[39m[34mrunAllTimers[39m()[33m;[39m
+    [90m189| [39m      })[33m.[39mnot[33m.[39m[34mtoThrow[39m()[33m;[39m
+    [90m   | [39m             [31m^[39m
+    [90m190| [39m    })[33m;[39m
+    [90m191| [39m  })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/unit/hooks/useSwiperGlModule.test.ts[2m > [22museSwiperGlModule - Dynamic Module Loading[2m > [22mLoading Sequence[2m > [22mshould emit ready state before mods are populated
+[31m[1mAssertionError[22m: expected '' to be 'ready-then-mods' // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- ready-then-mods[39m
+
+[36m [2m❯[22m src/__tests__/unit/hooks/useSwiperGlModule.test.ts:[2m250:29[22m[39m
+    [90m248| [39m      })[33m;[39m
+    [90m249| [39m
+    [90m250| [39m      [34mexpect[39m(emissionOrder)[33m.[39m[34mtoBe[39m([32m'ready-then-mods'[39m)[33m;[39m
+    [90m   | [39m                            [31m^[39m
+    [90m251| [39m    })[33m;[39m
+    [90m252| [39m  })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m4 failed[39m[22m[2m | [22m[1m[32m6 passed[39m[22m[90m (10)[39m
+[2m      Tests [22m [1m[31m5 failed[39m[22m[2m | [22m[1m[32m179 passed[39m[22m[90m (184)[39m
+[2m   Start at [22m 10:05:53
+[2m   Duration [22m 3.37s[2m (transform 1.49s, setup 4.71s, import 2.17s, tests 3.44s, environment 12.56s)[22m
+
