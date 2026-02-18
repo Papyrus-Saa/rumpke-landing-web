@@ -13,6 +13,7 @@ import { useAIChat } from '@/context/AIChatContext'
 export default function AIChatMobile() {
   const { visible, toggleChat, messages, setMessages, clearConversation } = useAIChat();
   const [isLoading, setIsLoading] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const listRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const scrollToBottom = (behavior: ScrollBehavior = 'smooth') => {
@@ -35,15 +36,21 @@ export default function AIChatMobile() {
   }, [])
   const handlePost = async (message: string) => {
     setIsLoading(true)
+    setErrorMessage(null)
     setMessages(prev => [...prev, { text: message, role: "user" }])
     try {
       const data = await rumpkeai_assistant_use_case(message)
-      if (!data) {
-        setMessages(prev => [...prev, { text: 'Ohne Antwort vom Server', role: "assistant" }])
-      } else {
+      if (data && data.error) {
+        setErrorMessage(data.error.message || 'Fehler beim Senden.')
+        setMessages(prev => [...prev, { text: data.error.message || 'Fehler beim Senden.', role: "assistant" }])
+      } else if (data && data.message) {
         setMessages(prev => [...prev, { text: data.message.content, role: "assistant" }])
+      } else {
+        setErrorMessage('Ohne Antwort vom Server')
+        setMessages(prev => [...prev, { text: 'Ohne Antwort vom Server', role: "assistant" }])
       }
     } catch {
+      setErrorMessage('Fehler beim Senden.')
       setMessages(prev => [...prev, { text: 'Fehler beim Senden.', role: "assistant" }])
     } finally {
       setIsLoading(false)
@@ -53,7 +60,7 @@ export default function AIChatMobile() {
 
   return (
     <>
-      <div ref={containerRef} className="w-full h-screen fixed top-0 right-0 z-[600] flex flex-col bg-light-100 dark:bg-dark-300 shadow-ai-l dark:shadow-ai-d">
+      <div ref={containerRef} className="w-full h-screen fixed top-0 right-0 z-600 flex flex-col bg-light-100 dark:bg-dark-300 shadow-ai-l dark:shadow-ai-d">
         <header
           className="w-full py-1 text-center text-white font-medium text-lg shadow-[0px_4px_12px_0px_rgba(0,0,0,0.10)] dark:shadow-[0px_4px_12px_0px_rgba(0,255,180,0.10)] fixed top-0 left-0 right-0 z-20 animate-gradient-move bg-light-100 dark:bg-dark-300"
           style={{
@@ -93,7 +100,7 @@ export default function AIChatMobile() {
             </button>
           </div>
 
-          <div className="relative min-h-[40px] flex items-center justify-center">
+          <div className="relative min-h-10 flex items-center justify-center">
             <span className="drop-shadow-lg text-base font-semibold text-center">Dein Assistent für Einfachheit</span>
           </div>
           <style>{`
@@ -156,7 +163,7 @@ export default function AIChatMobile() {
         )}
 
         <div className="w-full fixed bottom-0 left-0 right-0">
-          <div className="bg-light-200/90 dark:bg-dark-200/90 supports-[backdrop-filter]:backdrop-blur-md">
+          <div className="bg-light-200/90 dark:bg-dark-200/90 supports-backdrop-filter:backdrop-blur-md">
             <div className="relative mb-2">
               {messages.length > 0 && (
                 <button
@@ -182,6 +189,13 @@ export default function AIChatMobile() {
               )}
             </div>
             <div className="border-t border-black/10 dark:border-white/10 px-4 py-3">
+              {errorMessage && (
+                <div className="w-full flex justify-center items-center mb-2">
+                  <span className="text-xs text-center text-red-600 bg-red-50 dark:bg-red-900/30 rounded px-3 py-1 max-w-xs truncate">
+                    {errorMessage}
+                  </span>
+                </div>
+              )}
               <TextMessageBox onSend={handlePost} />
             </div>
           </div>

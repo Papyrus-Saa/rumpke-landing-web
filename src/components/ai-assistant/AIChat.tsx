@@ -21,6 +21,7 @@ export default function AIChat() {
 
 
   const [isLoading, setIsLoading] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
   const listRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -53,19 +54,22 @@ export default function AIChat() {
   }, [])
 
   const handlePost = async (message: string) => {
-
-
     setIsLoading(true)
+    setErrorMessage(null)
     setMessages(prev => [...prev, { text: message, role: "user" }])
-
     try {
       const data = await rumpkeai_assistant_use_case(message)
-      if (!data) {
-        setMessages(prev => [...prev, { text: 'Ohne Antwort vom Server', role: "assistant" }])
-      } else {
+      if (data && data.error) {
+        setErrorMessage(data.error.message || 'Fehler beim Senden.')
+        setMessages(prev => [...prev, { text: data.error.message || 'Fehler beim Senden.', role: "assistant" }])
+      } else if (data && data.message) {
         setMessages(prev => [...prev, { text: data.message.content, role: "assistant" }])
+      } else {
+        setErrorMessage('Ohne Antwort vom Server')
+        setMessages(prev => [...prev, { text: 'Ohne Antwort vom Server', role: "assistant" }])
       }
     } catch {
+      setErrorMessage('Fehler beim Senden.')
       setMessages(prev => [...prev, { text: 'Fehler beim Senden.', role: "assistant" }])
     } finally {
       setIsLoading(false)
@@ -77,7 +81,7 @@ export default function AIChat() {
       <div
         ref={containerRef}
         className="
-      w-[400px] h-[600px] fixed md:right-10 bottom-0 2xl:right-56 z-[600]
+      w-[400px] h-[600px] fixed md:right-10 bottom-0 2xl:right-56 z-600
       flex flex-col
       bg-light-100 dark:bg-dark-200 duration-100
       shadow-ai-l dark:shadow-ai-d
@@ -218,11 +222,18 @@ export default function AIChat() {
           duration-100
           border-t border-black/10 dark:border-white/10
           bg-light-100 dark:bg-dark-300
-          supports-[backdrop-filter]:backdrop-blur-md
+          supports-backdrop-filter:backdrop-blur-md
           px-4 py-3
           pb-[env(safe-area-inset-bottom)]
         "
         >
+          {errorMessage && (
+            <div className="w-full flex justify-center items-center mb-2">
+              <span className="text-xs text-center text-red-600 bg-red-50 dark:bg-red-900/30 rounded px-3 py-1 max-w-xs truncate">
+                {errorMessage}
+              </span>
+            </div>
+          )}
           <TextMessageBox onSend={handlePost} />
         </div>
       </div>

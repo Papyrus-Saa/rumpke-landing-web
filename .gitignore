@@ -18,6 +18,7 @@
 /.next/
 /out/
 
+
 # production
 /build
 
@@ -39,4 +40,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+# Ignorar instructions.md
+instructions.md
 next-env.d.ts

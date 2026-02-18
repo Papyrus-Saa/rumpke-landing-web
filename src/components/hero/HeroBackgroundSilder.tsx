@@ -104,16 +104,16 @@ export default function HeroBackgroundSlider() {
                     onLoad={() => setLoadedImages(prev => ({ ...prev, [item.id]: true }))}
                   />
                   {!loadedImages[item.id] && (
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-200/60 to-gray-400/80 animate-pulse z-10" />
+                    <div className="absolute inset-0 bg-linear-to-br from-gray-200/60 to-gray-400/80 animate-pulse z-10" />
                   )}
 
                   <div className="2xl:px-30 absolute left-0 top-1/4 xl:top-1/2 -translate-y-1/2 pl-6 sm:pl-12 max-w-[90vw] sm:max-w-[60vw] flex items-center pointer-events-none select-none">
-                    <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl lg:font-bold tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)] animate-fade-in-up text-left leading-tight break-words">
+                    <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl lg:font-bold tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)] animate-fade-in-up text-left leading-tight wrap-break-word">
                       {idx === currentSlide ? renderWelcomeText(item.welcome) : item.welcome}
                     </h2>
                   </div>
                   <div className="absolute right-0 2xl:px-30 bottom-0 pb-8 pr-6 sm:pb-16 sm:pr-12 max-w-[90vw] sm:max-w-[60vw] flex justify-end pointer-events-none select-none">
-                    <p className="text-white dark:text-mint-100 text-xl sm:text-2xl md:text-3xl font-bold italic tracking-wide drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)] animate-fade-in-up text-right leading-tight break-words">
+                    <p className="text-white dark:text-mint-100 text-xl sm:text-2xl md:text-3xl font-bold italic tracking-wide drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)] animate-fade-in-up text-right leading-tight wrap-break-word">
                       {item.quote}
                     </p>
                   </div>

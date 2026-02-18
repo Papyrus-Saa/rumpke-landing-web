@@ -17,7 +17,7 @@ const AwardProducts = () => {
               {slide.images.map((img, i) => (
                 <div
                   key={i}
-                  className="relative flex-shrink-0 flex flex-col items-center shadow dark:shadow-subtle-d"
+                  className="relative flex-0 flex flex-col items-center shadow dark:shadow-subtle-d"
                 >
                   <div
                     className="w-full "

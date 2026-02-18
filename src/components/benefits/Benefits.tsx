@@ -7,7 +7,7 @@ const Benefits = () => {
     <div id="benefits" className="w-full sm:w-[96%] lg:w-[90%] xl:w-[80%] mx-auto transition-all duration-100 mb-6 scroll-mt-22 xl:scroll-mt-30">
       <section className="w-full max-w-7xl mx-auto px-4 py-8 transition-all duration-100">
         <div className="text-center mb-8 transition-all duration-100 ">
-          <span className="inline-block px-4 py-1 bg-mint-600 text-white text-xs font-bold tracking-widest uppercase shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] transition-all duration-100 mb-6">
+          <span className="inline-block px-4 py-1 bg-mint-600 text-white text-xs font-bold tracking-widest uppercase shadow-subtle-l dark:shadow-subtle-d transition-all duration-100 mb-6">
             Prämienstaffel
           </span>
           <h3 className={`text-2xl font-bold  dark:text-mint-300 drop-shadow transition-all duration-100 mb-4 ${titleFonts.className}`}>
@@ -68,7 +68,7 @@ const Benefits = () => {
                 gewinn = pr * 0.09;
               }
               return (
-                <div key={i} className="rounded-xl duration-100 bg-white dark:bg-dark-200 shadow p-4 flex flex-col gap-2 border border-[var(--color-light-200)] dark:border-[var(--color-dark-200)]">
+                <div key={i} className="rounded-xl duration-100 bg-white dark:bg-dark-200 shadow p-4 flex flex-col gap-2 border border-light-200 dark:border-dark-200">
                   <div className="flex justify-between items-center">
                     <span className="text-xs">Stufe</span>
                     <span className="text-xs">{i + 1}</span>
@@ -79,11 +79,11 @@ const Benefits = () => {
                   </div>
                   <div className="flex justify-between items-center gap-2">
                     <span className="duration-100 text-xs text-gray-800 dark:text-gray-100">Prämie</span>
-                    <span className=" duration-100 text-xs text-gray-800 dark:text-gray-100 break-words max-w-[60%] text-right">{b.title}</span>
+                    <span className=" duration-100 text-xs text-gray-800 dark:text-gray-100 wrap-break-word max-w-[60%] text-right">{b.title}</span>
                   </div>
                   <div className="flex flex-col">
                     <span className="duration-100 text-xs text-gray-500 dark:text-gray-400">Beschreibung</span>
-                    <span className="duration-100 text-xs text-gray-500 dark:text-gray-400 break-words max-w-full whitespace-pre-line">{b.desc}</span>
+                    <span className="duration-100 text-xs text-gray-500 dark:text-gray-400 wrap-break-word max-w-full whitespace-pre-line">{b.desc}</span>
                   </div>
                   <div className="flex flex-col items-end mt-2">
                     <span className="text-xs mb-0.5">Mögliche Prämie</span>

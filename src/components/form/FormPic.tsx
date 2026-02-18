@@ -33,7 +33,7 @@ export const FormPic = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 30 }}
           transition={{ duration: 0.5 }}
-          className="fixed right-1 2xl:right-48 top-1/2 -translate-y-1/2 z-[600] overflow-hidden border-amber-600 border rounded-xl"
+          className="fixed right-1 2xl:right-48 top-1/2 -translate-y-1/2 z-600 overflow-hidden border-amber-600 border rounded-xl"
         >
           <span className="bg-mint-600 dark:bg-mint-700 w-full text-xs py-1 block text-center text-white">Tipp-Formular</span>
           <div className="relative w-50 h-40">

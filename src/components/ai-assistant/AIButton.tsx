@@ -15,13 +15,13 @@ const AIButton: React.FC<AIButtonProps> = ({ visible, toggleChat, showBadge = tr
     : "fixed bottom-10 right-2 md:bottom-6 2xl:right-42";
 
   return (
-    <div className={`${buttonClass} z-[600] flex flex-col items-center`}>
+    <div className={`${buttonClass} z-600 flex flex-col items-center`}>
       <div className="flex flex-col justify-center items-center">
         {showBadge && <BetaBadge className="mb-1" />}
         <button
           type="button"
           title="KI-Assistent öffnen/schließen"
-          className={`z-[600] w-6 h-6 flex items-center justify-center rounded-full cursor-pointer transition-shadow duration-100 focus:outline-none ${visible ? 'bg-gradient-to-tr from-cyan-900 via-mint-600 to-purple-900 shadow-lg border-2 border-mint-600' : 'text-white bg-mint-600 hover:bg-mint-800 shadow-md hover:shadow-lg'}`}
+          className={`z-600 w-6 h-6 flex items-center justify-center rounded-full cursor-pointer transition-shadow duration-100 focus:outline-none ${visible ? 'bg-linear-to-tr from-cyan-900 via-mint-600 to-purple-900 shadow-lg border-2 border-mint-600' : 'text-white bg-mint-600 hover:bg-mint-800 shadow-md hover:shadow-lg'}`}
           style={visible ? { position: 'relative', overflow: 'hidden' } : {}}
           onClick={toggleChat}
         >

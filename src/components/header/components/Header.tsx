@@ -22,7 +22,7 @@ export default function Header() {
       <header
         role="banner"
         aria-label="Main header"
-        className="2xl:rounded sticky top-0 z-[500] w-full mx-auto bg-mint-600 dark:bg-mint-700"
+        className="2xl:rounded sticky top-0 z-500 w-full mx-auto bg-mint-600 dark:bg-mint-700"
       >
         <nav
           className="flex justify-between rounded items-center p-2 h-12 sm:h-16 xl:h-20 lg:px-16 2xl:px-52 mx-auto"
@@ -39,7 +39,7 @@ export default function Header() {
         <div className="w-full mx-auto">
           <Contributors total={total} />
         </div>
-        
+
       </header>
     </>
   );

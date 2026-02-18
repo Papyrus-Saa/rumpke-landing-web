@@ -112,7 +112,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
         {(submitError || localError) && (
           <div
             ref={errorRef}
-            className="rounded-xl border border-red-500/20 bg-red-500/10 p-3 text-sm mt-2">
+            className="mx-auto mb-3 mt-1 flex items-center justify-center w-fit px-4 py-2 rounded-full bg-red-100 border border-red-300 text-red-700 text-xs font-medium shadow-sm text-center">
             {submitError || localError}
           </div>
         )}
@@ -265,7 +265,7 @@ export default function TipForm({ selectedPrize }: TipFormProps) {
               type="submit"
               disabled={loading}
               className={
-                "inline-flex items-center justify-center rounded px-3 py-1 sm:py-1 font-medium text-white shadow-[var(--shadow-subtle-l)] dark:shadow-[var(--shadow-subtle-d)] hover:brightness-110 active:brightness-95 disabled:opacity-60 disabled:cursor-not-allowed transition cursor-pointer w-full bg-gradient-to-tr grad bg-gradient-orange-yellow"
+                "inline-flex items-center justify-center rounded px-3 py-1 sm:py-1 font-medium text-white hover:brightness-110 active:brightness-95 disabled:opacity-60 disabled:cursor-not-allowed transition cursor-pointer w-full bg-linear-to-tr grad bg-gradient-orange-yellow"
               }
             >
               {loading ? 'Senden…' : 'Tipp senden'}

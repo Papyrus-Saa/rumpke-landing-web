@@ -19,7 +19,7 @@ const HeroSliderShowcase = () => (
             priority={slide.id === 1}
           />
           {/* Quote abajo, sobre la imagen */}
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-6 py-4">
+          <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/80 to-transparent px-6 py-4">
             <p className="text-white text-lg font-semibold drop-shadow-lg">
               {slide.quote}
             </p>

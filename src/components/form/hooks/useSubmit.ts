@@ -36,8 +36,13 @@ export function useSubmit() {
       );
       const result = await res.json();
       if (!res.ok) {
-        const j = await res.json().catch(() => ({ message: res.statusText }));
-        throw new Error(j.message || 'Es ist ein Fehler aufgetreten. Bitte lade die Seite neu. Wenn das Problem weiterhin besteht, versuche es später erneut.');
+        if (result && result.error) {
+          setError(result.error.message || 'An unknown error occurred.');
+          return false;
+        } else {
+          setError(res.statusText || 'An unknown error occurred.');
+          return false;
+        }
       }
       setSuccess('Vielen Dank für deine Empfehlung! Wir haben deine Angaben erhalten und unser Team prüft diese zeitnah. Du erhältst in Kürze eine Rückmeldung von uns. Deine Daten sind bei uns sicher und werden vertraulich behandelt. 😊');
       return { ok: true, result };

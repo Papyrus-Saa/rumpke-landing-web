@@ -28,8 +28,8 @@ const defaultRules: TipRule[] = [
   {
     key: "region-check",
     content: (
-      <div className="w-[100%] flex justify-between items-center ">
-        <span className="flex-grow">Es liegt in einer Region, in der wir aktiv sind.</span>
+      <div className="w-full flex justify-between items-center ">
+        <span className="grow">Es liegt in einer Region, in der wir aktiv sind.</span>
         <MapInfoSectionButton title="Prüfen" />
       </div>
     )
@@ -54,7 +54,7 @@ const TipInfo = ({ rules = defaultRules }: TipInfoProps) => (
             className="w-full flex items-start gap-3  dark:bg-dark-100 rounded-lg p-3 sm:p-4 bg-light-200 border border-light-300 dark:border-dark-100 duration-100  text-base sm:text-lg"
           >
             <span className="mt-1 text-mint-600 text-lg font-bold">•</span>
-            <span className={"text-gray-800 w-full dark:text-gray-100 duration-100 break-words"}>{rule.content}</span>
+            <span className={"text-gray-800 w-full dark:text-gray-100 duration-100 wrap-break-word"}>{rule.content}</span>
           </li>
         ))}
       </ul>

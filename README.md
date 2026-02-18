@@ -1,52 +1,154 @@
 
-# Rumpke Leads Collector
+# RUMPKE Landing Web
 
-Next.js project for real estate lead management and collection.
+## Overview
 
-## Installation
+Public landing page for Rumpke Immobilien digital lead generation.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Papyrus-Saa/rumpke-immo-frontend
-   cd rumpke-immo-frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+Built with Next.js and connected to a secure NestJS backend API for email handling and form validation.
+
+This project is the public-facing landing page for collecting property leads.
+
+## Architecture
+
+- **Frontend:** Next.js
+- **Backend API:** NestJS
+- **Email service:** SMTP / transactional email
+
+The frontend is fully decoupled from the backend and communicates via a secure API endpoint.
+
+## AI Assistant (Beta) – OpenAI Integration
+
+This project includes a lightweight AI assistant powered by OpenAI.
+
+### The assistant:
+
+- Answers questions about the program and how it works
+- Provides contextual guidance for users
+- Clearly informs users that responses are AI-generated
+- Does not store personal conversation data
+
+## Safety & Transparency
+
+- Users are explicitly informed they are interacting with an AI assistant
+- No legal or binding advice is provided
+- The assistant is limited to predefined context about the program
+
+This feature demonstrates integration of AI services into a production-ready web application.
+
+## Tech Stack
+
+- Next.js (App Router)
+- TypeScript
+- Server Actions / API calls
+- Environment-based configuration
+- SEO optimized metadata
+- Production-ready deployment (Vercel / Strato)
+
+## Security & Validation
+
+- Client-side validation
+- Backend validation (class-validator)
+- CORS restrictions
+- Rate limiting (handled in backend)
+- Captcha integration (Cloudflare Turnstile)
+- Honeypot field for bot detection
+
+## Performance & SEO
+
+- Optimized images (next/image)
+- Font optimization
+- Proper metadata and OpenGraph tags
+- Production build optimization
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+Application runs at:
+
+http://localhost:3000
+
+## Testing
+
+This project includes comprehensive unit and integration tests using **Vitest** and **React Testing Library**.
+
+### Running Tests
+
+```bash
+# Watch mode (development)
+npm run test
+
+# Visual UI dashboard
+npm run test:ui
+
+# Single run (CI/CD)
+npm run test:run
+
+# Coverage report
+npm run test:coverage
+```
+
+### Test Coverage
+
+- **69 tests** across hooks, components, and integrations
+- **100% code coverage** on all tested modules
+- All external libraries tested directly (not mocked)
+
+### Testing Guidelines
+
+For detailed testing documentation, methodology, and best practices, see [TESTING.md](./TESTING.md).
+
+Key testing principles:
+- Test user behavior, not implementation
+- Use React Testing Library's `screen` API for queries
+- Follow AAA pattern (Arrange-Act-Assert)
+- Mock only browser APIs, not external libraries
+- Achieve 100% coverage on all tested files
+
+### Test Files
+
+```
+src/__tests__/
+├── unit/hooks/
+│   ├── useThemeMode.test.ts
+│   ├── useScrolled.test.ts
+│   └── useRandomColoredWord.test.tsx
+├── integration/components/
+│   ├── AIButton.test.tsx
+│   └── ThemeContext.test.tsx
+└── e2e/
+```
 
 ## Environment Variables
 
-Create a `.env.local` file in the project root and set the following variables:
+Create a `.env.local` file:
 
-```env
-NEXT_PUBLIC_GPT_API=https://your-backend.com/rumpkeai
-NEXT_PUBLIC_API_BASE_URL=https://your-backend.com
+```
+NEXT_PUBLIC_API_URL=http://localhost:3001
 ```
 
-Make sure to use your actual backend/API URLs in production.
+**Never commit secrets.**
 
-## Scripts
+## Production
 
-- `npm run dev` — Start the development server.
-- `npm run build` — Build the app for production.
-- `npm run start` — Start the app in production mode.
-- `npm run lint` — Run the linter.
+Deployed via modern hosting platform with:
 
-## Deployment
+- HTTPS
+- Custom domain
+- CDN
+- Environment separation (dev/staging/prod)
 
-- **Frontend:** Deploy the project folder to Strato, Vercel, Netlify, etc.
-- **Backend:** Deploy your API to AWS, Railway, Render, Supabase, etc.
-- **Database:** Use a managed service like Railway, Render, Supabase, Neon, etc.
+## Future Improvements
 
-## Production Recommendations
+- Internationalization
+- Analytics dashboard
+- A/B testing
+- Conversion tracking
 
-- Properly configure environment variables and domains.
-- Ensure backend and database are accessible from the frontend.
-- Enable HTTPS and SSL certificates on your domain.
-- Check SEO, optimized images, and accessibility.
-- Test form submissions and validations.
+## License
 
-## Contact
-
-For support or questions, contact Papyrus-Saa.
+This project is private and not licensed for redistribution.

@@ -93,9 +93,9 @@ const AwardsSection = () => {
                     >
                       Klicken für mehr Info
                       <div className="absolute left-1/2 transform -translate-x-1/2 top-full
-                                   border-l-[8px] border-l-transparent
-                                   border-t-[8px] border-t-black/90
-                                   border-r-[8px] border-r-transparent" />
+                                   border-l-8 border-l-transparent
+                                   border-t-8 border-t-black/90
+                                   border-r-8 border-r-transparent" />
                     </motion.div>
                   )}
                   <div className="absolute inset-0 bg-gradient-mint-green opacity-0 blur-xl group-hover:opacity-10 dark:group-hover:opacity-20 transition-all duration-700 ease-out" />
@@ -139,9 +139,9 @@ const AwardsSection = () => {
             className="text-center mt-6"
           >
             <span className="inline-flex items-center gap-2 text-sm">
-              <span className="w-12 h-[1px] bg-gradient-orange-yellow opacity-50" />
+              <span className="w-12 h-xp bg-gradient-orange-yellow opacity-50" />
               Für erfolgreiche Immobilientipps
-              <span className="w-12 h-[1px] bg-gradient-orange-yellow opacity-50" />
+              <span className="w-12 h-xp bg-gradient-orange-yellow opacity-50" />
             </span>
           </motion.div>
         </motion.div>
