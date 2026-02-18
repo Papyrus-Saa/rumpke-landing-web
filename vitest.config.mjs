@@ -12,18 +12,7 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./src/setupTests.ts'],
-    deps: {
-      optimizer: {
-        web: {
-          include: ['html-encoding-sniffer', '@exodus/bytes']
-        }
-      }
-    },
-    server: {
-      deps: {
-        inline: ['html-encoding-sniffer', '@exodus/bytes']
-      }
-    },
+    pool: 'vmThreads',
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
