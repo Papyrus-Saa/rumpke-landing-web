@@ -134,8 +134,7 @@ describe('useSwiperGlModule - Dynamic Module Loading', () => {
       });
 
       expect(() => {
-        // Should not throw when accessing result
-        result.current.mods;
+        expect(result.current.mods).toBeDefined();
       }).not.toThrow();
     });
   });
@@ -222,10 +221,6 @@ describe('useSwiperGlModule - Dynamic Module Loading', () => {
 
     it('should emit ready state before mods are populated', async () => {
       const { result } = renderHook(() => useSwiperGlModule());
-
-      let emissionOrder = '';
-
-      const unsubscribe = vi.fn();
 
       await waitFor(() => {
         expect(result.current.ready).toBe(true);
